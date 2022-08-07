@@ -54,6 +54,106 @@
 
 }
 
+section{
+    
+
+.aboutus{
+    // background-color: rgb(240, 239, 239);
+    padding-top: 1.5rem;
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: space-around;
+
+    .content{
+       
+
+        h1{
+
+        }
+        p{
+            line-height: 2rem;
+            width: 26rem;
+        }
+
+        a{
+            background-color: #6cb1ff;
+            display: block;
+            width: 6rem;
+            padding: 8px;
+            border-radius: 1rem;
+            color: white;
+            text-align: center;
+            
+        }
+
+    }
+
+    .about-image{
+        img{
+            width: 30rem;
+            height: 18rem;
+        }
+
+        p{
+            width: 28rem;
+            line-height: 2rem;
+        }
+    }
+}
+
+
+.cert-head{
+    margin-left: 6.5rem;
+    margin-bottom: 1rem;
+}
+
+.certificate{
+    padding-bottom: 3.5rem;
+    display: flex;
+    margin-left: 6.5rem;
+    
+ 
+   
+    
+
+    .image{
+        margin-right: 3.5rem;
+    
+        
+        
+    img{
+        width: 15rem;
+        height: 9rem;
+    }
+
+    }
+
+}
+}
+
+.service-con{
+     background-color: rgb(249, 248, 248);
+    padding-top: 2rem;
+    h1{
+        text-align: center;
+        padding-bottom: 1.5rem;
+    }
+}
+
+.services{
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 6.5rem;
+    img{
+        width: 22rem;
+        height: 15rem;
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+
 // .banner{
 //     background-image: url('/assets/images/banner.jpg');
 //     background-size: cover;
