@@ -132,12 +132,15 @@ section{
 }
 
 .service-con{
-     background-color: rgb(249, 248, 248);
+     background-color: rgb(251, 251, 251);
     padding-top: 2rem;
-    h1{
+
+    .service-head{
         text-align: center;
         padding-bottom: 1.5rem;
+
     }
+   
 }
 
 .services{
@@ -152,6 +155,169 @@ section{
         margin-bottom: 2rem;
     }
 }
+
+
+
+// on hover animation//
+
+.item{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    display: block;
+    overflow: hidden;
+
+   
+   
+  }
+  
+  .item .overlay{
+    color: #000;
+    width: 91.6%;
+    height: 86.2%;
+    background-color: #fff;
+    opacity: 0;
+    transition: all 0.5s ease;
+    position: absolute;
+    overflow: hidden;
+    top: 0; 
+    bottom: 0;
+  }
+
+  .overlay span img{
+    
+        width: 180px;
+        height: 180px;
+  }
+  
+  /* effect-clean*/
+  .clean .overlay span:nth-child(1){
+    position: absolute;
+    left: 53%;
+    top: 3%;
+    font-size: 20px;
+    z-index: 12;
+    font-weight: bold;
+    font-family: coustard;
+    color: #777;
+    transform: translateX(-50%);
+  }
+  
+  .clean .overlay span:nth-child(2){
+    position: absolute;
+    top: 3%;
+    left: 56%;
+    transform: translateX(-50%);
+
+  
+    a{
+        position: absolute;
+        top: 85%;
+        color:  #6cb1ff;
+        width: fit-content;
+        padding: 5px;
+        display: block;
+        border:  1px solid  #6cb1ff;
+        left: 10%;
+        font-size: 15px;
+
+    }
+  }
+  
+  
+  .clean .overlay:hover{
+    opacity: 0.8;
+  }
+  
+  .clean .overlay:hover span:nth-child(1){
+    animation: slide 0.4s;
+  }
+  
+  .clean .overlay:hover span:nth-child(2){
+    animation: slide 0.7s;
+  }
+  
+  .clean .overlay:hover span:nth-child(3){
+    animation: line 0.5s forwards;
+  }
+
+  @keyframes slide{
+    0%   {transform:translateX(-10%);}
+    100% {transform:translateX(-50%);}
+  }
+  
+  @keyframes line{
+    0%   {width: 0;}
+    100% {width: 50%}
+  }
+
+  .appoint{
+    position: relative;
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        background-image: linear-gradient( 135deg, #0654ae 10%, #7ff4ff 100%);
+        opacity: 0.9;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        .add{
+            display: flex;
+            padding: 10px;
+         
+        }
+
+        .content{
+            color: #fff;
+            margin-top: 2rem;
+
+            
+            p{
+                font-size: 16px;
+
+                mat-icon{
+                    position: relative;
+                    top: 12px;
+                    font-size: 16px;
+                }
+            }
+
+            a{
+                padding: 15px;
+                background-color: rgb(250, 139, 47);
+                color: #fff;
+                display: block;
+                width: 8rem;
+                text-align: center;
+                border-radius: .4rem;
+                margin-top: 2rem;
+
+            }
+        }
+
+        .add-img{
+            margin-right: 6rem;
+           
+        }
+
+    }
+    .video-size {
+        height:350px;
+        width:100%;
+        overflow:hidden;
+    }
+    .video-size > video {
+        min-width: 100%;
+        min-height: 100%;
+    }
+  
+}
+
+
+  
+
+
 
 
 // .banner{
