@@ -9,6 +9,11 @@ import { FooterComponent } from './components/partials/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import { CardSliderComponent } from './components/partials/card-slider/card-slider.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -17,13 +22,17 @@ import { CardSliderComponent } from './components/partials/card-slider/card-slid
     NavBarComponent,
     HomeComponent,
     FooterComponent,
-    CardSliderComponent
+    CardSliderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

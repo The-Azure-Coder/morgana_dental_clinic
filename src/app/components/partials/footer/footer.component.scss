@@ -54,7 +54,7 @@ footer{
 
             img{
                 width: 19rem;
-                height: 15rem;
+                height: 12rem;
             }
 
             p{
@@ -202,4 +202,12 @@ footer{
         color: #fff;
 
     }
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
 }

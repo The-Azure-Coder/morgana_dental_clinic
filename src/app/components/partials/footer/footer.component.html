@@ -1,4 +1,4 @@
-
+<div class="foot-hide" [ngClass]="footerRoute('/register') || footerRoute('/login') ? 'hide' : 'show'">
 <footer>
     <div class="overlay"></div>
     <div class="headings">
@@ -39,7 +39,7 @@
                 <i class="fas fa-instagram"></i>
                 <i class="fa fa-youtube"></i>
                 <i class="fa fa-twitter"></i>
-                <i class="fa fa-snapchat"></i>
+                <i class="fa fa-snapchat" aria-hidden="true"></i>
             </div>
         </div>
     </div>
@@ -49,4 +49,6 @@
 
 <div class="copy">
     <label for="">©Copyright 2021 | all rights reserved</label>
+</div>
+
 </div>
