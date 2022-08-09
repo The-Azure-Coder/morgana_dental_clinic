@@ -8,6 +8,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
+import { CardSliderComponent } from './components/partials/card-slider/card-slider.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {MatIconModule} from '@angular/material/icon';
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    CardSliderComponent
   ],
   imports: [
     BrowserModule,

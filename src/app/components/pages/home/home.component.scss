@@ -314,6 +314,67 @@ section{
   
 }
 
+.staff{
+
+   padding-bottom: 2rem;
+
+    .staff-head{
+        margin-left: 6rem;
+        margin-top: 2rem;
+        padding-bottom: 1.1rem;
+
+    }
+
+    .card-con{
+        display: flex;
+        justify-content: center;
+       
+
+        .staff-card{
+            margin-right: 2.5rem;
+            border: 1px solid rgb(243, 242, 242);
+            width: 250px;
+            height: 320px;
+
+            .staff-img{
+                img{
+                    width: 250px;
+                    height: 200px;
+                }
+            }
+
+
+            .content{
+
+                h1{
+                    color: rgb(199, 197, 197);
+                    text-align: center;
+                }
+
+                p {
+                    color: #6cb1ff;
+                    text-align: center;
+                }
+            }
+
+        }
+
+      
+    }
+
+    a{
+        background-color: #6cb1ff;
+        margin-top: 2rem;
+        margin-left: 79%;
+        display: block;
+        width: 8rem;
+        padding: 10px;
+        border-radius: .3rem;
+        color: white;
+        text-align: center;
+    }
+}
+
 
   
 
