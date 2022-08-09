@@ -226,7 +226,7 @@ section{
   
   
   .clean .overlay:hover{
-    opacity: 0.8;
+    opacity: 0.9;
   }
   
   .clean .overlay:hover span:nth-child(1){
@@ -376,17 +376,82 @@ section{
 }
 
 
+.news{
+    padding: 15px;
+    background-color: rgb(251, 251, 251);
+
+
+    .news-head{
+        margin-left: 6rem;
+        margin-top: 2rem;
+        padding-bottom: 1.1rem;
+
+    }
+
+    .main-con{
+        display: flex;
+        margin-left: 6rem;
+
+        .col{
+            display: flex;
+            flex-direction: column;
+        
+
+            .first-sec{
+                display: flex;
+                margin-right: 4rem;
+                margin-bottom: 2rem;
+
+                .content{
+
+                    h1{
+                        color: #777;
+                        font-size: 20px;
+
+                    }
+
+                    p{
+                        width: 20rem;
+                    }
+
+                }
+
+                .image{
+                    margin-right: 2rem;
+
+                    img{
+
+                        width: 250px;
+                        height: 150px;
+                        
+                    }
+                }
+            }
+        }
+
+        .col2{
+
+            video{
+                width: 440px;
+                height: 300px;
+            }
+
+        }
+    }
+}
+
   
 
 
 
 
-// .banner{
-//     background-image: url('/assets/images/banner.jpg');
-//     background-size: cover;
-//     background-position: center;
-//     height: 10rem;
-// }
+.banner{
+    background-image: url('/assets/images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 20rem;
+    
+}
 
 
 
