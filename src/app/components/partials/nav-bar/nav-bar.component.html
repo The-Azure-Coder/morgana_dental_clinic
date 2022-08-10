@@ -1,15 +1,17 @@
 <div class="hide-foot" [ngClass]="footerRoute('/register') || footerRoute('/login') ? 'hide' : 'show'">
 
 <nav>
-  <div class="logo"><img src="/assets/images/logo3.png" alt="" /></div>
+  <div class="logo"><img [routerLink]="['/']" src="/assets/images/logo3.png" alt="" /></div>
   <div class="main-nav">
-    <a href=""><span>Home</span></a>
-    <a href=""><span>About</span></a>
-    <a href=""><span>Services</span></a>
-    <a href="">Contact</a>
+    <a [routerLink]="['/']"><span>Home</span></a>
+    <a href="#about"><span>About</span></a>
+    <a href="#services"><span>Services</span></a>
+    <a href="#staff"><span>Staff</span></a>
+    <a href="#news"><span>News</span></a>
+    <a [routerLink]="['/contact']">Contact</a>
   </div>
   <div class="book">
-    <a href=""><span>Become a patient</span></a>
+    <a [routerLink]="['/login']"><span>Sign In</span></a>
   </div>
 </nav>
 
