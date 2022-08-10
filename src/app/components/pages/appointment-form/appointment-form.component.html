@@ -1,0 +1,112 @@
+<div class="appoint-background">
+    <div class="overlay"></div>
+
+    <div class="heading">
+        <h1>Book an appointment</h1>
+    </div>
+   
+  </div>
+
+  <div class="stepper-background">
+
+  <mat-stepper class="stepper-con" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>General Info</ng-template>
+          <mat-label class="radio-label">Have you visited our clinic before?</mat-label>
+          <mat-radio-group class="radio-field" aria-label="Select an option">
+            <mat-radio-button value="yes">Yes</mat-radio-button>
+            <mat-radio-button value="No">No</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field class="select-field" appearance="outline">
+            <mat-label>Reason For Your Visit?</mat-label>
+            <mat-select>
+              <mat-option value="volvo">Extraction</mat-option>
+              <mat-option value="saab">Cleaning</mat-option>
+              <mat-option value="mercedes">Root Canals</mat-option>
+              <mat-option value="audi">Braces</mat-option>
+            </mat-select>
+          </mat-form-field>
+    
+        <div>
+          <button class="next-btn" mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Personal Information</ng-template>
+
+            <div class="name">
+              <div class="first">
+                <mat-form-field appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input matInput  placeholder="Ex. 1 Main St, New York, NY"
+                           required>
+                  </mat-form-field>
+              </div>
+        <div class="sec">
+            <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Ex. 1 Main St, New York, NY"
+                       required>
+              </mat-form-field>
+        </div>
+          
+          </div>
+
+          <div class="contact">
+            <div class="mail">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Ex. 1 Main St, New York, NY"
+                   required>
+          </mat-form-field>
+          </div>
+          <div class="num">
+          <mat-form-field appearance="outline">
+            <mat-label>Phone Number</mat-label>
+            <input matInput placeholder="Ex. 1 Main St, New York, NY"
+                   required>
+          </mat-form-field>
+          </div>
+          </div>
+
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput placeholder="Ex. 1 Main St, New York, NY"
+                   required>
+          </mat-form-field>
+
+
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Age</mat-label>
+            <input matInput placeholder="Ex. 1 Main St, New York, NY"
+                   required>
+          </mat-form-field>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Address</mat-label>
+          <input matInput placeholder="Ex. 1 Main St, New York, NY">
+        </mat-form-field>
+        <div>
+          <button class="next-btn" mat-button matStepperNext>Next</button>
+          <button class="back-btn" mat-button matStepperPrevious>Back</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button class="back-btn" mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+
+  </div>
+  
+  
+  

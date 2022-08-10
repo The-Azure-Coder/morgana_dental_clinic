@@ -15,6 +15,14 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { SignupComponent } from './components/pages/signup/signup.component';
+import { AppointmentFormComponent } from './components/pages/appointment-form/appointment-form.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
+
+
 
 
 @NgModule({
@@ -25,7 +33,8 @@ import { SignupComponent } from './components/pages/signup/signup.component';
     FooterComponent,
     CardSliderComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AppointmentFormComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +43,14 @@ import { SignupComponent } from './components/pages/signup/signup.component';
     MatIconModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatStepperModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatRadioModule,
+    MatSelectModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
