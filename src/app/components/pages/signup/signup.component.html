@@ -1,30 +1,49 @@
 <div class="login-background">
-    <div class="overlay"></div>
-    <div class="login-content">
-        <div class="welcome">
-            <h2>Morgana Sign Up</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto quod aut, asperiores itaque ex quam explicabo voluptas aliquam dol</p>
-        </div>
-        <div class="login-form">
-          <form action="">
-            <h2>Register Today</h2>
-            <mat-form-field class="form-field" appearance="standard">
-                <mat-label>Email</mat-label>
-                <input matInput placeholder="Placeholder">
-              </mat-form-field>
+  <div class="overlay"></div>
+  <div class="login-content">
+    <div class="welcome">
+      <h2>Morgana Sign Up</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto quod aut, asperiores itaque ex quam explicabo voluptas aliquam dol</p>
+    </div>
+    <div class="login-form">
+      <form action="" [formGroup]="regForm">
+        <h2>Register Today</h2>
 
-              <mat-form-field class="form-field" appearance="standard">
-                <mat-label>Password</mat-label>
-                <input matInput placeholder="Placeholder">
-              </mat-form-field>
+        <mat-form-field hideRequiredMarker class="form-field" appearance="standard">
+          <mat-label>Email</mat-label>
+          <input type="email" formControlName="email" name="email" matInput placeholder="Placeholder">
+          <!-- <mat-hint>Enter Email Address</mat-hint> -->
+          <mat-error *ngIf=" regForm.get('email')?.touched">
+            <mat-error *ngIf="regForm.get('email')?.hasError('required')">
+              Please Enter your Email Address</mat-error>
+            <mat-error *ngIf="regForm.get('email')?.hasError('email') && regForm.get('email')?.touched">
+              Invalid Email Address</mat-error>
+          </mat-error>
+        </mat-form-field>
 
-              <mat-form-field class="form-field" appearance="standard">
-                <mat-label>Confirm Password</mat-label>
-                <input matInput placeholder="Placeholder">
-              </mat-form-field>
-              <button>Sign Up</button>
-              <p>Already have an account? <a [routerLink]="['/login']">Login</a></p>
-          </form>
-        </div>
+        <mat-form-field hideRequiredMarker class="form-field" appearance="standard">
+          <mat-label>Password</mat-label>
+          <input type="password" formControlName="password" matInput placeholder="Placeholder">
+
+          <!-- <mat-hint>Enter Your Password</mat-hint> -->
+          <mat-error *ngIf="regForm.get('password')?.hasError('required')&& regForm.get('password')?.touched">Password is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field hideRequiredMarker class="form-field" appearance="standard">
+          <mat-label>Confirm Password</mat-label>
+          <input type="password" formControlName="cpassword" name="cpassword" matInput placeholder="Placeholder">
+          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+          <!-- <mat-hint>Enter your username</mat-hint> -->
+          <mat-error *ngIf="regForm.get('cpassword')?.touched">
+            <mat-error *ngIf="regForm.get('cpassword')?.hasError('required')">
+              password required</mat-error>
+            <mat-error *ngIf="regForm.get('cpassword')?.hasError('matching') && regForm.get('cpassword')?.touched">
+              Passwords do not match</mat-error>
+          </mat-error>
+        </mat-form-field>
+        <button>Sign Up</button>
+        <p>Already have an account? <a [routerLink]="['/login']">Login</a></p>
+      </form>
     </div>
   </div>
+</div>
