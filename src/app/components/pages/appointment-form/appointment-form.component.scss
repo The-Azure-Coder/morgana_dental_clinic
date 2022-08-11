@@ -66,6 +66,20 @@
               
             }
 
+            .reset-btn{
+                background-color: #ffe601;
+                color: white;
+                margin-left: .8rem;
+              
+            }
+
+            .submit-btn{
+                background-color: #02d372;
+                color: white;
+                float: right;
+              
+            }
+
         .radio-field{
             display: block;
             padding-bottom: 2rem;
@@ -117,6 +131,15 @@
         }
 
 
+    }
+
+    .form-image{
+        display: flex;
+        justify-content: center;
+
+        img{
+            width: 300px;
+        }
     }
 
 

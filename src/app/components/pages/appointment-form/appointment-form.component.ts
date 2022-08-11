@@ -17,10 +17,18 @@ import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 export class AppointmentFormComponent implements OnInit {
 
   firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
+    yesorno: ['', Validators.required],
+    services: ['', Validators.required],
+
   });
   secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+     first_nm: ['', Validators.required],
+     last_nm: ['', Validators.required],
+     email: ['', Validators.required, Validators.email],
+     mobile: ['', Validators.required],
+     address: ['', Validators.required],
+     age: ['', Validators.required],
+     dob: ['', Validators.required],
   });
 
   constructor(private _formBuilder: FormBuilder) { }
