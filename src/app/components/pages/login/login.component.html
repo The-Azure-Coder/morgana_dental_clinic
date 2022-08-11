@@ -1,27 +1,37 @@
 <div class="login-background">
-    <div class="overlay"></div>
-    <div class="login-content">
-        <div class="welcome">
-            <h2>Morgana Login</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto quod aut, asperiores itaque ex quam explicabo voluptas aliquam dol</p>
-        </div>
-        <div class="login-form">
-          <form action="">
-            <h2>Hello,<br> Welcome Back</h2>
-            
-            <mat-form-field class="form-field" appearance="standard">
-                <mat-label>Email</mat-label>
-                <input matInput placeholder="Placeholder">
-              </mat-form-field>
+  <div class="overlay"></div>
+  <div class="login-content">
+    <div class="welcome">
+      <h2>Morgana Login</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto quod aut, asperiores itaque ex quam explicabo voluptas aliquam dol</p>
+    </div>
+    <div class="login-form">
+      <form [formGroup]="loginForm" action="">
+        <h2>Hello,<br> Welcome Back</h2>
 
-              <mat-form-field class="form-field" appearance="standard">
-                <mat-label>Password</mat-label>
-                <input matInput placeholder="Placeholder">
-              </mat-form-field>
-              <p>Forget Password?</p>
-              <button>Login Now</button>
-              <p>Don't have an account? <a [routerLink]="['/register']">sign up</a></p>
-          </form>
-        </div>
+        <mat-form-field hideRequiredMarker class="form-field" appearance="standard">
+          <mat-label>Email</mat-label>
+          <input type="email" formControlName="email" name="email" matInput placeholder="Placeholder">
+          <!-- <mat-hint>Enter Email Address</mat-hint> -->
+          <mat-error *ngIf=" loginForm.get('email')?.touched">
+            <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+              Please Enter your Email Address</mat-error>
+            <mat-error *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched">
+              Invalid Email Address</mat-error>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field hideRequiredMarker class="form-field" appearance="standard">
+          <mat-label>Password</mat-label>
+          <input type="password" formControlName="password" matInput placeholder="Placeholder">
+
+          <!-- <mat-hint>Enter Your Password</mat-hint> -->
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')&& loginForm.get('password')?.touched">Password is required</mat-error>
+        </mat-form-field>
+        <p>Forget Password?</p>
+        <button>Login Now</button>
+        <p>Don't have an account? <a [routerLink]="['/register']">sign up</a></p>
+      </form>
     </div>
   </div>
+</div>
