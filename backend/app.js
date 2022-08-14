@@ -12,9 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 
 // const indexRouter = require();
 const dentistRouter = require("./routes/dentist.route");
+const serviceRouter = require("./routes/service.route");
 
 // Routes
 
-app.use("", dentistRouter);
+app.use("/", dentistRouter);
+app.use("/", serviceRouter);
 
 module.exports = app;
