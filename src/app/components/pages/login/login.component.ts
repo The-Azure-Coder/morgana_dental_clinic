@@ -12,6 +12,9 @@ export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
     'email': new FormControl('',[Validators.required,Validators.email]),
     'password': new FormControl('',[Validators.required])
+
+
+
   })
 
   constructor(private router: Router) { }

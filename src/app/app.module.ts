@@ -25,6 +25,7 @@ import {MatSelectModule} from '@angular/material/select';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,7 @@ import {MatSelectModule} from '@angular/material/select';
     CardSliderComponent,
     LoginComponent,
     SignupComponent,
-    AppointmentFormComponent
+    AppointmentFormComponent,
   ],
   imports: [
     BrowserModule,
