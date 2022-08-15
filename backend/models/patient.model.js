@@ -25,24 +25,22 @@ let patientSchema = new db.Schema({
     type: Date,
     required: true,
   },
-
-  gender: {
-    type: String,
-    require: true,
-  },
-
   regDate: {
     type: Date,
     default: Date.now(),
   },
-  checkoutDate: {
+  appointDate: {
     type: Date,
+    default: new Date(Date.now() + 12096e5),
   },
-
-  caringDentist: {
-    type: Schema.Types.ObjectId,
-    ref: "Dentist",
-  },
+  // serviceID: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "Services",
+  // },
+  // dentistID: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "Dentist",
+  // },
 });
 
 module.exports = db.model("Patient", patientSchema);
