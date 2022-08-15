@@ -1,4 +1,5 @@
 const db = require("mongoose");
+const Schema = db.Schema;
 
 let dentistSchema = new db.Schema({
   first_nm: {
@@ -11,7 +12,6 @@ let dentistSchema = new db.Schema({
     required: true,
     trim: true,
   },
-
   email: {
     type: String,
     trim: true,
