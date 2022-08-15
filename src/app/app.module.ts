@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -50,7 +51,8 @@ import {MatSelectModule} from '@angular/material/select';
     ReactiveFormsModule,
     MatButtonModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule
   
   ],
   providers: [],

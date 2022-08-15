@@ -13,10 +13,12 @@ app.use(express.urlencoded({ extended: true }));
 // const indexRouter = require();
 const dentistRouter = require("./routes/dentist.route");
 const serviceRouter = require("./routes/service.route");
+const patientRouter = require("./routes/patient.route");
 
 // Routes
 
 app.use("/", dentistRouter);
 app.use("/", serviceRouter);
+app.use("/", patientRouter);
 
 module.exports = app;
