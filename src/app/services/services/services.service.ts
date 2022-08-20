@@ -36,7 +36,13 @@ export class ServicesService {
     return this.http.put<APIResponse<Services>>(`${this.API_URL}/update/${service._id}`, service).pipe(catchError(this._handleHttpErrors(new Services())));
   }
 
-  deleteItem(id:string): Observable<APIResponse<Services>>{
+  deleteService(id:string): Observable<APIResponse<Services>>{
     return this.http.delete<APIResponse<Services>>(this.API_URL + '/' + id).pipe(catchError(this._handleHttpErrors(new Services())));
   }
+
+   getLimitedServices(page= 1, limit = 20): Observable<APIResponse<Services[]>>{
+    return this.http.get<APIResponse<Services[]>>(this.API_URL+"?_page="+page +"&_limit="+limit);
+  }
+
 }
+
