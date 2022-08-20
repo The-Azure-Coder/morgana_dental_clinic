@@ -22,6 +22,11 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { ServiceDetailComponent } from './components/pages/service-detail/service-detail.component';
+import { DoctorDetailsComponent } from './components/doctor-details/doctor-details.component';
+
+
 
 
 
@@ -37,6 +42,10 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     SignupComponent,
     AppointmentFormComponent,
+    ServiceDetailComponent,
+    DoctorDetailsComponent
+  
+
   ],
   imports: [
     BrowserModule,
@@ -52,7 +61,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatRadioModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule
   
   ],
   providers: [],
