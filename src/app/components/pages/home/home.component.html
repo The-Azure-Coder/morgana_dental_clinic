@@ -53,74 +53,19 @@
   </div>
 
   <div class="services">
-    <div class="item clean">
-      <img src="/assets/images/whitening.jpg" alt="image">
+    <div *ngFor="let service of services" class="item clean">
+      <img src="{{service.serviceImg}}" alt="image">
       <div class="overlay">
-        <span>Whitening</span>
+        <span>{{service.serviceName}}</span>
         <span>
-          <img src="/assets/images/whitening.png" alt="">
-          <a href="">Book Appoinment</a>
+          <img src="{{service.serviceImg2}}" alt="">
+          <a routerLink="/services/{{service._id}}">Book Appoinment</a>
         </span>
 
       </div>
     </div>
-
-    <div class="item clean">
-      <img src="/assets/images/canal.jpg" alt="image">
-      <div class="overlay">
-        <span>Root Canal</span>
-        <span>
-          <img src="/assets/images/root-canal.png" alt="">
-          <a href="">Book Appoinment</a>
-        </span>
-
-      </div>
-    </div>
-
-    <div class="item clean">
-      <img src="/assets/images/cleaning.jpg" alt="image">
-      <div class="overlay">
-        <span>Cleaning</span>
-        <span>
-          <img src="/assets/images/cleaning.png" alt="">
-          <a href="">Book Appoinment</a>
-        </span>
-
-      </div>
-    </div>
-    <div class="item clean">
-      <img src="/assets/images/extract.jpeg" alt="image">
-      <div class="overlay">
-        <span>Extraction</span>
-        <span>
-          <img src="/assets/images/extration.png" alt="">
-          <a href="">Book Appoinment</a>
-        </span>
-
-      </div>
-    </div>
-    <div class="item clean">
-      <img src="/assets/images/ven-implant.jpg" alt="image">
-      <div class="overlay">
-        <span>Venures implant</span>
-        <span>
-          <img src="/assets/images/venures.png" alt="">
-          <a href="">Book Appoinment</a>
-        </span>
-
-      </div>
-    </div>
-    <div class="item clean">
-      <img src="/assets/images/brace-implant.png" alt="image">
-      <div class="overlay">
-        <span>Braces Implant</span>
-        <span>
-          <img src="/assets/images/braces.jpg" alt="">
-          <a href="">Book Appoinment</a>
-        </span>
-
-      </div>
-    </div>
+    <mat-paginator class="pag-color" [length]="length" (page)="getPageWithIndex($event)" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" aria-label="Select page">
+    </mat-paginator>
   </div>
 
 </section>
@@ -161,47 +106,20 @@
     <h1 id="staff">Meet Our Staff</h1>
   </div>
   <div class="card-con">
-    <div class="staff-card">
+    <div *ngFor="let dentist of dentists" class="staff-card">
       <div class="staff-img">
-        <img src="/assets/images/den1.jpg" alt="">
+        <img src="{{dentist.docImg}}" alt="">
       </div>
       <div class="content">
-        <h1>Dr Tyrone Morris</h1>
-        <p>Teeth Whitening</p>
-      </div>
-    </div>
-    <div class="staff-card">
-      <div class="staff-img">
-        <img src="/assets/images/den2.jpg" alt="">
-      </div>
-      <div class="content">
-        <h1>Dr Alxander williams</h1>
-        <p>Root Canal</p>
-      </div>
-    </div>
-    <div class="staff-card">
-      <div class="staff-img">
-        <img src="/assets/images/den3.jpg" alt="">
-      </div>
-      <div class="content">
-        <h1>Dr Olivia Palmer</h1>
-        <p>Teeth cleaning</p>
-      </div>
-    </div>
-    <div class="staff-card">
-      <div class="staff-img">
-        <img src="/assets/images/den4.jpg" alt="">
-      </div>
-      <div class="content">
-        <h1>Dr Octavious Macleave</h1>
-        <p>Tooth extraction</p>
+        <h1>Dr {{dentist.first_nm}} {{dentist.last_nm}}</h1>
+        <p>DDS in Dentistry</p>
+        <a routerLink="/dentists/{{dentist._id}}">View Profile</a>
       </div>
     </div>
   </div>
-  <a href="">More Details</a>
-
-
+  <mat-paginator class="pag-adjust" [length]="length2" (page)="getPageWithIndex2($event)" [pageSize]="pageSize2" [pageSizeOptions]="pageSizeOptions2" aria-label="Select page"> </mat-paginator>
 </div>
+
 
 <div class="news">
   <div class="news-head">

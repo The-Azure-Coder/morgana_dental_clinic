@@ -34,8 +34,8 @@
         p{
             font-size: 18px;
             width: 25rem;
-            line-height: 1.5rem;
-            letter-spacing:1.5px;
+            line-height: 1.7rem;
+            letter-spacing:1.2px;
 
         }
         a{
@@ -153,6 +153,11 @@ section{
         height: 15rem;
         margin-right: 2rem;
         margin-bottom: 2rem;
+    }
+
+
+    .pag-color{
+        background-color: rgb(251, 251, 251);
     }
 }
 
@@ -316,7 +321,7 @@ section{
 
 .staff{
 
-   padding-bottom: 2rem;
+   padding-bottom: 6rem;
 
     .staff-head{
         margin-left: 6rem;
@@ -327,6 +332,7 @@ section{
 
     .card-con{
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
        
 
@@ -334,7 +340,8 @@ section{
             margin-right: 2.5rem;
             border: 1px solid rgb(243, 242, 242);
             width: 250px;
-            height: 320px;
+            margin-bottom: 2rem;
+             height: fit-content;
 
             .staff-img{
                 img{
@@ -345,6 +352,7 @@ section{
 
 
             .content{
+                padding: 5px;
 
                 h1{
                     color: rgb(199, 197, 197);
@@ -352,28 +360,41 @@ section{
                 }
 
                 p {
-                    color: #6cb1ff;
+                    color: rgb(47, 145, 250);
+                    text-align: center;
+                }
+
+                a{
+                    border: 1px solid #6cb1ff;
+                    text-align: center;
+                    color: #6cb1ff ;
+                    display: block;
+                    width: 8rem;
+                    margin-left: 3rem;
+                    margin-bottom: 1.2rem;
+                    padding: 8px;
+                    border-radius: .3rem;
                     text-align: center;
                 }
             }
+
+
+           
 
         }
 
       
     }
-
-    a{
-        background-color: #6cb1ff;
-        margin-top: 2rem;
-        margin-left: 79%;
+    .pag-adjust{
+        float: left;
         display: block;
-        width: 8rem;
-        padding: 10px;
-        border-radius: .3rem;
-        color: white;
-        text-align: center;
+        margin-left: 6rem;
+        margin-top: 1.4rem;
     }
+
 }
+
+
 
 
 .news{
