@@ -1,0 +1,161 @@
+.services{
+.services-background{
+    position: relative;
+    height:440px;
+    width:100%;
+    background-image: url('/assets/images/services-img.jpg');
+    background-size: cover;
+    background-position: center;
+
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        // background-image: linear-gradient( 135deg, #0654ae 10%, #7ff4ff 100%);
+        opacity: 0.3;
+       
+        /* Black see-through */
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+    }
+}
+
+
+.service-layout{
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+
+    .service-content{
+        margin-right: 6rem;
+        display: flex;
+        flex-direction: column;
+
+        .service-image{
+            position: relative;
+            .blue-background {
+                position: absolute;
+                bottom: 18px;
+               background-color: rgb(120, 198, 246);
+                
+                 left: 20px;
+                /* Black see-through */
+                width: 100%;
+                height: 100%;
+                z-index: -9999;
+                overflow: hidden;
+        
+            }
+
+            img{
+
+                width: 30rem;
+                height: 20rem;
+
+            }
+        }
+
+        .service-detail{
+            h2{
+                color: rgb(13, 153, 239);
+                font-size: 25px;
+            }
+
+            p{
+                width: 30rem;
+                color: #777;
+                line-height: 30px;
+                
+            }
+
+            .money{
+                margin-top: 2rem;
+                color: rgb(250, 139, 47);
+                font-size: 22px;
+
+                span{
+                    color: rgb(93, 93, 93);
+                    margin-right: 12rem;
+                }
+            }
+
+        }
+
+
+    }
+    .select-field{
+        width: 31.5rem;
+
+
+    }
+    
+    
+    .name{
+        display: flex;
+    
+        mat-form-field{
+            width: 15rem;
+        }
+    
+        .first{
+            margin-right: 1.5rem;
+    
+            
+    
+        }
+    }
+    
+    .contact{
+        display: flex;
+    
+        mat-form-field{
+            width: 15rem;
+        }
+    
+        .mail{
+            margin-right: 1.5rem;
+    
+        }
+    }
+    
+    .form-field{
+        display: block;
+        width: 31.5rem;
+    }
+
+    .submit-btn{
+        margin-top: 1.1rem;
+        padding: 15px;
+        background-color: rgb(13, 153, 239) ;
+        border: none;
+        color: white;
+        width: 31.5rem;
+        margin-bottom: 2rem;
+        border-radius: .3rem;
+    }
+    
+}
+
+.service-heading{
+
+margin-top: 2rem;
+    color: rgb(13, 153, 239);
+    text-align: center;
+    font-size: 2rem;
+
+}
+
+.banner{
+    background-image: url('/assets/images/banner2.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 15rem   ;
+    width: 100%;
+}
+
+}
+
+
+
