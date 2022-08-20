@@ -37,6 +37,8 @@ exports.createDentist = async (req, res) => {
       first_nm: req.body.first_nm,
       last_nm: req.body.last_nm,
       email: req.body.email,
+      docDescrip: req.body.docDescrip,
+      docImg: req.body.docImg,
     });
     const dentist = await Dentist.create(dentistObj);
     JSONResponse.success(res, "Success.", dentist, 201);

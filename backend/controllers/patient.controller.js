@@ -45,7 +45,9 @@ exports.createPatient = async (req, res) => {
       last_nm: req.body.last_nm,
       email: req.body.email,
       address: req.body.address,
+      phoneNumber: req.body.phoneNumber,
       dob: req.body.dob,
+      age: req.body.age,
     });
     const addPatient = await Patient.create(patientObj);
     JSONResponse.success(res, "Success.", addPatient, 201);
