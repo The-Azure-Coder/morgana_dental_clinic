@@ -12,6 +12,18 @@ let dentistSchema = new db.Schema({
     required: true,
     trim: true,
   },
+
+  docImg: {
+    type: String,
+    required: true,
+    default:
+      "https://www.pngitem.com/pimgs/m/413-4131087_line-art-head-okay-cartoon-doctor-image-png.png",
+  },
+
+  docDescrip: {
+    type: String,
+    required: true,
+  },
   email: {
     type: String,
     trim: true,

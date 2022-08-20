@@ -16,14 +16,28 @@ let patientSchema = new db.Schema({
     type: String,
     trim: true,
   },
+  phoneNumber: {
+    type: String,
+    trim: true,
+  },
+
   email: {
     type: String,
+    trim: true,
+  },
+
+  age: {
+    type: Number,
     trim: true,
   },
 
   dob: {
     type: Date,
     required: true,
+  },
+  caringDentist: {
+    type: Schema.Types.ObjectId,
+    ref: "Dentist",
   },
   regDate: {
     type: Date,
@@ -33,14 +47,6 @@ let patientSchema = new db.Schema({
     type: Date,
     default: new Date(Date.now() + 12096e5),
   },
-  // serviceID: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "Services",
-  // },
-  // dentistID: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "Dentist",
-  // },
 });
 
 module.exports = db.model("Patient", patientSchema);
