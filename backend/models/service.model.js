@@ -31,4 +31,4 @@ let serviceSchema = new db.Schema({
   },
 });
 
-module.exports = db.model("Services", serviceSchema);
+module.exports = db.model("service", serviceSchema);

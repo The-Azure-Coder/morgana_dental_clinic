@@ -1,14 +1,14 @@
 const db = require("mongoose");
-
+const Schema = db.Schema;
 const billSchema = new Schema({
   serviceCost: {
     type: Number,
   },
 
-  discount: {
-    type: Number,
-    default: 0.1,
+  patientId: {
+    type: Schema.Types.ObjectId,
+    ref: "patient",
   },
 });
 
-module.exports = db.model("Bill", billSchema);
+module.exports = db.model("bill", billSchema);

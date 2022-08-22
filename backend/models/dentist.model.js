@@ -1,5 +1,4 @@
 const db = require("mongoose");
-const Schema = db.Schema;
 
 let dentistSchema = new db.Schema({
   first_nm: {
@@ -30,4 +29,4 @@ let dentistSchema = new db.Schema({
   },
 });
 
-module.exports = db.model("Dentist", dentistSchema);
+module.exports = db.model("dentist", dentistSchema);
