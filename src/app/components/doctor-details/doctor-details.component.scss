@@ -27,6 +27,7 @@
         position: relative;
         top: -11rem;
         background-color: #fff;
+        border: 1px solid rgb(210, 210, 210);
 
         box-shadow: 9px 9px 5px 0px rgba(0,0,0,0.06);
         -webkit-box-shadow: 9px 9px 5px 0px rgba(0,0,0,0.06);
@@ -40,6 +41,8 @@
         display: flex;
 
         .profile-content{
+            padding: 10px;
+            width: 24rem;
 
             .icons{
                 display: flex;
@@ -66,11 +69,13 @@
             p{
                 text-align: center;
                 color: #777;
+              
             }
 
         }
 
         .profile-img{
+            padding-left: 2rem;
             margin-right: 2rem;
           
             img{
@@ -107,9 +112,6 @@
         
             .first{
                 margin-right: 1.5rem;
-        
-                
-        
             }
         }
         

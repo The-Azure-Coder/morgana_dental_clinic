@@ -13,9 +13,9 @@ import { LoginComponent } from './components/pages/login/login.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { SignupComponent } from './components/pages/signup/signup.component';
-import { AppointmentFormComponent } from './components/pages/appointment-form/appointment-form.component';
+import {MatNativeDateModule } from '@angular/material/core';
+import {SignupComponent } from './components/pages/signup/signup.component';
+import {AppointmentFormComponent } from './components/pages/appointment-form/appointment-form.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
@@ -25,11 +25,10 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ServiceDetailComponent } from './components/pages/service-detail/service-detail.component';
 import { DoctorDetailsComponent } from './components/doctor-details/doctor-details.component';
-
-
-
-
-
+import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
+import { DashNavComponent } from './components/partials/dash-nav/dash-nav.component';
+import {MatTableModule} from '@angular/material/table';
+import { Chart1Component } from './components/partials/chart1/chart1.component';
 
 
 @NgModule({
@@ -43,7 +42,11 @@ import { DoctorDetailsComponent } from './components/doctor-details/doctor-detai
     SignupComponent,
     AppointmentFormComponent,
     ServiceDetailComponent,
-    DoctorDetailsComponent
+    DoctorDetailsComponent,
+    DashboardComponent,
+    DashNavComponent,
+    Chart1Component,
+
   
 
   ],
@@ -62,7 +65,8 @@ import { DoctorDetailsComponent } from './components/doctor-details/doctor-detai
     MatRadioModule,
     MatSelectModule,
     HttpClientModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatTableModule
   
   ],
   providers: [],

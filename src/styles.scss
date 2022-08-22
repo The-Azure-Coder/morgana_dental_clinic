@@ -39,6 +39,11 @@ $morganaDental-theme: mat.define-light-theme((
     margin: 0;
     text-decoration: none;
     scroll-behavior: smooth;
+
+  
 }
-html, body { height: 100%; }
+html, body { 
+  height: 100%;
+  width: 100%;
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

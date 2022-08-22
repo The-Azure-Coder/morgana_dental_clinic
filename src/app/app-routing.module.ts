@@ -6,6 +6,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { ServiceDetailComponent } from './components/pages/service-detail/service-detail.component';
 import { SignupComponent } from './components/pages/signup/signup.component';
+import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 
 const routes: Routes = [
   {path: '',component:HomeComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'appoint',component:AppointmentFormComponent},
   {path: 'services/:id',component:ServiceDetailComponent },
   {path: 'dentists/:id',component: DoctorDetailsComponent },
+  {path: 'dashboard',component:DashboardComponent}
 
 ];
 
