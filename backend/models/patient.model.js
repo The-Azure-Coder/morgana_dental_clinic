@@ -35,9 +35,13 @@ let patientSchema = new db.Schema({
     type: Date,
     required: true,
   },
-  caringDentist: {
+  dentistId: {
     type: Schema.Types.ObjectId,
-    ref: "Dentist",
+    ref: "dentist",
+  },
+  serviceId: {
+    type: Schema.Types.ObjectId,
+    ref: "service",
   },
   regDate: {
     type: Date,
@@ -49,4 +53,4 @@ let patientSchema = new db.Schema({
   },
 });
 
-module.exports = db.model("Patient", patientSchema);
+module.exports = db.model("patient", patientSchema);

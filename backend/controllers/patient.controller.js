@@ -22,7 +22,10 @@ exports.getAllPatients = async (req, res) => {
 
 exports.getPatientById = async (req, res) => {
   try {
-    const patient = await Patient.findById(req.params.id);
+    const patient = await Patient.findById(req.params.id)
+      .populate("dentistId")
+      .populate("serviceId");
+    console.log(patient);
     JSONResponse.success(res, "Success.", patient, 200);
   } catch (error) {
     JSONResponse.error(
@@ -45,6 +48,8 @@ exports.createPatient = async (req, res) => {
       last_nm: req.body.last_nm,
       email: req.body.email,
       address: req.body.address,
+      dentistId: req.body.dentistId,
+      serviceId: req.body.serviceId,
       phoneNumber: req.body.phoneNumber,
       dob: req.body.dob,
       age: req.body.age,
