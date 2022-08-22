@@ -1,4 +1,4 @@
-<div class="hide-foot" [ngClass]="footerRoute('/register') || footerRoute('/login') ? 'hide' : 'show'">
+<div class="hide-foot" [ngClass]="headerRoute('/register') || headerRoute('/login') || headerRoute('/dashboard') ? 'hide' : 'show'">
 
   <nav>
     <div class="logo"><img src="/assets/images/logo3.png" alt=""></div>

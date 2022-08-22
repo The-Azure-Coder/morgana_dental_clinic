@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class NavBarComponent implements OnInit {
 
   constructor(private router: Router) { }  
-  footerRoute(route: string) {
+  headerRoute(route: string) {
     return this.router.url === route
   }
 
