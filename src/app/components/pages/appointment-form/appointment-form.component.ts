@@ -19,6 +19,7 @@ export class AppointmentFormComponent implements OnInit {
   firstFormGroup = this._formBuilder.group({
     yesorno: ['', Validators.required],
     services: ['', Validators.required],
+    dentist: ['', Validators.required],
 
   });
   secondFormGroup = this._formBuilder.group({
@@ -27,7 +28,6 @@ export class AppointmentFormComponent implements OnInit {
      email: ['', Validators.required, Validators.email],
      mobile: ['', Validators.required],
      address: ['', Validators.required],
-     dentist: ['', Validators.required],
      age: ['', Validators.required],
      dob: ['', Validators.required],
   });

@@ -30,6 +30,18 @@
           <mat-error *ngIf="firstFormGroup.get('services')?.hasError('required')&& firstFormGroup.get('services')?.touched">Please Select a Service</mat-error>
         </mat-form-field>
 
+        <mat-form-field class="select-field" appearance="outline">
+          <mat-label>Choose a Doctor?</mat-label>
+          <mat-select formControlName="dentist">
+            <mat-option value="volvo">Aldaine</mat-option>
+            <mat-option value="saab">Roshane</mat-option>
+            <mat-option value="mercedes">Tyrese</mat-option>
+            <mat-option value="audi">Bob</mat-option>
+          </mat-select>
+          <mat-hint>Choose a Dentist</mat-hint>
+          <mat-error *ngIf="firstFormGroup.get('dentist')?.hasError('required')&& firstFormGroup.get('dentist')?.touched">Please Select a Service</mat-error>
+        </mat-form-field>
+
 
 
         <div>
