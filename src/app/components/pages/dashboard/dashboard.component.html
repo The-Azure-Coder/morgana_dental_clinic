@@ -1,0 +1,95 @@
+<section class="interface">
+  <div class="navigation">
+    <div class="nl">
+      <div class="search">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search" />
+      </div>
+    </div>
+    <div class="profile">
+      <i class="fas fa-bell"></i>
+      <img src="https://icon-library.com/images/no-profile-picture-icon/no-profile-picture-icon-18.jpg" alt="" />
+    </div>
+  </div>
+  <h3 class="i-name">Dashboard</h3>
+
+  <div class="values">
+    <div class="val-box">
+      <div class="val-img">
+        <img src="/assets/images/patients-icon.png" alt="">
+      </div>
+      <div>
+        <h3>2000</h3>
+        <span>Patients</span>
+      </div>
+    </div>
+    <div class="val-box">
+      <div class="val-img">
+        <img src="/assets/images/doctors-icon.png" alt="">
+      </div>
+      <div>
+        <h3>15</h3>
+        <span>Doctors</span>
+      </div>
+    </div>
+    <div class="val-box">
+      <div class="val-img">
+        <img src="/assets/images/services-icon.png" alt="">
+      </div>
+      <div>
+        <h3>7</h3>
+        <span>Services</span>
+      </div>
+    </div>
+    <div class="val-box">
+      <div class="val-img">
+        <img src="/assets/images/salary-icon.png" alt="">
+      </div>
+      <div>
+        <h3>50000</h3>
+        <span>Total Salary</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="table-head">Doctors</h2>
+    <div>
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+          <!-- ID Column -->
+          <ng-container matColumnDef="firstname">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Firstname</th>
+            <td mat-cell *matCellDef="let row"> {{row.first_nm}} </td>
+          </ng-container>
+
+          <!-- Progress Column -->
+          <ng-container matColumnDef="lastname">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Lastname</th>
+            <td mat-cell *matCellDef="let row"> {{row.last_nm}}</td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+            <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+          </ng-container>
+
+          <!-- Fruit Column -->
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          <!-- Row shown when there is no matching data. -->
+
+        </table>
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+</section>
