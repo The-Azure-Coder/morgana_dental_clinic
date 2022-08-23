@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Services } from 'src/app/models/services';
+import { ServicesService } from 'src/app/services/services/services.service';
 import { Chart,registerables } from 'chart.js';
 Chart.register(...registerables);
 
@@ -8,8 +10,17 @@ Chart.register(...registerables);
   styleUrls: ['./chart1.component.scss']
 })
 export class Chart1Component implements OnInit {
+  serviceName: any[] |  Services[]=[]
+  serviceCost: Services[]=[]
 
-  constructor() { }
+  constructor(private servicesService: ServicesService) { }
+
+  getAllServices(){
+    this.servicesService.getAllServices().subscribe(results=>{
+      // this.serviceName = results.data.serviceName
+      // this.serviceCost = results.data.serviceCost
+    })
+  }
 
   ngOnInit(): void {
     const myChart = new Chart("myChart", {
@@ -17,7 +28,7 @@ export class Chart1Component implements OnInit {
       data: {
           labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
           datasets: [{
-              label: '# of Votes',
+              label: 'cost of services',
               data: [12, 19, 3, 5, 2, 3],
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
