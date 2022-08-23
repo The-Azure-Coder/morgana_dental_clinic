@@ -46,17 +46,20 @@
         <img src="/assets/images/salary-icon.png" alt="">
       </div>
       <div>
-        <h3>50000</h3>
+        <h3></h3>
         <span>Total Salary</span>
       </div>
     </div>
   </div>
 
+
+
   <div class="container">
-    <h2 class="table-head">Doctors</h2>
+    <h1 class="table-name">Patient Info</h1>
+
     <div>
       <div class="mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource" matSort>
+        <table mat-table [dataSource]="patientDataSource" matSort>
 
           <!-- ID Column -->
           <ng-container matColumnDef="firstname">
@@ -71,15 +74,25 @@
           </ng-container>
 
           <!-- Name Column -->
-          <ng-container matColumnDef="email">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
-            <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+          <ng-container matColumnDef="dentist">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Dentist</th>
+            <td mat-cell *matCellDef="let row"> Dr. {{row.dentistId.first_nm}} {{row.dentistId.last_nm}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="service">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Service</th>
+            <td mat-cell *matCellDef="let row"> {{row.serviceId.serviceName}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="cost">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Cost</th>
+            <td mat-cell *matCellDef="let row"> {{row.serviceId.serviceCost | currency}} </td>
           </ng-container>
 
           <!-- Fruit Column -->
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          <tr mat-header-row *matHeaderRowDef="patientColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: patientColumns;"></tr>
 
           <!-- Row shown when there is no matching data. -->
 
@@ -91,5 +104,25 @@
 
   </div>
 
+
+  <h1 class="doc-msg">Doc's Message</h1>
+  <div class="dash-flex">
+    <div class="doc-card">
+      <div *ngFor="let dentist of dentists" class="doc-list">
+        <div class="profile-image">
+          <img src="{{dentist.docImg}}" alt="">
+        </div>
+        <div class="profile-content">
+          <h1>Dr {{dentist.last_nm}}</h1>
+          <p>{{dentist.docDescrip}} </p>
+        </div>
+      </div>
+    </div>
+    <div class="chart">
+      <app-chart1></app-chart1>
+
+    </div>
+
+  </div>
 
 </section>

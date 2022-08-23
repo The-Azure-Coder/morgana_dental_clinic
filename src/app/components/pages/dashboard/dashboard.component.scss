@@ -1,6 +1,10 @@
+*{
+   
+}
 .interface{
-    // width: 100%;
-    height: 100%;
+    // width: 81%;
+   
+   
     margin-left: 240px;
     background-color: #f7f5f5;
 }
@@ -11,13 +15,13 @@
     background: #fff;
     padding: 15px 30px;
     border-bottom: 3px solid #007fbe;
-    width: max-content;
     
 }
 
 .interface .navigation .search{
     display: flex;
-    margin-right: 48rem;
+    margin-right: 47rem;
+
     align-items: center;
     padding: 10px 14px;
     border-radius: 4px;
@@ -70,7 +74,7 @@
     width: fit-content;
     padding-left: 30px;
     margin-bottom: 2rem;
-   
+  
     flex-wrap: wrap;
 }
 
@@ -82,7 +86,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-right: 1.5rem;
+    margin-right: 1.2rem;
     border:  1px solid transparent;
     cursor: pointer;
 }
@@ -131,7 +135,7 @@
 }
 
 .container {
-    max-width: 1035px;
+    max-width: 1020px;
     position: relative;
     margin-left: 2rem;
    
@@ -188,4 +192,73 @@ th {
     // color: #437bf5;
     // font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 12px;
+}
+
+.doc-card{
+   
+    border-radius: 5px 5px 0px 0px;
+    
+    width: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    margin-right: 2.5rem;
+   
+
+   
+
+    .doc-list{
+        background-color: #fff;
+        padding: 8px;
+        display: flex;
+        margin-bottom: .6rem;
+       
+       
+      
+
+        .profile-image{
+            margin-right: 1.5rem;
+
+            img{
+                border-radius: 50%;
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        .profile-content{
+            width: 28rem;
+           h1{
+            color: #777;
+            font-size: 14px;
+           }
+           p{
+            color: rgb(87, 86, 86);
+
+           }
+        }
+    }
+}
+
+.dash-flex{
+    display: flex;
+   
+
+
+    .chart{
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 2rem;
+      
+    }
+}
+
+.doc-msg{
+    margin-top: 2rem;
+    margin-left: 2rem;
+    font-size: 20px;
+    color: #777;
 }
