@@ -1,4 +1,4 @@
-<div class="services">
+<div class="services" *ngIf="service">
   <div class="services-background">
   </div>
 
@@ -15,26 +15,26 @@
         <p>{{service.serviceDescrip}}</p>
         <div class="price-info">
           <p class="money"><span>Service Cost:</span>{{service.serviceCost | currency}}</p>
-
         </div>
       </div>
     </div>
 
     <div class="book-form">
-      <form [formGroup]="appointForm">
+      <form (submit)="onSubmit()" [formGroup]="appointForm">
         <div class="name">
           <div class="first">
             <mat-form-field hideRequiredMarker appearance="outline">
               <mat-label>First Name</mat-label>
-              <input matInput formControlName="first_nm" placeholder="Ex. 1 Main St, New York, NY" required>
+              <input matInput name="first_nm" formControlName="first_nm" placeholder="Ex. 1 Main St, New York, NY" required>
               <mat-hint>Enter You First Name</mat-hint>
               <mat-error *ngIf="appointForm.get('first_nm')?.hasError('required')&& appointForm.get('first_nm')?.touched">Your Firstname is required</mat-error>
             </mat-form-field>
+            <input type="hidden" name="serviceId" [(ngModel)]="service._id" formControlName="serviceId">
           </div>
           <div class="sec">
             <mat-form-field hideRequiredMarker appearance="outline">
               <mat-label>Last Name</mat-label>
-              <input matInput formControlName="last_nm" placeholder="Ex. 1 Main St, New York, NY" required>
+              <input matInput name="last_nm" formControlName="last_nm" placeholder="Ex. 1 Main St, New York, NY" required>
 
               <mat-hint>Enter You last Name</mat-hint>
               <mat-error *ngIf="appointForm.get('last_nm')?.hasError('required')&& appointForm.get('last_nm')?.touched">Your lastname is required</mat-error>
@@ -61,7 +61,7 @@
           <div class="num">
             <mat-form-field hideRequiredMarker appearance="outline">
               <mat-label>Phone Number</mat-label>
-              <input matInput formControlName="mobile" placeholder="Ex. 1 Main St, New York, NY" required>
+              <input matInput formControlName="mobile" name="mobile" placeholder="Ex. 1 Main St, New York, NY" required>
 
               <mat-hint>Enter phone number</mat-hint>
               <mat-error *ngIf="appointForm.get('mobile')?.hasError('required')&& appointForm.get('mobile')?.touched">Phone number required</mat-error>
@@ -84,14 +84,11 @@
 
         <mat-form-field hideRequiredMarker class="select-field" appearance="outline">
           <mat-label>Select a Doctor?</mat-label>
-          <mat-select formControlName="dentist">
-            <mat-option value="volvo">Extraction</mat-option>
-            <mat-option value="saab">Cleaning</mat-option>
-            <mat-option value="mercedes">Root Canals</mat-option>
-            <mat-option value="audi">Braces</mat-option>
+          <mat-select formControlName="dentistId" name="dentistId">
+            <mat-option *ngFor="let dentist of dentists" value="{{dentist._id}}">Dr{{dentist.first_nm}} {{dentist.last_nm}}</mat-option>
           </mat-select>
           <mat-hint>Choose a Dentist</mat-hint>
-          <mat-error *ngIf="appointForm.get('dentist')?.hasError('required')&& appointForm.get('dentist')?.touched">Please Select a Service</mat-error>
+          <mat-error *ngIf="appointForm.get('dentistId')?.hasError('required')&& appointForm.get('dentistId')?.touched">Please Select a Service</mat-error>
         </mat-form-field>
 
 
