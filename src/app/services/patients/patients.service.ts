@@ -28,7 +28,7 @@ export class PatientsService {
     return this.http.get<APIResponse<Patients>>(this.API_URL + '/' + id).pipe(catchError(this._handleHttpErrors(new Patients())));
   }
 
-  createPatient(patient:Patients): Observable<APIResponse<Patients>>{
+  createPatient(patient:Partial<Patients>): Observable<APIResponse<Patients>>{
     return this.http.post<APIResponse<Patients>>(this.API_URL, patient).pipe(catchError(this._handleHttpErrors(new Patients())));
   }
 

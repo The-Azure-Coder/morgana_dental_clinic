@@ -8,7 +8,9 @@ const Dentist = require("../models/dentist.model");
  */
 exports.getAllPatients = async (req, res) => {
   try {
-    const patients = await Patient.find();
+    const patients = await Patient.find()
+      .populate("serviceId")
+      .populate("dentistId");
     JSONResponse.success(res, "Success.", patients, 200);
   } catch (error) {
     JSONResponse.error(
