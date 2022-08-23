@@ -41,11 +41,11 @@ import { Chart1Component } from './components/partials/chart1/chart1.component';
     LoginComponent,
     SignupComponent,
     AppointmentFormComponent,
-    ServiceDetailComponent,
     DoctorDetailsComponent,
     DashboardComponent,
     DashNavComponent,
-    Chart1Component,
+    ServiceDetailComponent,
+    Chart1Component
 
   
 
