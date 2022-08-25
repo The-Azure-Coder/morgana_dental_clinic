@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DoctorDetailsComponent } from './components/doctor-details/doctor-details.component';
+import { DoctorDetailsComponent } from './components/pages/doctor-details/doctor-details.component';
 import { AppointmentFormComponent } from './components/pages/appointment-form/appointment-form.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { ServiceDetailComponent } from './components/pages/service-detail/service-detail.component';
 import { SignupComponent } from './components/pages/signup/signup.component';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
+import { AppointmentsComponent } from './components/pages/appointments/appointments.component';
+import { BookAppointmentComponent } from './components/pages/book-appointment/book-appointment.component';
+import { EditAppointmentComponent } from './components/pages/edit-appointment/edit-appointment.component';
+import { PatientDetailsComponent } from './components/pages/patient-details/patient-details.component';
+
+
 
 const routes: Routes = [
   {path: '',component:HomeComponent},
@@ -15,7 +21,15 @@ const routes: Routes = [
   {path: 'appoint',component:AppointmentFormComponent},
   {path: 'services/:id',component:ServiceDetailComponent },
   {path: 'dentists/:id',component: DoctorDetailsComponent },
-  {path: 'dashboard',component:DashboardComponent}
+  {path: 'dashboard',component:DashboardComponent},
+  {path: 'appointments',component: AppointmentsComponent },
+  {path: 'bookappoints',component:BookAppointmentComponent },
+  {path: 'bookappointments/:id',component:BookAppointmentComponent},
+  {path: 'appointEdit/:id',component:EditAppointmentComponent},
+  {path: 'patientDetails/:id',component: PatientDetailsComponent}
+
+  
+
 
 ];
 

@@ -24,11 +24,19 @@ import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ServiceDetailComponent } from './components/pages/service-detail/service-detail.component';
-import { DoctorDetailsComponent } from './components/doctor-details/doctor-details.component';
+import { DoctorDetailsComponent } from './components/pages/doctor-details/doctor-details.component';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 import { DashNavComponent } from './components/partials/dash-nav/dash-nav.component';
 import {MatTableModule} from '@angular/material/table';
 import { Chart1Component } from './components/partials/chart1/chart1.component';
+import { AppointmentsComponent } from './components/pages/appointments/appointments.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BookAppointmentComponent } from './components/pages/book-appointment/book-appointment.component';
+import { EditAppointmentComponent } from './components/pages/edit-appointment/edit-appointment.component';
+import { PatientDetailsComponent } from './components/pages/patient-details/patient-details.component';
+
+
+
 
 
 @NgModule({
@@ -45,7 +53,15 @@ import { Chart1Component } from './components/partials/chart1/chart1.component';
     DashboardComponent,
     DashNavComponent,
     ServiceDetailComponent,
-    Chart1Component
+    Chart1Component,
+    AppointmentsComponent,
+    BookAppointmentComponent,
+    EditAppointmentComponent,
+    PatientDetailsComponent
+
+  
+    
+   
 
   
 
@@ -66,7 +82,8 @@ import { Chart1Component } from './components/partials/chart1/chart1.component';
     MatSelectModule,
     HttpClientModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
   
   ],
   providers: [],
