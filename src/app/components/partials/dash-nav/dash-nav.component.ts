@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class DashNavComponent implements OnInit {
 
   dashRoute(route: string) {
-    return this.router.url === route
+    return this.router.url.includes(route)
   }
   
 

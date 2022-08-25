@@ -11,7 +11,7 @@ export class FooterComponent implements OnInit {
   constructor(private router: Router) { }
 
   footerRoute(route: string) {
-    return this.router.url === route
+    return this.router.url.includes(route)
   }
 
   ngOnInit(): void {

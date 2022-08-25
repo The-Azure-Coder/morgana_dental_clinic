@@ -32,8 +32,8 @@ export class PatientsService {
     return this.http.post<APIResponse<Patients>>(this.API_URL, patient).pipe(catchError(this._handleHttpErrors(new Patients())));
   }
 
-  updatePatient(patient:Patients): Observable<APIResponse<Patients>>{
-    return this.http.put<APIResponse<Patients>>(`${this.API_URL}/update/${patient._id}`, patient).pipe(catchError(this._handleHttpErrors(new Patients())));
+  updatePatient(id:string, patient:Patients): Observable<APIResponse<Patients>>{
+    return this.http.put<APIResponse<Patients>>(`${this.API_URL}/update/${id}`, patient).pipe(catchError(this._handleHttpErrors(new Patients())));
   }
 
   deletePatient(id:string): Observable<APIResponse<Patients>>{

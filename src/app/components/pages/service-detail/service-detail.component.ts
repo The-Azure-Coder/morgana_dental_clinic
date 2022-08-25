@@ -29,7 +29,7 @@ export class ServiceDetailComponent implements OnInit {
     'first_nm': new FormControl('',[Validators.required]),
     'last_nm': new FormControl('',[Validators.required]),
     'email': new FormControl('',[Validators.required, Validators.email]),
-    'mobile': new FormControl('',[Validators.required]),
+    'phoneNumber': new FormControl('',[Validators.required]),
     'address': new FormControl('',[Validators.required]),
     'dob': new FormControl('',[Validators.required]),
     'age': new FormControl('',[Validators.required]),

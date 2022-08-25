@@ -9,8 +9,8 @@ export class Patients{
     email: string;
     phoneNumber: string;
     age: string;
-    dentistId: string;
-    serviceId: string;
+    dentistId: string | any;
+    serviceId: string | any;
     dob: string;
     regDate: string;
     appointDate: string;

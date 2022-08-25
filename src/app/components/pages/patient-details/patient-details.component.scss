@@ -1,0 +1,192 @@
+.interface{
+    // width: 81%;
+    height: 100%;
+    margin-left: 240px;
+    background-color: #f7f5f5;
+}
+
+.interface .navigation{
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 15px 30px;
+    border-bottom: 3px solid #007fbe;
+    
+}
+
+.interface .navigation .search{
+    display: flex;
+    margin-right: 47rem;
+
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: 1px solid #d7dbe6;
+    border-radius: 4px;
+
+}
+
+.interface .navigation .search i{
+    margin-right: 14px;
+}
+
+.interface .navigation .search input{
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.interface .navigation .profile{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.interface .navigation .profile i{
+    margin-right: 20px;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.interface .navigation .profile img{
+    width: 30px;
+    height:30px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+.profile{
+
+    .profile-card{
+        display: flex;
+        border:  1px solid #ccc;
+        border-radius: 8px;
+        width: fit-content;
+        background: #fff;
+        margin: 2rem auto;
+        margin-bottom: 2rem;
+        
+
+        .profile-image{
+            margin-right: .8rem;
+            border-radius: 8px;
+
+            img{
+                display: block;
+                width: 28rem;
+                height: 30rem;
+                border-radius: 8px 0px 0px 8px;
+            }
+        }
+
+        .profile-content{
+            padding-right: .8rem; 
+            h2{
+                text-align: center;
+                padding-top: 1rem;
+                color: rgb(0, 131, 201);
+            }
+            
+            .field1{
+                border-radius: 8px;
+                padding: 10px;
+                border: 1px solid  #ccc;
+                margin-bottom: 2rem;
+
+                legend{
+                    font-size:16px;
+                    color: #777;
+                }
+            }
+
+            .field2{
+                border-radius: 8px;
+                padding: 10px;
+                border: 1px solid  #ccc;
+
+                legend{
+                    font-size:16px;
+                    color: #777;
+                }
+            }
+            
+            .name{
+                display: flex;
+                margin-bottom: 1.5rem;
+                span{
+                    color: rgb(96, 95, 95);
+                    font-weight: 450;
+                }
+
+
+                P{
+                    font-size: 14px;
+                    color: rgb(105, 105, 105);
+
+                }
+
+                .fname{
+                 
+                    margin-right: 5rem
+                }
+
+                .reg{
+                 
+                    margin-right: 1rem
+                }
+            }
+
+            .dob{
+                display: flex;
+                margin-bottom: 1.5rem;
+
+                span{
+                    color: rgb(96, 95, 95);
+                    font-weight: 450;
+                }
+
+                P{
+                    font-size: 14px;
+                    color: rgb(105, 105, 105);
+
+                }
+
+                .email{
+                   
+                    margin-right: 1.9rem
+                }
+
+                .service{
+                 
+                    margin-right: 1.5rem
+                }
+            }
+
+            .other{
+                display: flex;
+                span{
+                    color: rgb(96, 95, 95);
+                    font-weight: 450;
+                }
+
+                P{
+                    font-size: 14px;
+                    color: rgb(105, 105, 105);
+
+                 
+                }
+
+                .address{
+                    margin-right: 2.5rem
+                }
+
+                .dentist{
+                    margin-right: 3.3rem
+                }
+            }
+        }
+
+    }
+
+}

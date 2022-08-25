@@ -60,9 +60,9 @@
 }
 
 .i-name{
-    color: #444a53;
+    color: rgb(76, 76, 76);
     padding: 30px 30px 0 30px;
-    font-size: 24px;
+    font-size: 25px;
     // font-weight: 00;
 }
 
@@ -155,9 +155,8 @@ table {
 
 td,
 th {
-    width: 6%;
     font-size: 13px;
-    padding-left: 8rem;
+   
     color: #777;
     // font-family: 'Times New Roman', Times, serif
 }
@@ -176,12 +175,14 @@ th {
     }
 
     img {
+        position: relative;
         width: 20rem;
         height: 10rem;
     }
 }
 
-.table-head {
+
+.table-name {
     margin-bottom: .8rem;
     color: #777;
     // font-family: Georgia, 'Times New Roman', Times, serif;
@@ -214,6 +215,8 @@ th {
         padding: 8px;
         display: flex;
         margin-bottom: .6rem;
+
+        
        
        
       
@@ -242,6 +245,13 @@ th {
     }
 }
 
+.doc-list:hover{
+    box-shadow: 3px 3px 12px 0px rgba(204,204,204,0.75);
+    -webkit-box-shadow: 3px 3px 12px 0px rgba(204,204,204,0.75);
+    -moz-box-shadow: 3px 3px 12px 0px rgba(204,204,204,0.75);
+
+}
+
 .dash-flex{
     display: flex;
    
@@ -252,6 +262,7 @@ th {
         padding: 10px;
         border-radius: 5px;
         margin-bottom: 2rem;
+        height: fit-content;
       
     }
 }

@@ -19,7 +19,7 @@
         <img src="/assets/images/patients-icon.png" alt="">
       </div>
       <div>
-        <h3>2000</h3>
+        <h3>{{patientLength}}</h3>
         <span>Patients</span>
       </div>
     </div>
@@ -28,7 +28,7 @@
         <img src="/assets/images/doctors-icon.png" alt="">
       </div>
       <div>
-        <h3>15</h3>
+        <h3>{{dentistLength}}</h3>
         <span>Doctors</span>
       </div>
     </div>
@@ -37,7 +37,7 @@
         <img src="/assets/images/services-icon.png" alt="">
       </div>
       <div>
-        <h3>7</h3>
+        <h3>{{serviceLength}}</h3>
         <span>Services</span>
       </div>
     </div>
@@ -46,7 +46,7 @@
         <img src="/assets/images/salary-icon.png" alt="">
       </div>
       <div>
-        <h3></h3>
+        <h3>$3000.00</h3>
         <span>Total Salary</span>
       </div>
     </div>
@@ -55,7 +55,7 @@
 
 
   <div class="container">
-    <h1 class="table-name">Patient Info</h1>
+    <h1 class="table-name">Patient Summary</h1>
 
     <div>
       <div class="mat-elevation-z8">
@@ -97,6 +97,7 @@
           <!-- Row shown when there is no matching data. -->
 
         </table>
+        <mat-paginator [pageSizeOptions]="[3, 12, 18, 100]" aria-label="Select page of users"></mat-paginator>
 
       </div>
     </div>

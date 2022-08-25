@@ -1,0 +1,89 @@
+<section class="interface">
+  <div class="navigation">
+    <div class="nl">
+      <div class="search">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search" />
+      </div>
+    </div>
+    <div class="profile">
+      <i class="fas fa-bell"></i>
+      <img src="https://icon-library.com/images/no-profile-picture-icon/no-profile-picture-icon-18.jpg" alt="" />
+    </div>
+  </div>
+
+  <div class="profile">
+    <div class="profile-con">
+      <div class="profile-card">
+        <div class="profile-image">
+          <img src="/assets/images/noProfile.jpg" alt="">
+        </div>
+        <div class="profile-content">
+          <h2>{{patient.first_nm}}'s Profile</h2>
+          <fieldset class="field1">
+            <legend>Personal Info</legend>
+            <div class="name">
+              <div class="fname">
+                <p><span>First Name: </span>{{patient.first_nm}}</p>
+              </div>
+              <div>
+                <p><span>Last Name: </span> {{patient.last_nm}}</p>
+              </div>
+            </div>
+
+            <div class="dob">
+              <div class="email">
+                <p><span>Email: </span> {{patient.email}}</p>
+              </div>
+              <div>
+                <p><span>Age: </span> {{patient.age}}</p>
+              </div>
+            </div>
+
+            <div class="other">
+              <div class="address">
+                <p> <span>Address: </span> {{patient.address}}</p>
+              </div>
+              <div>
+                <p><span>Date of Birth: </span>{{patient.dob | date}} </p>
+
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="field2">
+            <legend>General Details</legend>
+            <div class="name">
+              <div class="reg">
+                <p><span>Registration Date: </span>{{patient.regDate | date}}</p>
+              </div>
+              <div>
+                <p><span>Appointment Date: </span> {{patient.appointDate| date}}</p>
+              </div>
+            </div>
+
+            <div class="dob">
+              <div class="service">
+                <p><span>Service Name: </span> {{patient.serviceId.serviceName}}</p>
+              </div>
+              <div>
+                <p><span>Service Cost: </span>{{patient.serviceId.serviceCost | currency}}</p>
+              </div>
+            </div>
+
+            <div class="other">
+              <div class="dentist">
+                <p> <span>Dentist: </span>Dr {{patient.dentistId.first_nm}} {{patient.dentistId.last_nm}}</p>
+              </div>
+              <div>
+                <p><span>Doctor's Email: </span>{{patient.dentistId.email}} </p>
+
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
