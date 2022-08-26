@@ -32,9 +32,10 @@
         </div>
       </div>
       <div class="book-form">
-        <form [formGroup]="appointForm">
+        <form [formGroup]="appointForm" (submit)="onSubmit()">
           <div class="name">
             <div class="first">
+              <input type="hidden" name="dentistId" [(ngModel)]="dentist._id" formControlName="dentistId">
               <mat-form-field hideRequiredMarker appearance="outline">
                 <mat-label>First Name</mat-label>
                 <input matInput name="first_nm" formControlName="first_nm" placeholder="Ex. 1 Main St, New York, NY" required>
@@ -72,10 +73,10 @@
             <div class="num">
               <mat-form-field hideRequiredMarker appearance="outline">
                 <mat-label>Phone Number</mat-label>
-                <input matInput formControlName="mobile" name="mobile" placeholder="Ex. 1 Main St, New York, NY" required>
+                <input matInput formControlName="phoneNumber" name="phoneNumber" placeholder="Ex. 1 Main St, New York, NY" required>
 
                 <mat-hint>Enter phone number</mat-hint>
-                <mat-error *ngIf="appointForm.get('mobile')?.hasError('required')&& appointForm.get('mobile')?.touched">Phone number required</mat-error>
+                <mat-error *ngIf="appointForm.get('phoneNumber')?.hasError('required')&& appointForm.get('phoneNumber')?.touched">Phone number required</mat-error>
               </mat-form-field>
             </div>
           </div>
@@ -95,14 +96,11 @@
 
           <mat-form-field hideRequiredMarker class="select-field" appearance="outline">
             <mat-label>Select a Service</mat-label>
-            <mat-select formControlName="service" name="service">
-              <mat-option value="volvo">Extraction</mat-option>
-              <mat-option value="saab">Cleaning</mat-option>
-              <mat-option value="mercedes">Root Canals</mat-option>
-              <mat-option value="audi">Braces</mat-option>
+            <mat-select formControlName="serviceId" name="serviceId">
+              <mat-option *ngFor="let service of services" value="{{service._id}}">{{service.serviceName}}</mat-option>
             </mat-select>
             <mat-hint>Choose a Dentist</mat-hint>
-            <mat-error *ngIf="appointForm.get('service')?.hasError('required')&& appointForm.get('service')?.touched">Please Select a Service</mat-error>
+            <mat-error *ngIf="appointForm.get('serviceId')?.hasError('required')&& appointForm.get('serviceId')?.touched">Please Select a Service</mat-error>
           </mat-form-field>
 
 

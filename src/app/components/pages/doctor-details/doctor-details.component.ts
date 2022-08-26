@@ -1,9 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Dentists } from 'src/app/models/dentist';
+import { Patients } from 'src/app/models/patient';
+import { Services } from 'src/app/models/services';
 import { DentistsService } from 'src/app/services/doctors/doctors.service';
+import { PatientsService } from 'src/app/services/patients/patients.service';
+import { ServicesService } from 'src/app/services/services/services.service';
 
 @Component({
   selector: 'app-doctor-details',
@@ -12,35 +16,55 @@ import { DentistsService } from 'src/app/services/doctors/doctors.service';
 })
 export class DoctorDetailsComponent implements OnInit {
   @Input() dentist!: Dentists
+  services: Services[] = [];
 
   dentistSub!: Subscription;
   dentistId!: string;
   routeSub!: Subscription;
 
 
-  appointForm= this._formBuilder.group({
-    first_nm: ['', Validators.required],
-    last_nm: ['', Validators.required],
-    email: ['', Validators.required, Validators.email],
-    mobile: ['', Validators.required],
-    address: ['', Validators.required],
-    service: ['', Validators.required],
-    age: ['', Validators.required],
-    dob: ['', Validators.required],
- });
+  appointForm = new FormGroup({
+    'first_nm': new FormControl('', [Validators.required]),
+    'last_nm': new FormControl('', [Validators.required]),
+    'email': new FormControl('', [Validators.required, Validators.email]),
+    'phoneNumber': new FormControl('', [Validators.required]),
+    'address': new FormControl('', [Validators.required]),
+    'dob': new FormControl('', [Validators.required]),
+    'age': new FormControl('', [Validators.required]),
+    'dentistId': new FormControl('', [Validators.required]),
+    'serviceId': new FormControl('', [Validators.required]),
 
-  constructor(private dentistService:DentistsService, private router: Router,private route: ActivatedRoute,private _formBuilder: FormBuilder) { }
+  });
+
+  constructor(private dentistService: DentistsService, private patientsService: PatientsService, private router: Router, private route: ActivatedRoute, private serviceService: ServicesService) { }
 
 
-  getDentistFromId(id: string): void{
-    this.dentistSub = this.dentistService.getDentistsById(id).subscribe(theitem=>this.dentist = theitem.data)
+  getDentistFromId(id: string): void {
+    this.dentistSub = this.dentistService.getDentistsById(id).subscribe(theitem => this.dentist = theitem.data)
   }
+
+  onSubmit() {
+    console.log(this.appointForm.value)
+    const formData = (this.appointForm.value as unknown) as Partial<Patients>
+    this.patientsService.createPatient(formData).subscribe(() => {
+      this.router.navigate(['/'])
+      alert("appointment Successful Added");
+    })
+  }
+
+  getServiceList(): void {
+    this.serviceService.getAllServices().subscribe(results => {
+      this.services = results.data
+    })
+  }
+
   ngOnInit(): void {
+    this.getServiceList()
 
     this.routeSub = this.route.params.subscribe((params: Params) => {
       this.dentistId = params['id'];
       this.getDentistFromId(this.dentistId);
-  })
-}
+    })
+  }
 
 }
