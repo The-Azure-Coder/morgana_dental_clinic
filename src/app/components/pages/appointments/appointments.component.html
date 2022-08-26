@@ -12,14 +12,27 @@
     </div>
   </div>
 
+  <div class="stats">
+    <div class="appoint-image">
+      <img src="/assets/images/statics-img.jpg" alt="">
+    </div>
 
+    <div class="chart">
+      <app-chart2></app-chart2>
+    </div>
+  </div>
 
 
   <div class="appoint">
     <div class="container">
-      <h1 class="table-name">Appointment List</h1>
+      <div class="table-label">
+        <h1 class="table-name">Appointment List</h1>
+        <button routerLink="/bookappoints" class="appoint-btn">New Appointment</button>
 
-      <button routerLink="/bookappoints" class="appoint-btn">New Appointment</button>
+      </div>
+
+
+
       <div>
         <div class="mat-elevation-z8">
           <table mat-table [dataSource]="patientDataSource" matSort>
@@ -83,7 +96,7 @@
             </tr>
 
           </table>
-          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+          <mat-paginator [pageSizeOptions]="[4, 24, 36, 100]" aria-label="Select page of users"></mat-paginator>
 
         </div>
       </div>
