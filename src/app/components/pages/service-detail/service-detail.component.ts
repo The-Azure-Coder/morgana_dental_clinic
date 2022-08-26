@@ -15,7 +15,7 @@ import { Patients } from 'src/app/models/patient';
   styleUrls: ['./service-detail.component.scss']
 })
 export class ServiceDetailComponent implements OnInit {
-  dentists: Dentists[]=[]
+  dentists: Dentists[] = []
 
   @Input() service!: Services
 
@@ -26,53 +26,56 @@ export class ServiceDetailComponent implements OnInit {
   routeSub!: Subscription;
 
   appointForm = new FormGroup({
-    'first_nm': new FormControl('',[Validators.required]),
-    'last_nm': new FormControl('',[Validators.required]),
-    'email': new FormControl('',[Validators.required, Validators.email]),
-    'phoneNumber': new FormControl('',[Validators.required]),
-    'address': new FormControl('',[Validators.required]),
-    'dob': new FormControl('',[Validators.required]),
-    'age': new FormControl('',[Validators.required]),
-    'dentistId': new FormControl('',[Validators.required]),
-    'serviceId': new FormControl('',[Validators.required]),
+    'first_nm': new FormControl('', [Validators.required]),
+    'last_nm': new FormControl('', [Validators.required]),
+    'email': new FormControl('', [Validators.required, Validators.email]),
+    'phoneNumber': new FormControl('', [Validators.required]),
+    'address': new FormControl('', [Validators.required]),
+    'dob': new FormControl('', [Validators.required]),
+    'age': new FormControl('', [Validators.required]),
+    'dentistId': new FormControl('', [Validators.required]),
+    'serviceId': new FormControl('', [Validators.required]),
 
- });
+  });
 
-//  get first_nm() {
-//   return this.appointForm.get('first_nm');
-// }
+  //  get first_nm() {
+  //   return this.appointForm.get('first_nm');
+  // }
 
-// get last_nm() {
-//   return this.appointForm.get('last_nm');
-// }
+  // get last_nm() {
+  //   return this.appointForm.get('last_nm');
+  // }
 
-// get price() {
-//   return this.appointForm.get('price');
-// }
+  // get price() {
+  //   return this.appointForm.get('price');
+  // }
 
-// get quantity() {
-//   return this.appointForm.get('quantity');
-// }
+  // get quantity() {
+  //   return this.appointForm.get('quantity');
+  // }
 
-  constructor(private servicesService:ServicesService, private patientsService: PatientsService, private dentistService:DentistsService, private router: Router,private route: ActivatedRoute,private _formBuilder: FormBuilder) { }
-  
+  constructor(private servicesService: ServicesService, private patientsService: PatientsService, private dentistService: DentistsService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder) { }
 
-  getServiceFromId(id: string): void{
-    this.serviceSub = this.servicesService.getServicesById(id).subscribe(theitem=>this.service = theitem.data)
+
+  getServiceFromId(id: string): void {
+    this.serviceSub = this.servicesService.getServicesById(id).subscribe(theitem => this.service = theitem.data)
   }
 
-  getdoctorList(): void{
-    this.dentistService.getAllDentists().subscribe(results=>{
+  getdoctorList(): void {
+    this.dentistService.getAllDentists().subscribe(results => {
       this.dentists = results.data
     })
   }
 
 
-  onSubmit(){
+  onSubmit() {
     console.log(this.appointForm.value)
     const formData = (this.appointForm.value as unknown) as Partial<Patients>
-    this.patientsService.createPatient(formData).subscribe()
-    alert("appointment Successful Added");
+    this.patientsService.createPatient(formData).subscribe(() => {
+      this.router.navigate(['/'])
+      alert("appointment Successful Added");
+    })
+
 
   }
 
@@ -83,8 +86,8 @@ export class ServiceDetailComponent implements OnInit {
       this.getServiceFromId(this.serviceId);
 
 
-      
-  })
+
+    })
 
   }
 

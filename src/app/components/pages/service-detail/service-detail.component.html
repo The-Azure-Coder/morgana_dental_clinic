@@ -20,7 +20,7 @@
     </div>
 
     <div class="book-form">
-      <form [formGroup]="appointForm">
+      <form [formGroup]="appointForm" (submit)="onSubmit()">
         <div class="name">
           <div class="first">
             <mat-form-field hideRequiredMarker appearance="outline">
