@@ -1,0 +1,68 @@
+<div class="appointment-form">
+
+  <div class="appoint-form">
+    <div class="form-background"></div>
+
+
+    <div class="book-form">
+      <img routerLink="/serviceList" src="/assets/images/close.png" alt="">
+      <form [formGroup]="serviceForm" (submit)="onSubmit()">
+        <h2>Add Service</h2>
+        <div class="name">
+          <div class="first">
+            <mat-form-field hideRequiredMarker appearance="outline">
+              <mat-label>Service Name</mat-label>
+              <input matInput name="serviceName" formControlName="serviceName" placeholder="Ex. 1 Main St, New York, NY" required>
+              <mat-hint>Enter You First Name</mat-hint>
+              <mat-error *ngIf="serviceForm.get('serviceName')?.hasError('required')&& serviceForm.get('serviceName')?.touched">Your Firstname is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="sec">
+            <mat-form-field hideRequiredMarker appearance="outline">
+              <mat-label>Service Cost</mat-label>
+              <input matInput name="serviceCost" formControlName="serviceCost" placeholder="Ex. 1 Main St, New York, NY" required>
+
+              <mat-hint>Enter You last Name</mat-hint>
+              <mat-error *ngIf="serviceForm.get('serviceCost')?.hasError('required')&& serviceForm.get('serviceCost')?.touched">Your lastname is required</mat-error>
+
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="contact">
+          <div class="mail">
+            <mat-form-field hideRequiredMarker appearance="outline">
+              <mat-label>Service Image</mat-label>
+              <input matInput formControlName="serviceImg2" name="serviceImg2" placeholder="Ex. 1 Main St, New York, NY" required>
+
+              <mat-hint>Enter service imageUrl</mat-hint>
+              <mat-error *ngIf="serviceForm.get('serviceImg2')?.hasError('required')&& serviceForm.get('serviceImg2')?.touched">Phone number required</mat-error>
+            </mat-form-field>
+
+          </div>
+          <div class="num">
+            <mat-form-field hideRequiredMarker appearance="outline">
+              <mat-label>Enter Another imageUrl</mat-label>
+              <input matInput formControlName="serviceImg" name="serviceImg" placeholder="Ex. 1 Main St, New York, NY" required>
+
+              <mat-hint>Enter image url</mat-hint>
+              <mat-error *ngIf="serviceForm.get('serviceImg')?.hasError('required')&& serviceForm.get('serviceImg')?.touched">Phone number required</mat-error>
+            </mat-form-field>
+          </div>
+
+        </div>
+
+        <mat-form-field hideRequiredMarker class="form-field" appearance="outline">
+          <mat-label>Service Description</mat-label>
+          <textarea type="text" name="serviceDescrip" formControlName="serviceDescrip" matInput placeholder="Placeholder"></textarea>
+          <mat-hint>Enter service Desscription</mat-hint>
+
+          <mat-error *ngIf="serviceForm.get('serviceDescrip')?.hasError('required') && serviceForm.get('serviceDescrip')?.touched">
+            Service Desscription is required</mat-error>
+        </mat-form-field>
+
+        <button class="submit-btn">Add Service</button>
+      </form>
+    </div>
+  </div>
+</div>
