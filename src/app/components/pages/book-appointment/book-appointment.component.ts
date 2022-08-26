@@ -55,7 +55,7 @@ onSubmit(){
       this.router.navigate(['/appointments']);
       console.log(formData)
     },
-    error: () => {
+    error: () => {  
       alert("Error While booking the appointment")
       
     }
