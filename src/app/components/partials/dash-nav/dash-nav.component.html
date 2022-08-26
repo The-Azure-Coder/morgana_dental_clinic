@@ -1,4 +1,4 @@
-<div class="dashboard" [ngClass]="dashRoute('/patients') || dashRoute('/dashboard') || dashRoute('/appointments') || dashRoute('/patientDetails')  ? 'show' : 'hide'">
+<div class="dashboard" [ngClass]="dashRoute('/patients') || dashRoute('/dashboard') || dashRoute('/appointments') || dashRoute('/patientDetails') || dashRoute('/dentistList') || dashRoute('/viewMore')|| dashRoute('serviceList') ? 'show' : 'hide'">
 
   <section class="menu">
     <div class="logo">
@@ -17,12 +17,12 @@
         <li><img src="/assets/images/patients-icon.png" alt="">Users</li>
       </a>
 
-      <a>
+      <a routerLink="/dentistList">
         <li><img src="/assets/images/doctors-icon.png" alt="">Doctors</li>
       </a>
 
-      <a>
-        <li><img src="/assets/images/bill-icon.png" alt="">Bill Info</li>
+      <a routerLink="/serviceList">
+        <li><img src="/assets/images/bill-icon.png" alt="">Services</li>
       </a>
 
       <a>
