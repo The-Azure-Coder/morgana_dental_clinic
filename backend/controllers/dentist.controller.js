@@ -1,5 +1,7 @@
+const { async } = require("rxjs");
 const { JSONResponse } = require("../lib/helper");
 const Dentist = require("../models/dentist.model");
+const Patient = require("../models/patient.model");
 
 /**
  * ### Description
@@ -27,6 +29,15 @@ exports.getDentistById = async (req, res) => {
   }
 };
 
+exports.getDentistPatientList = async (req, res) => {
+  try {
+    const dentist = await Patient.find({ dentistId: req.params.id });
+    JSONResponse.success(res, "Success.", dentist, 200);
+  } catch (error) {
+    JSONResponse.error(res, "Failure handling dentist Model.", error, 500);
+  }
+};
+
 /**
  * ### Description
  * Creating a Dentist
@@ -37,6 +48,7 @@ exports.createDentist = async (req, res) => {
       first_nm: req.body.first_nm,
       last_nm: req.body.last_nm,
       email: req.body.email,
+      phoneNumber: req.body.phoneNumber,
       docDescrip: req.body.docDescrip,
       docImg: req.body.docImg,
     });

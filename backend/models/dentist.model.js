@@ -27,6 +27,10 @@ let dentistSchema = new db.Schema({
     type: String,
     trim: true,
   },
+  phoneNumber: {
+    type: String,
+    trim: true,
+  },
 });
 
 module.exports = db.model("dentist", dentistSchema);
