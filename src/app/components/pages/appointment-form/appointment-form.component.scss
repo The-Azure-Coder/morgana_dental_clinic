@@ -1,7 +1,13 @@
+
+
+
+.appointment{
+
+    
 .appoint-background{
     position: relative;
-    height:15rem;
     width:100%;
+    height: 100vh;
     background-image: url('/assets/images/appoint-img.jpg');
     background-position: center;
     background-size: cover;
@@ -29,121 +35,154 @@
         h1{
             text-transform: uppercase;
             font-size: 2.5rem;
-            color: white;
+            color: #fff
         }
     }
 
   
 }
 
-.stepper-background{
+.appointment-section{
+    padding-top: 2rem;
+    display: flex;
+    padding-left: 10rem;
+  
+}
 
+.appoint-content{
+    padding-top: 8rem;
+    width: 28rem ;
+    margin-right: 5rem;
+    color: #fff;
+    z-index: 1000;
+
+    h2{
+        font-size: 32px;
+        margin-bottom: 2rem;
+    }
+    p{
+        font-size: 15px;
+        line-height: 28px;
+    }
+}
+
+.book-form{
+    padding: 2rem;
     position: relative;
-    height:100%;
-    width:100%;
-    background-image: url('/assets/images/dentist-app.jpg');
-    background-position: center;
-    background-size: cover;
+    background-color: #fff;
+    border-radius: .5rem;
+    
+    
 
-
-    .stepper-con{
-        margin: 2rem auto;
-        width: 80%;
-        
-             .radio-label{
-              color: #777;
-               font-size: 16px;
-            }
-
-            .next-btn{
-                background-color: #0654ae;
-                color: white;
-                float: right;
-            }
-            .back-btn{
-                background-color: #d53007;
-                color: white;
-              
-            }
-
-            .reset-btn{
-                background-color: #ffe601;
-                color: white;
-                margin-left: .8rem;
-              
-            }
-
-            .submit-btn{
-                background-color: #02d372;
-                color: white;
-                float: right;
-              
-            }
-
-        .radio-field{
-            display: block;
-            padding-bottom: 2rem;
-            padding-top: 1.1rem;
-           
-
-            mat-radio-button{
-                padding-right: 4rem;
-
-            }
-        }
-
-        .select-field{
-            width: 15rem;
-            display: block;
-            margin-bottom: 1.1rem;
-
-        }
-
-
-        .name{
-            display: flex;
-
-            mat-form-field{
-                width: 15rem;
-            }
-
-            .first{
-                margin-right: 1.5rem;
-
-                
-
-            }
-        }
-
-        .contact{
-            display: flex;
-
-            mat-form-field{
-                width: 15rem;
-            }
-
-            .mail{
-                margin-right: 1.5rem;
-
-            }
-        }
-
-        .form-field{
-            display: block;
-            width: 31.5rem;
-        }
-
-
+    img{
+        position: absolute;
+        margin-top: 1.1rem;
+        margin-left: 28rem;
+        cursor: pointer;
     }
+  
+   
 
-    .form-image{
+    h2{
+        text-align: center;
+      
+    }
+    .select-field{
+        width: 29.5rem;
+        display: block;
+        color: #fff;
+
+   
+      
+    }
+    
+    
+    .name{
         display: flex;
-        justify-content: center;
-
-        img{
-            width: 300px;
+    
+        mat-form-field{
+            width: 14rem;
+        }
+    
+        .first{
+            margin-right: 1.5rem;
+        }
+    }
+    
+    .contact{
+        display: flex;
+    
+        mat-form-field{
+            width: 14rem;
+        }
+    
+        .mail{
+            margin-right: 1.5rem;
+    
         }
     }
 
+    .other{
+
+        display: flex;
+    
+        mat-form-field{
+            width: 14rem;
+        }
+    
+        .third{
+            margin-right: 1.5rem;
+    
+        }
+    }
+    
+  
+    .form-field{
+        display: block;
+        width: 29.5rem;
+
+
+
+        .matInput{
+            border: 1px solid #fff;
+        }
+
+    }
+
+    
+}
+
+.action-btn{
+    display: flex;
+
+    .submit{
+        margin-top: 2rem;
+        background-color: rgb(250, 139, 47);
+        padding: 10px;
+        color: #fff;
+        width: 9rem;
+        border: none;
+        margin-right: 2rem;
+        border-radius: .4rem;
+        
+    }
+
+    .home-btn{
+        margin-top: 2rem;
+        text-align: center;
+        border: 1px solid #fff;
+        padding: 10px;
+        color: #fff;
+        width: 9rem;
+        border-radius: .4rem;
+        
+    }
+}
+
+
+.appoint-btn{
+    background-color: rgb(13, 153, 239) ;
+    color: white;
+}
 
 }

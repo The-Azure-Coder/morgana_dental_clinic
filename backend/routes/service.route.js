@@ -6,14 +6,14 @@ const {
   getAllServices,
   createService,
   getServiceById,
-  deleteServicetById,
+  deleteServiceById,
   updateService,
 } = require("../controllers/service.controller");
 
 router.route("/").get(IndexController.index);
 
 router.route("/services").post(createService).get(getAllServices);
-router.route("/services/:id").delete(deleteServicetById).get(getServiceById);
+router.route("/services/:id").delete(deleteServiceById).get(getServiceById);
 router.route("/services/update/:id").put(updateService);
 
 module.exports = router;

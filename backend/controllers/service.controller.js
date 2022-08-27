@@ -73,7 +73,7 @@ exports.updateService = async (req, res) => {
  * ### Description
  * Deleting a detist from list
  */
-exports.deleteServicetById = async (req, res) => {
+exports.deleteServiceById = async (req, res) => {
   try {
     const service = await Services.findById(req.params.id);
     if (service) await service.delete();
