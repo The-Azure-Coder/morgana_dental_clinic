@@ -59,17 +59,22 @@ export class AppointmentFormComponent implements OnInit {
 
   onSubmit() {
     const formData = (this.appointForm.value as unknown) as Partial<Patients>
-    this.patientsService.createPatient(formData).subscribe({
-      next: (res) => {
-        alert('Appointment Booked successfully')
-        this.router.navigate(['/']);
-        console.log(formData)
-      },
-      error: () => {
-        alert("Error While booking the appointment")
+    if (this.appointForm.valid) {
+      this.patientsService.createPatient(formData).subscribe({
+        next: (res) => {
+          alert('Appointment Booked successfully')
+          this.router.navigate(['/']);
+          console.log(formData)
+        },
+        error: () => {
+          alert("Error While booking the appointment")
 
-      }
-    })
+        }
+      })
+    } else {
+      alert('Invalid Form')
+
+    }
   }
 
 

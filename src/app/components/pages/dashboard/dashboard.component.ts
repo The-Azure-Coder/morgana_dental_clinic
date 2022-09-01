@@ -9,6 +9,7 @@ import { DentistsService } from 'src/app/services/doctors/doctors.service';
 import { ServicesService } from 'src/app/services/services/services.service';
 import { Services } from 'src/app/models/services';
 import { MatPaginator } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,11 +20,13 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   dentists: Dentists[] = [];
+  appointCost: number[] = [];
   services: Services[] = [];
   serviceCost: any[] | Services[] = [];
   dentistLength!: number;
   patientLength!: number;
   serviceLength!: number;
+  totalSalary!: number;
 
   dentistDataSource!: MatTableDataSource<Dentists>;
   patientDataSource!: MatTableDataSource<Patients>;
@@ -42,8 +45,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   constructor(
     private dentistService: DentistsService,
     private patientService: PatientsService,
-    private servicesService: ServicesService
-  ) {}
+    private servicesService: ServicesService,
+    private router: Router
+  ) { }
+
 
   getAllService() {
     this.servicesService.getAllServices().subscribe({
@@ -51,7 +56,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         // this.dentistDataSource = new MatTableDataSource(res.data);
         this.services = res.data;
         this.serviceLength = res.data.length;
-        this.patientDataSource.paginator = this.paginator;
+
         // this.dataSource.sort = this.sort
       },
       error: (err) => {
@@ -81,16 +86,36 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       next: (res) => {
         this.patientDataSource = new MatTableDataSource(res.data);
         this.patientLength = res.data.length;
+        this.patientDataSource.paginator = this.paginator;
       },
       error: (err) => {
         alert('Error while fetching the patients');
       },
     });
   }
+  getTotalSalary() {
+    this.patientService.getAllPatients().subscribe(results => {
+      this.appointCost = results.data.map(mapitems => {
+        return mapitems.serviceId.serviceCost
 
-  ngAfterViewInit() {}
+      })
+      this.totalSalary = this.appointCost.reduce((a, b) => {
+        return a += b;
+      }, 0)
+
+
+      console.log(this.totalSalary)
+    })
+  }
+
+
+
+
+
+  ngAfterViewInit() { }
 
   ngOnInit(): void {
+    this.getTotalSalary()
     this.getDentistsList();
     this.getPatientList();
     this.getAllService();

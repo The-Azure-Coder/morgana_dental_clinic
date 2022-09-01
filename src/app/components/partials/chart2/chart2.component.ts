@@ -20,9 +20,8 @@ export class Chart2Component implements OnInit {
   dentistPatientCount: number[] = [];
 
   constructor(
-    private patientService: PatientsService,
     private dentistService: DentistsService
-  ) {}
+  ) { }
 
   getAllDentists() {
     this.dentistService.getAllDentists().subscribe((results) => {

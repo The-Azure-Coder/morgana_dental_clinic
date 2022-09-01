@@ -37,9 +37,10 @@ exports.createService = async (req, res) => {
       serviceName: req.body.serviceName,
       serviceCost: req.body.serviceCost,
       serviceImg: req.body.serviceImg,
+
       serviceDescrip: req.body.serviceDescrip,
     });
-    const addService = await Services.create(serviceObj);
+    const addService = await Services.create(req.body);
     JSONResponse.success(res, "Success.", addService, 201);
   } catch (error) {
     JSONResponse.error(res, "Failure handling Service model.", error, 500);

@@ -11,9 +11,16 @@ export class DashNavComponent implements OnInit {
   dashRoute(route: string) {
     return this.router.url.includes(route)
   }
-  
 
-  constructor(private  router: Router) { }
+
+  constructor(private router: Router) { }
+
+  onLogOut() {
+    if (localStorage.getItem('admin')) {
+      localStorage.removeItem('admin')
+      this.router.navigate(['/login'])
+    }
+  }
 
   ngOnInit(): void {
   }

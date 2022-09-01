@@ -1,0 +1,111 @@
+.users{
+    position: fixed;
+    height: 100%;
+    width :100%;
+    background-color: #f7f5f5;
+
+
+    .userform{
+         position: relative;
+         display: flex;
+         border-radius: 0px 5px 5px 0px;
+         margin-bottom: 2rem;
+         margin-left: 18rem;
+         background-color: #fff;
+    
+   
+    box-shadow: 9px 9px 5px 0px rgba(0,0,0,0.06);
+    -webkit-box-shadow: 9px 9px 5px 0px rgba(0,0,0,0.06);
+    -moz-box-shadow: 9px 9px 5px 0px rgba(0,0,0,0.06);
+    margin-top: 6rem;
+    width: fit-content;
+
+
+        .login-background{
+           
+            width: 25rem;
+             height:30rem;
+            background-image: url('https://cdn.sanity.io/images/0vv8moc6/dpr/6b348f5e493c67a0d58cf7b34abf4d135c6f00f7-640x380.png');
+            background-size: cover;
+            background-position: center;
+         
+        }
+        .login-content{
+           
+            .login-form{
+                position: relative;
+                border-radius: .4rem;
+                background-color: #fff;
+                width: 21rem;
+                height:26rem;
+                padding: 25px;
+
+                img{
+                    position: absolute;
+                    left: 21rem;
+                    bottom: 26rem;
+                    cursor: pointer;
+                   
+
+                }
+    
+                h2{
+                    color: #777;
+                    letter-spacing: 1.2px;
+                }
+    
+                .form-field{
+                    display: block;
+                    width: 20rem;
+                }
+    
+                p{
+                    text-align: center;
+                    font-size: 12px;
+                    margin-bottom: .4rem;
+                
+                    color: #777;
+    
+                    a{
+    
+                        color: #0654ae;
+                    }
+                }
+                button{
+                    background-color: #0654ae;
+                    color: white;
+                    outline: none;
+                    border: none;
+                    padding: 10px;
+                    margin-top: 1.1rem;
+                    margin-bottom: 1.1rem;
+                    width: 20rem;
+                }
+            }
+    
+            .welcome{
+                color: white;
+                margin-right: 6rem;
+                margin-top: 8rem;
+    
+                h2{
+                    font-size: 40px;
+                }
+    
+                p{
+                    width: 30rem;
+                    line-height: 30px;
+                }
+            }
+        }
+    
+    }
+
+
+
+
+
+
+
+
+}

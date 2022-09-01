@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, of } from 'rxjs';
 import { APIResponse } from 'src/app/models/api-response';
 import { Users } from 'src/app/models/user';
+import { AUTHResponse } from 'src/app/models/auth-respose';
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +18,16 @@ export class UserService {
     };
   }
 
+  private _handleAuthErrors(retVal: any) {
+    return (err: any) => {
+      console.log(err);
+      return of({ status: err.status, loginUser: err.loginUser, data: retVal, response: err.response, auth: err.auth });
+    };
+  }
+
   constructor(private http: HttpClient) { }
 
-  getAllServices(): Observable<APIResponse<Users[]>> {
+  getAllUsers(): Observable<APIResponse<Users[]>> {
     return this.http
       .get<APIResponse<Users[]>>(this.API_URL)
       .pipe(catchError(this._handleHttpErrors([])));
@@ -31,17 +39,23 @@ export class UserService {
       .pipe(catchError(this._handleHttpErrors(new Users())));
   }
 
-  createUser(service: Partial<Users>): Observable<APIResponse<Users>> {
+  loginUser(user: Partial<Users>): Observable<AUTHResponse<Users>> {
     return this.http
-      .post<APIResponse<Users>>(this.API_URL, service)
-      .pipe(catchError(this._handleHttpErrors(new Users())));
+      .post<AUTHResponse<Users>>(`${this.API_URL}/login`, user)
+      .pipe(catchError(this._handleAuthErrors(new Users())));
   }
 
-  updateUser(id: string, service: Users): Observable<APIResponse<Users>> {
+  RegisterUser(user: Partial<Users>): Observable<AUTHResponse<Users>> {
+    return this.http
+      .post<AUTHResponse<Users>>(`${this.API_URL}/register`, user)
+      .pipe(catchError(this._handleAuthErrors(new Users())));
+  }
+
+  updateUser(id: string, user: Users): Observable<APIResponse<Users>> {
     return this.http
       .put<APIResponse<Users>>(
         `${this.API_URL}/update/${id}`,
-        service
+        user
       )
       .pipe(catchError(this._handleHttpErrors(new Users())));
   }

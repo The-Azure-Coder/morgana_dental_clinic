@@ -19,26 +19,38 @@ import { ServicelistComponent } from './components/pages/servicelist/servicelist
 import { AddServiceComponent } from './components/pages/add-service/add-service.component';
 import { EditServiceComponent } from './components/pages/edit-service/edit-service.component';
 
+import { UserlistComponent } from './components/pages/userlist/userlist.component';
+import { AddUserComponent } from './components/pages/add-user/add-user.component';
+import { EditUserComponent } from './components/pages/edit-user/edit-user.component';
+import { AdminGuard } from './admin.guard';
+import { PatientSearchComponent } from './components/pages/patient-search/patient-search.component';
+import { UserGuard } from './user.guard';
+
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: SignupComponent },
-  { path: 'appoint', component: AppointmentFormComponent },
+  { path: 'appoint', component: AppointmentFormComponent, canActivate: [UserGuard] },
   { path: 'services/:id', component: ServiceDetailComponent },
   { path: 'dentists/:id', component: DoctorDetailsComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'appointments', component: AppointmentsComponent },
-  { path: 'bookappoints', component: BookAppointmentComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
+  { path: 'appointments', component: AppointmentsComponent, canActivate: [AdminGuard] },
+  { path: 'bookappoints', component: BookAppointmentComponent, canActivate: [AdminGuard] },
   { path: 'bookappointments/:id', component: BookAppointmentComponent },
   { path: 'appointEdit/:id', component: EditAppointmentComponent },
   { path: 'patientDetails/:id', component: PatientDetailsComponent },
-  { path: 'dentistList', component: DentistlistComponent },
+  { path: 'dentistList', component: DentistlistComponent, canActivate: [AdminGuard] },
   { path: 'addDentist', component: AddDentistComponent },
   { path: 'editDentist/:id', component: EditDentistComponent },
   { path: 'viewMore/:id', component: ViewAppointDetailsComponent },
-  { path: 'serviceList', component: ServicelistComponent },
+  { path: 'serviceList', component: ServicelistComponent, canActivate: [AdminGuard] },
   { path: 'addService', component: AddServiceComponent },
   { path: 'editService/:id', component: EditServiceComponent },
+  { path: 'userList', component: UserlistComponent, canActivate: [AdminGuard] },
+  { path: 'addUser', component: AddUserComponent },
+  { path: 'search', component: PatientSearchComponent, canActivate: [UserGuard] },
+  { path: 'editUser/:id', component: EditUserComponent },
 ];
 
 @NgModule({

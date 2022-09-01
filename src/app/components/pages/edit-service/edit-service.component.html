@@ -6,7 +6,7 @@
 
     <div class="book-form">
       <img routerLink="/serviceList" src="/assets/images/close.png" alt="">
-      <form [formGroup]="serviceForm">
+      <form *ngIf="serviceForm" [formGroup]="serviceForm">
         <h2>Edit Service</h2>
         <div class="name">
           <div class="first">

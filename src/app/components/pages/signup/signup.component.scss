@@ -20,14 +20,14 @@
     .login-content{
         display: flex;
         position: absolute;
-         margin-top: 8rem;
+         margin-top: 7rem;
          margin-left: 10rem;
        
         .login-form{
             border-radius: .4rem;
             background-color: #fff;
             width: 21rem;
-            height:22rem;
+            height:26rem;
             padding: 25px;
 
             h2{
@@ -66,6 +66,7 @@
 
         .welcome{
             color: white;
+            position: relative;
             margin-right: 6rem;
             margin-top: 8rem;
 
@@ -77,6 +78,12 @@
                 width: 30rem;
                 line-height: 30px;
             }
+
+            img{
+                top: -10rem;
+                   position: absolute;
+                   cursor: pointer;
+               }
         }
     }
 

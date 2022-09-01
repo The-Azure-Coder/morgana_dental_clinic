@@ -70,11 +70,16 @@ export class ServiceDetailComponent implements OnInit {
 
   onSubmit() {
     console.log(this.appointForm.value)
-    const formData = (this.appointForm.value as unknown) as Partial<Patients>
-    this.patientsService.createPatient(formData).subscribe(() => {
-      this.router.navigate(['/'])
-      alert("appointment Successful Added");
-    })
+    if (this.appointForm.valid) {
+      const formData = (this.appointForm.value as unknown) as Partial<Patients>
+      this.patientsService.createPatient(formData).subscribe(() => {
+        this.router.navigate(['/'])
+        alert("appointment Successful Added");
+      })
+
+    } else {
+      alert('please fill out all contents in the form')
+    }
 
 
   }

@@ -8,7 +8,6 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-import { CardSliderComponent } from './components/partials/card-slider/card-slider.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -42,6 +41,10 @@ import { ViewAppointDetailsComponent } from './components/pages/view-appoint-det
 import { ServicelistComponent } from './components/pages/servicelist/servicelist.component';
 import { AddServiceComponent } from './components/pages/add-service/add-service.component';
 import { EditServiceComponent } from './components/pages/edit-service/edit-service.component';
+import { UserlistComponent } from './components/pages/userlist/userlist.component';
+import { AddUserComponent } from './components/pages/add-user/add-user.component';
+import { EditUserComponent } from './components/pages/edit-user/edit-user.component';
+import { PatientSearchComponent } from './components/pages/patient-search/patient-search.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,6 @@ import { EditServiceComponent } from './components/pages/edit-service/edit-servi
     NavBarComponent,
     HomeComponent,
     FooterComponent,
-    CardSliderComponent,
     LoginComponent,
     SignupComponent,
     AppointmentFormComponent,
@@ -70,6 +72,10 @@ import { EditServiceComponent } from './components/pages/edit-service/edit-servi
     ServicelistComponent,
     AddServiceComponent,
     EditServiceComponent,
+    UserlistComponent,
+    AddUserComponent,
+    EditUserComponent,
+    PatientSearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -93,4 +99,4 @@ import { EditServiceComponent } from './components/pages/edit-service/edit-servi
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

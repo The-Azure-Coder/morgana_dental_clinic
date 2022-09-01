@@ -7,11 +7,13 @@ const {
   deletePatienttById,
   getPatientById,
   updatePatient,
+  getPatientInfo,
 } = require("../controllers/patient.controller");
 
 router.route("/").get(IndexController.index);
 
 router.route("/patients").post(createPatient).get(getAllPatients);
+router.route("/patients/search").post(getPatientInfo);
 
 router.route("/patients/:id").delete(deletePatienttById).get(getPatientById);
 

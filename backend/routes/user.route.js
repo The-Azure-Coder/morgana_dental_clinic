@@ -19,10 +19,10 @@ const {
 router.route("/").get(IndexController.index);
 
 router.route("/users").post(registerUser).get(getAllUsers);
-router
-  .route("/login")
-  .post(passport.authenticate("local", { session: false }), loginUser);
-router.route("/user/:id").delete(deleteUserById).get(getUserById);
+router.route("/users/login").post(loginUser);
+router.route("/users/register").post(registerUser);
+router.route("/users/:id").delete(deleteUserById).get(getUserById);
 router.route("/users/update/:id").put(updateUser);
 
+// passport.authenticate("local", { session: false }),
 module.exports = router;

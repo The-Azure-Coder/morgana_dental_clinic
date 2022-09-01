@@ -2,12 +2,15 @@
   <div class="overlay"></div>
   <div class="login-content">
     <div class="welcome">
-      <h2>Morgana Login</h2>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto quod aut, asperiores itaque ex quam explicabo voluptas aliquam dol</p>
+      <img routerLink="/" src="/assets/images/logo2.0.png" alt="">
+      <p>Login, Make an Appointment and help us help you matain those precious pearly whites. Welcome to Morgana Hospital where the patients are placed first</p>
+      <button></button>
     </div>
     <div class="login-form">
-      <form [formGroup]="loginForm" action="">
+      <form [formGroup]="loginForm" action="" (submit)="onSubmit()">
         <h2>Hello,<br> Welcome Back</h2>
+
+
 
         <mat-form-field hideRequiredMarker class="form-field" appearance="standard">
           <mat-label>Email</mat-label>

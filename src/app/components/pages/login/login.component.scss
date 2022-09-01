@@ -68,6 +68,7 @@
             color: white;
             margin-right: 6rem;
             margin-top: 8rem;
+            position: relative;
 
             h2{
                 font-size: 40px;
@@ -76,6 +77,12 @@
             p{
                 width: 30rem;
                 line-height: 30px;
+            }
+
+            img{
+             top: -10rem;
+                position: absolute;
+                cursor: pointer;
             }
         }
     }

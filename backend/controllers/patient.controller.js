@@ -39,6 +39,23 @@ exports.getPatientById = async (req, res) => {
   }
 };
 
+exports.getPatientInfo = async (req, res) => {
+  try {
+    const patient = await Patient.findOne(req.body)
+      .populate("dentistId")
+      .populate("serviceId");
+    console.log(patient);
+    JSONResponse.success(res, "Success.", patient, 200);
+  } catch (error) {
+    JSONResponse.error(
+      res,
+      "Failure handling patient Model.",
+      console.log(error),
+      500
+    );
+  }
+};
+
 /**
  * ### Description
  * Creating a patient
