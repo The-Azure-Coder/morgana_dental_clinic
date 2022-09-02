@@ -4,6 +4,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { Services } from 'src/app/models/services';
 import { ServicesService } from 'src/app/services/services/services.service';
+import { Patients } from 'src/app/models/patient';
+import { PatientsService } from 'src/app/services/patients/patients.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-servicelist',
@@ -18,10 +21,12 @@ export class ServicelistComponent implements OnInit {
   serviceDataSource!: MatTableDataSource<Services>;
   serviceColumns: string[] = ['serviceName', 'serviceCost', 'action'];
 
-  constructor(private servicesService: ServicesService) {}
+  constructor(private servicesService: ServicesService, private patientsService: PatientsService) { }
+
 
   getAllServices() {
     this.servicesService.getAllServices().subscribe((results) => {
+      this.services = results.data
       this.serviceDataSource = new MatTableDataSource(results.data);
       this.serviceDataSource.sort = this.sort;
       this.serviceDataSource.paginator = this.paginator;
@@ -29,16 +34,38 @@ export class ServicelistComponent implements OnInit {
   }
 
   deleteService(id: string): void {
-    this.servicesService.deleteService(id).subscribe({
+    this.patientsService.getAllPatients().subscribe({
       next: (res) => {
-        alert('Product Deleted Successfully');
-        this.getAllServices();
-      },
-      error: () => {
-        alert('Error while deleting product');
-      },
-    });
+        this.servicesService.getServicesById(id).subscribe({
+          next: (res2) => {
+            let groupFilter;
+            groupFilter = res.data.filter(i => {
+              return i.serviceId._id == res2.data._id;
+            })
+
+            if (groupFilter.length == 0) {
+
+
+              this.servicesService.deleteService(id).subscribe({
+                next: (res) => {
+                  Swal.fire('Service Deleted Successfully');
+                  this.getAllServices();
+                }
+              })
+            } else {
+              Swal.fire(`${res2.data.serviceName} service has ${groupFilter.length} patient(s) \nRemove patient(s) before proceeding.`)
+            }
+            console.log(groupFilter);
+          }
+        })
+      }
+    })
   }
+
+
+
+
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.serviceDataSource.filter = filterValue.trim().toLowerCase();
@@ -50,4 +77,5 @@ export class ServicelistComponent implements OnInit {
   ngOnInit(): void {
     this.getAllServices();
   }
+
 }

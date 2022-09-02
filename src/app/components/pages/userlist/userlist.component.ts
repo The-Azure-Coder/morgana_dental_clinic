@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Users } from 'src/app/models/user';
 import { UserService } from 'src/app/services/users/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-userlist',
@@ -34,7 +35,11 @@ export class UserlistComponent implements OnInit {
         this.userDataSource.paginator = this.paginator;
       },
       error: (err) => {
-        alert('Error while fetching the patients');
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Error While fetching results!',
+        })
       },
     });
   }
@@ -42,16 +47,36 @@ export class UserlistComponent implements OnInit {
 
 
   deleteUser(id: string): void {
-    this.userService.deleteUser(id).subscribe({
-      next: (res) => {
-        alert('Product Deleted Successfully');
-        this.getUserList();
-      },
-      error: () => {
-        alert('Error while deleting product');
-      },
-    });
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        );
+        this.userService.deleteUser(id).subscribe({
+          next: (res) => {
+            this.getUserList();
+          },
+          error: () => {
+            Swal.fire('Error while deleting User');
+          },
+        });
+      }
+
+    })
   }
+
+
+
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

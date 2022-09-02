@@ -5,13 +5,15 @@
       <div class="login-form">
         <img routerLink="/userList" src="/assets/images/close.png" alt="">
         <form action="" *ngIf="userForm" [formGroup]="userForm">
-          <h2>AddUser</h2>
+          <h2>edit User</h2>
+
           <mat-form-field hideRequiredMarker class=" form-field" appearance="standard">
             <mat-label>Username</mat-label>
             <input type="email" formControlName="username" name="username" matInput placeholder="Placeholder">
             <!-- <mat-hint>Enter Email Address</mat-hint> -->
             <mat-error *ngIf="userForm.get('username')?.hasError('required')&& userForm.get('username')?.touched">Username is required</mat-error>
           </mat-form-field>
+
 
 
           <mat-form-field hideRequiredMarker class="form-field" appearance="standard">
@@ -24,6 +26,16 @@
               <mat-error *ngIf="userForm.get('email')?.hasError('email') && userForm.get('email')?.touched">
                 Invalid Email Address</mat-error>
             </mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field hideRequiredMarker class="select-field" appearance="standard">
+            <mat-label>Select a Role</mat-label>
+            <mat-select formControlName="role" name="role">
+              <mat-option value="admin">Admin</mat-option>
+              <mat-option value="user">user</mat-option>
+            </mat-select>
+            <mat-error *ngIf="userForm.get('role')?.hasError('required')&& userForm.get('role')?.touched">Please Select a Role</mat-error>
           </mat-form-field>
 
 

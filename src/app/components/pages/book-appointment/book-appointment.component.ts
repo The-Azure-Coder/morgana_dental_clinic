@@ -7,6 +7,7 @@ import { Services } from 'src/app/models/services';
 import { DentistsService } from 'src/app/services/doctors/doctors.service';
 import { PatientsService } from 'src/app/services/patients/patients.service';
 import { ServicesService } from 'src/app/services/services/services.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-book-appointment',
@@ -48,21 +49,27 @@ export class BookAppointmentComponent implements OnInit {
 
 
   onSubmit() {
+    console.log('here')
     const formData = (this.appointForm.value as unknown) as Partial<Patients>
     if (this.appointForm.valid) {
       this.patientsService.createPatient(formData).subscribe({
         next: (res) => {
-          alert('Appointment Booked successfully')
+          Swal.fire('Appointment Booked successfully')
           this.router.navigate(['/appointments']);
           console.log(formData)
         },
         error: () => {
-          alert("Error While booking the appointment")
+          Swal.fire("Error While booking the appointment")
 
         }
       })
     } else {
-      alert('please fill out all required contents of the form')
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Invalid Form Submission',
+        footer: '<a href="">Why do I have this issue?</a>'
+      })
     }
   }
 

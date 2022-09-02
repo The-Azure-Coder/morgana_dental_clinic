@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/users/user.service';
 import { Users } from 'src/app/models/user';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -24,29 +25,49 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     const formData = this.loginForm.value as unknown as Partial<Users>;
-    this.userService.loginUser(formData).subscribe(res => {
-      if (res.data.existUser?.role === 'user' && res.loginUser) {
-        console.log('User as logged in Successfully')
-        localStorage.setItem('user', res.loginUser)
-        localStorage.removeItem('admin')
-        // this.router.navigate(['/search'])
-        location.href = "/search";
-      } else if (res.data.existUser?.role === 'admin' && res.loginUser) {
-        console.log(res)
-        console.log('admin as logged in Successfully')
-        localStorage.setItem('admin', res.loginUser)
-        this.router.navigate(['/dashboard'])
-        localStorage.removeItem('user')
+    if (this.loginForm.valid) {
+      this.userService.loginUser(formData).subscribe(res => {
+        if (res.data.existUser?.role === 'user' && res.loginUser) {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'User Sccessfully logged in',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          localStorage.setItem('user', res.loginUser)
+          localStorage.removeItem('admin')
+          location.href = "/appoint";
+        } else if (res.data.existUser?.role === 'admin' && res.loginUser) {
+          console.log(res)
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Admin Logged in Successfully',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          localStorage.setItem('admin', res.loginUser)
+          this.router.navigate(['/dashboard'])
+          localStorage.removeItem('user')
+        }
+        else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Unauthorized User',
+          })
+        }
       }
-      else {
-        alert('Not valid user')
-      }
-    }, (err) => {
-      if (err) {
-        console.log('Error is ', err)
-      }
+      )
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Invalid form submission',
+      })
 
-    })
+    }
   }
 
 

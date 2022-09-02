@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-nav-bar',
@@ -19,7 +20,13 @@ export class NavBarComponent implements OnInit {
   }
 
   logOut() {
-    alert('You are logged out')
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your are looged Out',
+      showConfirmButton: false,
+      timer: 1500
+    })
     localStorage.removeItem('admin')
     localStorage.removeItem('user')
     this.router.navigate(['/']);

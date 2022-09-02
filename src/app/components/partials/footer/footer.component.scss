@@ -3,7 +3,8 @@ footer{
     padding-top: 2rem;
     background-image: linear-gradient( 135deg, #0654ae 10%, #53bfc9 100%);
 
-    .heading{
+    .headings{
+        z-index: 1000;
        
       }
     
@@ -44,6 +45,7 @@ footer{
         .about{
           
             // margin-right: 2rem;
+            z-index: 1000;
 
             h1{
                 font-size: 20px;
@@ -68,6 +70,7 @@ footer{
 
         .services{
             margin-right: 3.5rem;
+            z-index: 1000;
           
             h1{
                 font-size: 20px;
@@ -108,6 +111,7 @@ footer{
 
         .interest{
             margin-right: 3.5rem;
+            z-index: 1000;
 
             h1{
                 font-size: 20px;
@@ -149,6 +153,7 @@ footer{
 
         .news{
             margin-right: 4rem;
+            z-index: 1000;
         }
 
         h1{

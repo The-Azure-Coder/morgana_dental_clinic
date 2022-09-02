@@ -4,6 +4,8 @@ import { DentistsService } from 'src/app/services/doctors/doctors.service';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { PatientsService } from 'src/app/services/patients/patients.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dentistlist',
@@ -24,7 +26,7 @@ export class DentistlistComponent implements OnInit {
     'action',
   ];
 
-  constructor(private dentistService: DentistsService) { }
+  constructor(private dentistService: DentistsService, private patientsService: PatientsService) { }
 
   getDentistList() {
     this.dentistService.getAllDentists().subscribe({
@@ -34,7 +36,12 @@ export class DentistlistComponent implements OnInit {
         this.dentistDataSource.paginator = this.paginator;
       },
       error: (err) => {
-        alert('Error while fetching the patients');
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Error While fetching results!',
+          footer: '<a href="">Why do I have this issue?</a>'
+        })
       },
     });
   }
@@ -42,16 +49,35 @@ export class DentistlistComponent implements OnInit {
 
 
   deleteDentist(id: string): void {
-    this.dentistService.deleteDentist(id).subscribe({
+
+    this.patientsService.getAllPatients().subscribe({
       next: (res) => {
-        alert('Product Deleted Successfully');
-        this.getDentistList();
-      },
-      error: () => {
-        alert('Error while deleting product');
-      },
-    });
+        this.dentistService.getDentistsById(id).subscribe({
+          next: (res2) => {
+            let dentistFilter;
+            dentistFilter = res.data.filter(i => {
+              return i.dentistId._id == res2.data._id;
+            })
+
+            if (dentistFilter.length == 0) {
+
+              this.dentistService.deleteDentist(id).subscribe({
+                next: (res) => {
+                  Swal.fire('Service Deleted Successfully');
+                  this.getDentistList();
+                }
+              })
+            } else {
+              Swal.fire(`Dr ${res2.data.last_nm} has ${dentistFilter.length} patient(s) \nRemove patient(s) before proceeding.`)
+            }
+          }
+        })
+      }
+    })
   }
+
+
+
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

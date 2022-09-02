@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Dentists } from 'src/app/models/dentist';
 import { DentistsService } from 'src/app/services/doctors/doctors.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-dentist',
@@ -22,21 +23,28 @@ export class AddDentistComponent implements OnInit {
   constructor(
     private dentistService: DentistsService,
     private router: Router
-  ) {}
+  ) { }
 
   onSubmit() {
     const formData = this.dentistForm.value as unknown as Partial<Dentists>;
-    this.dentistService.createDentist(formData).subscribe({
-      next: (res) => {
-        alert('Appointment Booked successfully');
-        this.router.navigate(['/dentistList']);
-        console.log(formData);
-      },
-      error: () => {
-        alert('Error While booking the appointment');
-      },
-    });
+    if (this.dentistForm.valid) {
+      this.dentistService.createDentist(formData).subscribe({
+        next: (res) => {
+          Swal.fire('Dentist added successfully');
+          this.router.navigate(['/dentistList']);
+          console.log(formData);
+        },
+        error: () => {
+          Swal.fire('Error While booking the appointment');
+        },
+      });
+    }
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Invalid form submission',
+    })
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

@@ -12,7 +12,7 @@
           <div class="first">
             <mat-form-field hideRequiredMarker appearance="outline">
               <mat-label>First Name</mat-label>
-              <input matInput value="{{dentist.first_nm}}" name="first_nm" formControlName="first_nm" placeholder="Ex. 1 Main St, New York, NY" required>
+              <input matInput value="{{dentist.first_nm}}" name="first_nm" formControlName="first_nm" required>
               <mat-hint>Enter You First Name</mat-hint>
               <mat-error *ngIf="dentistForm.get('first_nm')?.hasError('required')&& dentistForm.get('first_nm')?.touched">Your Firstname is required</mat-error>
             </mat-form-field>
@@ -20,7 +20,7 @@
           <div class="sec">
             <mat-form-field hideRequiredMarker appearance="outline">
               <mat-label>Last Name</mat-label>
-              <input matInput value="{{dentist.last_nm}}" name="last_nm" formControlName="last_nm" placeholder="Ex. 1 Main St, New York, NY" required>
+              <input matInput value="{{dentist.last_nm}}" name="last_nm" formControlName="last_nm" required>
 
               <mat-hint>Enter You last Name</mat-hint>
               <mat-error *ngIf="dentistForm.get('last_nm')?.hasError('required')&& dentistForm.get('last_nm')?.touched">Your lastname is required</mat-error>
@@ -46,7 +46,7 @@
           <div class="num">
             <mat-form-field hideRequiredMarker appearance="outline">
               <mat-label>Phone Number</mat-label>
-              <input value="{{dentist.phoneNumber}}" matInput formControlName="phoneNumber" name="phoneNumber" placeholder="Ex. 1 Main St, New York, NY" required>
+              <input value="{{dentist.phoneNumber}}" matInput formControlName="phoneNumber" name="phoneNumber" required>
 
               <mat-hint>Enter phone number</mat-hint>
               <mat-error *ngIf="dentistForm.get('phoneNumber')?.hasError('required')&& dentistForm.get('phoneNumber')?.touched">Phone number required</mat-error>
@@ -59,7 +59,7 @@
 
         <mat-form-field hideRequiredMarker class="form-field" appearance="outline">
           <mat-label>Dentist Image </mat-label>
-          <input value="{{dentist.docImg}}" formControlName="docImg" matInput placeholder="Ex. 1 Main St, New York, NY" required>
+          <input value="{{dentist.docImg}}" formControlName="docImg" matInput required>
           <mat-hint>Enter your doctor's image</mat-hint>
           <mat-error *ngIf="dentistForm.get('docImg')?.hasError('required') && dentistForm.get('docImg')?.touched">
             docImg is required</mat-error>

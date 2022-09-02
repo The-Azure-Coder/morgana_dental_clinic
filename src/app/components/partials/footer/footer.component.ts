@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-footer',
@@ -14,7 +15,18 @@ export class FooterComponent implements OnInit {
     return this.router.url.includes(route)
   }
 
+  getNews() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Subscription Still in development!',
+
+    })
+  }
+
   ngOnInit(): void {
   }
+
+
 
 }

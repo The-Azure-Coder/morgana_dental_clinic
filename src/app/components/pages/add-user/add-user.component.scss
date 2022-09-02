@@ -24,7 +24,7 @@
         .login-background{
            
             width: 25rem;
-             height:30rem;
+             height:28rem;
             background-image: url('https://cdn.sanity.io/images/0vv8moc6/dpr/6b348f5e493c67a0d58cf7b34abf4d135c6f00f7-640x380.png');
             background-size: cover;
             background-position: center;
@@ -36,14 +36,49 @@
                 position: relative;
                 border-radius: .4rem;
                 background-color: #fff;
-                width: 21rem;
-                height:26rem;
+                width: 23rem;
+                height:24rem;
                 padding: 25px;
+
+    
+
+
+                .select-field{
+                    width: 22rem;
+
+                }
+
+                .user{
+                    display: flex; 
+                    
+                    
+                    .email{
+
+                        .form-field{
+
+                            margin-right: 2rem;
+                            width: 10rem;
+                        }
+ 
+
+                    }
+
+                    .username{
+
+                        .form-field{
+
+                            margin-right: 2rem;
+                            width: 10rem;
+                        }
+ 
+
+                    }
+                }
 
                 img{
                     position: absolute;
-                    left: 21rem;
-                    bottom: 26rem;
+                    left: 23rem;
+                    bottom: 24rem;
                     cursor: pointer;
                    
 
@@ -56,7 +91,7 @@
     
                 .form-field{
                     display: block;
-                    width: 20rem;
+                    width: 22rem;
                 }
     
                 p{
@@ -79,7 +114,7 @@
                     padding: 10px;
                     margin-top: 1.1rem;
                     margin-bottom: 1.1rem;
-                    width: 20rem;
+                    width: 22rem;
                 }
             }
     

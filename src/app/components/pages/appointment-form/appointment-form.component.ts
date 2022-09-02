@@ -8,6 +8,7 @@ import { Services } from 'src/app/models/services';
 import { Dentists } from 'src/app/models/dentist';
 import { Patients } from 'src/app/models/patient';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -62,17 +63,17 @@ export class AppointmentFormComponent implements OnInit {
     if (this.appointForm.valid) {
       this.patientsService.createPatient(formData).subscribe({
         next: (res) => {
-          alert('Appointment Booked successfully')
+          Swal.fire('Appointment Booked successfully')
           this.router.navigate(['/']);
           console.log(formData)
         },
         error: () => {
-          alert("Error While booking the appointment")
+          Swal.fire("Error While booking the appointment")
 
         }
       })
     } else {
-      alert('Invalid Form')
+      Swal.fire('Invalid Form')
 
     }
   }

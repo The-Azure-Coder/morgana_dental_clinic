@@ -8,6 +8,7 @@ import { Dentists } from 'src/app/models/dentist';
 import { DentistsService } from 'src/app/services/doctors/doctors.service';
 import { PatientsService } from 'src/app/services/patients/patients.service';
 import { Patients } from 'src/app/models/patient';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-service-detail',
@@ -74,11 +75,17 @@ export class ServiceDetailComponent implements OnInit {
       const formData = (this.appointForm.value as unknown) as Partial<Patients>
       this.patientsService.createPatient(formData).subscribe(() => {
         this.router.navigate(['/'])
-        alert("appointment Successful Added");
+        Swal.fire("appointment Successful Added");
       })
 
     } else {
-      alert('please fill out all contents in the form')
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Invalid form submission!',
+        footer: '<a href="">Why do I have this issue?</a>'
+      })
+
     }
 
 

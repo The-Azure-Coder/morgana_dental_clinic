@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Users } from 'src/app/models/user';
 import { UserService } from 'src/app/services/users/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-user',
@@ -16,8 +17,22 @@ export class EditUserComponent implements OnInit {
   constructor(private userService: UserService, private router: Router, private route: ActivatedRoute) { }
 
   updateUser() {
-    this.userService.updateUser(this.user._id, this.userForm.value).subscribe(() => {
-      this.router.navigate(['/userList'])
+    Swal.fire({
+      title: 'Do you want to save the changes?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire('Saved!', '', 'success')
+        this.userService.updateUser(this.user._id, this.userForm.value).subscribe(() => {
+          this.router.navigate(['/userList'])
+        })
+      } else if (result.isDenied) {
+        Swal.fire('Changes are not saved', '', 'info')
+      }
     })
   }
 

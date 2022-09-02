@@ -8,6 +8,7 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 import { Services } from 'src/app/models/services';
 import { ServicesService } from 'src/app/services/services/services.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-service',
@@ -20,8 +21,22 @@ export class EditServiceComponent implements OnInit {
   constructor(private serviceService: ServicesService, private router: Router, private route: ActivatedRoute) { }
 
   updateService() {
-    this.serviceService.updateService(this.service._id, this.serviceForm.value).subscribe(() => {
-      this.router.navigate(['/serviceList'])
+    Swal.fire({
+      title: 'Do you want to save the changes?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire('Saved!', '', 'success')
+        this.serviceService.updateService(this.service._id, this.serviceForm.value).subscribe(() => {
+          this.router.navigate(['/serviceList'])
+        })
+      } else if (result.isDenied) {
+        Swal.fire('Changes are not saved', '', 'info')
+      }
     })
   }
 
@@ -37,12 +52,8 @@ export class EditServiceComponent implements OnInit {
             Validators.required,
           ]),
           serviceCost: new FormControl(results.data.serviceCost, [Validators.required]),
-          serviceImg: new FormControl(results.data.serviceImg, [
-            Validators.required,
-          ]),
-          serviceImg2: new FormControl(results.data.serviceImg2, [
-            Validators.required,
-          ]),
+          serviceImg: new FormControl(results.data.serviceImg,),
+          serviceImg2: new FormControl(results.data.serviceImg2,),
           serviceDescrip: new FormControl(results.data.serviceDescrip, [
             Validators.required,
           ]),

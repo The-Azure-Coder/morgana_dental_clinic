@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import Validation from 'src/app/directives/custom.validator';
 import { Users } from 'src/app/models/user';
 import { UserService } from 'src/app/services/users/user.service';
+import Swal from 'sweetalert2';
 
 
 
@@ -29,16 +30,24 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     const formData = this.regForm.value as unknown as Partial<Users>;
-    this.userService.RegisterUser(formData).subscribe({
-      next: (res) => {
-        this.router.navigate(['/login'])
-        alert('Registered successfully');
-        console.log(res.status);
-      },
-      error: () => {
-        alert('Error While booking the appointment');
-      },
-    });
+    if (this.regForm.valid) {
+      this.userService.RegisterUser(formData).subscribe({
+        next: (res) => {
+          this.router.navigate(['/login'])
+          Swal.fire('Registered successfully');
+          console.log(res.status);
+        },
+        error: () => {
+          Swal.fire('Error While booking the appointment');
+        },
+      })
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Invalid form submission',
+      })
+    }
   }
 
   ngOnInit(): void {

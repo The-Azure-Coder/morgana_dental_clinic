@@ -12,7 +12,7 @@
           <div class="first">
             <mat-form-field hideRequiredMarker appearance="outline">
               <mat-label>First Name</mat-label>
-              <input matInput name="first_nm" formControlName="first_nm" placeholder="Ex. 1 Main St, New York, NY" required>
+              <input matInput name="first_nm" formControlName="first_nm" required>
               <mat-hint>Enter You First Name</mat-hint>
               <mat-error *ngIf="dentistForm.get('first_nm')?.hasError('required')&& dentistForm.get('first_nm')?.touched">Your Firstname is required</mat-error>
             </mat-form-field>
@@ -20,7 +20,7 @@
           <div class="sec">
             <mat-form-field hideRequiredMarker appearance="outline">
               <mat-label>Last Name</mat-label>
-              <input matInput name="last_nm" formControlName="last_nm" placeholder="Ex. 1 Main St, New York, NY" required>
+              <input matInput name="last_nm" formControlName="last_nm" required>
 
               <mat-hint>Enter You last Name</mat-hint>
               <mat-error *ngIf="dentistForm.get('last_nm')?.hasError('required')&& dentistForm.get('last_nm')?.touched">Your lastname is required</mat-error>
@@ -33,7 +33,7 @@
           <div class="mail">
             <mat-form-field hideRequiredMarker appearance="outline">
               <mat-label>Email</mat-label>
-              <input type="email" formControlName="email" name="email" matInput placeholder="Placeholder">
+              <input type="email" formControlName="email" name="email" matInput>
               <mat-hint>Enter Email Address</mat-hint>
               <mat-error *ngIf=" dentistForm.get('email')?.touched">
                 <mat-error *ngIf="dentistForm.get('email')?.hasError('required')">
@@ -46,7 +46,7 @@
           <div class="num">
             <mat-form-field hideRequiredMarker appearance="outline">
               <mat-label>Phone Number</mat-label>
-              <input matInput formControlName="phoneNumber" name="phoneNumber" placeholder="Ex. 1 Main St, New York, NY" required>
+              <input matInput formControlName="phoneNumber" name="phoneNumber" required>
 
               <mat-hint>Enter phone number</mat-hint>
               <mat-error *ngIf="dentistForm.get('phoneNumber')?.hasError('required')&& dentistForm.get('phoneNumber')?.touched">Phone number required</mat-error>
@@ -54,30 +54,22 @@
           </div>
 
         </div>
-
-
-
         <mat-form-field hideRequiredMarker class="form-field" appearance="outline">
           <mat-label>Dentist Image </mat-label>
-          <input formControlName="docImg" matInput placeholder="Ex. 1 Main St, New York, NY" required>
+          <input formControlName="docImg" matInput required>
           <mat-hint>Enter your doctor's image</mat-hint>
           <mat-error *ngIf="dentistForm.get('docImg')?.hasError('required') && dentistForm.get('docImg')?.touched">
-            docImg is required</mat-error>
+            dentist img is required</mat-error>
         </mat-form-field>
 
         <mat-form-field hideRequiredMarker class="form-field" appearance="outline">
-          <mat-label>docDescrip</mat-label>
-          <textarea type="text" name="docDescrip" formControlName="docDescrip" matInput placeholder="Placeholder"></textarea>
-          <mat-hint>Enter your docDescrip</mat-hint>
+          <mat-label>Dentist Description</mat-label>
+          <textarea type="text" name="docDescrip" formControlName="docDescrip" matInput></textarea>
+          <mat-hint>Enter your dentist Description</mat-hint>
 
           <mat-error *ngIf="dentistForm.get('docDescrip')?.hasError('required') && dentistForm.get('docDescrip')?.touched">
-            docDescrip is required</mat-error>
+            Dentist Description is required</mat-error>
         </mat-form-field>
-
-        <!-- <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Leave a comment</mat-label>
-            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-          </mat-form-field> -->
 
         <button class="submit-btn">Add Doctor</button>
       </form>

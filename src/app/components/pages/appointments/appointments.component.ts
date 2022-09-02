@@ -6,6 +6,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { DentistsService } from 'src/app/services/doctors/doctors.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-appointments',
@@ -32,7 +33,7 @@ export class AppointmentsComponent implements OnInit {
     private dialog: MatDialog,
     private patientService: PatientsService,
     private dentistService: DentistsService
-  ) {}
+  ) { }
 
   getPatientList() {
     this.patientService.getAllPatients().subscribe({
@@ -42,22 +43,42 @@ export class AppointmentsComponent implements OnInit {
         this.patientDataSource.paginator = this.paginator;
       },
       error: (err) => {
-        alert('Error while fetching the patients');
+        Swal.fire('Error while fetching the patients');
       },
     });
   }
 
   deleteAppointment(id: string): void {
-    this.patientService.deletePatient(id).subscribe({
-      next: (res) => {
-        alert('Product Deleted Successfully');
-        this.getPatientList();
-      },
-      error: () => {
-        alert('Error while deleting product');
-      },
-    });
+
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        );
+        this.patientService.deletePatient(id).subscribe({
+          next: (res) => {
+            this.getPatientList();
+          },
+          error: () => {
+            Swal.fire('Error while deleting appointment');
+          },
+        });
+      }
+    })
   }
+
+
+
 
   getDetistPatients() {
     this.patientService.getAllPatients().subscribe((patients) => {

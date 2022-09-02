@@ -42,7 +42,7 @@ exports.loginUser = async (req, res) => {
           res.json({
             status: "warn",
             loginUser: false,
-            data: "Please enter valid password",
+            data: "Please enter valid email",
           });
         }
       },

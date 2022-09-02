@@ -10,6 +10,7 @@ import { ServicesService } from 'src/app/services/services/services.service';
 import { Services } from 'src/app/models/services';
 import { MatPaginator } from '@angular/material/paginator';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dashboard',
@@ -60,7 +61,13 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         // this.dataSource.sort = this.sort
       },
       error: (err) => {
-        alert('Error while fetching the records');
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Error While fetching results!',
+          footer: '<a href="">Why do I have this issue?</a>'
+        })
+
       },
     });
   }
@@ -76,7 +83,12 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         // this.dataSource.sort = this.sort
       },
       error: (err) => {
-        alert('Error while fetching the records');
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Error While fetching results!',
+          footer: '<a href="">Why do I have this issue?</a>'
+        })
       },
     });
   }
@@ -89,7 +101,12 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         this.patientDataSource.paginator = this.paginator;
       },
       error: (err) => {
-        alert('Error while fetching the patients');
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Error While fetching results!',
+          footer: '<a href="">Why do I have this issue?</a>'
+        })
       },
     });
   }

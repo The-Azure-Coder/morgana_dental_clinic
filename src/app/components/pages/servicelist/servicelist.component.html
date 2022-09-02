@@ -21,7 +21,7 @@
 
 
   <div class="appoint">
-    <div class="container">
+    <!-- <div class="container">
       <div class="table-label">
         <h1 class="table-name">Services List</h1>
         <button routerLink="/addService" class="appoint-btn">Add Service</button>
@@ -31,23 +31,17 @@
         <div class="mat-elevation-z8">
           <table mat-table [dataSource]="serviceDataSource" matSort>
 
-            <!-- ID Column -->
+          
             <ng-container matColumnDef="serviceName">
               <th mat-header-cell *matHeaderCellDef mat-sort-header>Service</th>
               <td mat-cell *matCellDef="let row"> {{row.serviceName}} </td>
             </ng-container>
 
-            <!-- Progress Column -->
+           
             <ng-container matColumnDef="serviceCost">
               <th mat-header-cell *matHeaderCellDef mat-sort-header>Cost</th>
               <td mat-cell *matCellDef="let row"> {{row.serviceCost | currency}} </td>
             </ng-container>
-
-            <!-- Name Column -->
-            <!-- <ng-container matColumnDef="serviceDescrip">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>Desscription</th>
-              <td mat-cell *matCellDef="let row">{{row.serviceDescrip}}</td>
-            </ng-container> -->
 
 
             <ng-container matColumnDef="action">
@@ -62,7 +56,6 @@
               </td>
             </ng-container>
 
-            <!-- Fruit Column -->
 
             <tr mat-header-row *matHeaderRowDef="serviceColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: serviceColumns;"></tr>
@@ -78,7 +71,31 @@
       </div>
 
 
+    </div> -->
+    <div class="table-label">
+      <h1 class="table-name">Services List</h1>
+      <button routerLink="/addService" class="appoint-btn">Add Service</button>
     </div>
+
+    <ul class="cards">
+      <li class="cards__item" *ngFor="let service of services">
+        <div class="card">
+          <div class="card__image">
+            <img src="{{service.serviceImg}}" alt="">
+          </div>
+          <div class="card__content">
+            <div class="card__title">{{service.serviceName}}</div>
+            <p class="card__text">{{service.serviceDescrip}}</p>
+            <span class="card__price">{{service.serviceCost | currency}}</span>
+            <!-- <button class="btn btn--block card__btn">Button</button> -->
+            <div class="card__action">
+              <img routerLink="/editService/{{service._id}}" class="card__edit" src="/assets/images/card-edit.png" alt="">
+              <img (click)="deleteService(service._id)" class="card__remove" src="/assets/images/remove.png" alt="">
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
 
 
 
