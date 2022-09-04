@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Dentists } from 'src/app/models/dentist';
 import { Patients } from 'src/app/models/patient';
 import { Services } from 'src/app/models/services';
-import { DentistsService } from 'src/app/services/doctors/doctors.service';
+import { DentistsService } from 'src/app/services/dentists/dentists.service';
 import { PatientsService } from 'src/app/services/patients/patients.service';
 import { ServicesService } from 'src/app/services/services/services.service';
 import Swal from 'sweetalert2';

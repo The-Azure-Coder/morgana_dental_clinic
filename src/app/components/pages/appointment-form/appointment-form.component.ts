@@ -3,13 +3,12 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { ServicesService } from 'src/app/services/services/services.service';
 import { PatientsService } from 'src/app/services/patients/patients.service';
-import { DentistsService } from 'src/app/services/doctors/doctors.service';
+import { DentistsService } from 'src/app/services/dentists/dentists.service';
 import { Services } from 'src/app/models/services';
 import { Dentists } from 'src/app/models/dentist';
 import { Patients } from 'src/app/models/patient';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-
 
 @Component({
   selector: 'app-appointment-form',
@@ -56,8 +55,6 @@ export class AppointmentFormComponent implements OnInit {
     })
   }
 
-
-
   onSubmit() {
     const formData = (this.appointForm.value as unknown) as Partial<Patients>
     if (this.appointForm.valid) {
@@ -77,9 +74,6 @@ export class AppointmentFormComponent implements OnInit {
 
     }
   }
-
-
-
 
   ngOnInit(): void {
     this.getDentistsList()

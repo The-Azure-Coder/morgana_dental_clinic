@@ -6,16 +6,12 @@ import { Users } from 'src/app/models/user';
 import { UserService } from 'src/app/services/users/user.service';
 import Swal from 'sweetalert2';
 
-
-
-
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-
 
   regForm = new FormGroup({
     'email': new FormControl('', [Validators.required, Validators.email]),

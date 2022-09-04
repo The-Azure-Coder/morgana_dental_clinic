@@ -79,9 +79,8 @@
 
         </div>
 
-
         <mat-form-field hideRequiredMarker class="form-field" appearance="outline">
-          <mat-label>Choose a date</mat-label>
+          <mat-label>Date of Birth</mat-label>
           <input formControlName="dob" value="{{patient.dob}}" name="dob" matInput [matDatepicker]="picker1">
           <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
@@ -101,7 +100,6 @@
             Select Appointment Date</mat-error>
         </mat-form-field>
 
-
         <mat-form-field hideRequiredMarker class="select-field" appearance="outline">
           <mat-label>Select a Dentist</mat-label>
           <mat-select formControlName="dentistId" name="dentistId">
@@ -119,10 +117,6 @@
           <mat-hint>Choose a Service</mat-hint>
           <mat-error *ngIf="appointForm.get('serviceId')?.hasError('required')&& appointForm.get('serviceId')?.touched">Please Select a Service</mat-error>
         </mat-form-field>
-
-
-
-
         <button (click)="updatePatient()" class="submit-btn">Update Appointment</button>
       </form>
     </div>

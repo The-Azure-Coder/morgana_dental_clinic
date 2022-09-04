@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PatientsService } from 'src/app/services/patients/patients.service';
-import { DentistsService } from 'src/app/services/doctors/doctors.service';
+import { DentistsService } from 'src/app/services/dentists/dentists.service';
 import { Patients } from 'src/app/models/patient';
 import { Dentists } from 'src/app/models/dentist';
 import { Chart, registerables } from 'chart.js';

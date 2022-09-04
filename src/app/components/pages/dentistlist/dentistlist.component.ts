@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, OnInit, ViewChild } from '@angular/core';
 import { Dentists } from 'src/app/models/dentist';
-import { DentistsService } from 'src/app/services/doctors/doctors.service';
+import { DentistsService } from 'src/app/services/dentists/dentists.service';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -27,7 +27,6 @@ export class DentistlistComponent implements OnInit {
   ];
 
   constructor(private dentistService: DentistsService, private patientsService: PatientsService) { }
-
   getDentistList() {
     this.dentistService.getAllDentists().subscribe({
       next: (res) => {
@@ -45,11 +44,7 @@ export class DentistlistComponent implements OnInit {
       },
     });
   }
-
-
-
   deleteDentist(id: string): void {
-
     this.patientsService.getAllPatients().subscribe({
       next: (res) => {
         this.dentistService.getDentistsById(id).subscribe({
@@ -75,10 +70,6 @@ export class DentistlistComponent implements OnInit {
       }
     })
   }
-
-
-
-
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dentistDataSource.filter = filterValue.trim().toLowerCase();

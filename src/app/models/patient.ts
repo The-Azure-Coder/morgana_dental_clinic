@@ -1,6 +1,4 @@
 
-
-
 export class Patients {
   _id: string;
   first_nm: string;
@@ -17,7 +15,8 @@ export class Patients {
 
 
 
-  constructor(_id?: string, first_nm?: string, last_nm?: string, address?: string, regDate?: string, email?: string, phoneNumber?: string, dentistId?: string, serviceId?: string, age?: string, dob?: string, appointDate?: string,) {
+  constructor(_id?: string, first_nm?: string, last_nm?: string, address?: string, regDate?: string, email?: string, phoneNumber?: string,
+    dentistId?: string, serviceId?: string, age?: string, dob?: string, appointDate?: string,) {
     this._id = _id!;
     this.first_nm = first_nm!;
     this.last_nm = last_nm!;

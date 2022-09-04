@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { Dentists } from 'src/app/models/dentist';
 import { Patients } from 'src/app/models/patient';
 import { Services } from 'src/app/models/services';
-import { DentistsService } from 'src/app/services/doctors/doctors.service';
+import { DentistsService } from 'src/app/services/dentists/dentists.service';
 import { PatientsService } from 'src/app/services/patients/patients.service';
 import { ServicesService } from 'src/app/services/services/services.service';
 import Swal from 'sweetalert2';
@@ -37,7 +37,8 @@ export class DoctorDetailsComponent implements OnInit {
 
   });
 
-  constructor(private dentistService: DentistsService, private patientsService: PatientsService, private router: Router, private route: ActivatedRoute, private serviceService: ServicesService) { }
+  constructor(private dentistService: DentistsService, private patientsService: PatientsService, private router: Router,
+    private route: ActivatedRoute, private serviceService: ServicesService) { }
 
 
   getDentistFromId(id: string): void {

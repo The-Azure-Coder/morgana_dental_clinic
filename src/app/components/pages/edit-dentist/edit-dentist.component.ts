@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Dentists } from 'src/app/models/dentist';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { DentistsService } from 'src/app/services/doctors/doctors.service';
+import { DentistsService } from 'src/app/services/dentists/dentists.service';
 import Swal from 'sweetalert2';
 
 

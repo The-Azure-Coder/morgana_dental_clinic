@@ -11,7 +11,6 @@
       <img src="https://icon-library.com/images/no-profile-picture-icon/no-profile-picture-icon-18.jpg" alt="" />
     </div>
   </div>
-
   <div class="stats">
     <div class="appoint-image">
       <img src="/assets/images/statics-img.jpg" alt="">
@@ -21,18 +20,12 @@
       <app-chart2></app-chart2>
     </div>
   </div>
-
-
   <div class="appoint">
     <div class="container">
       <div class="table-label">
         <h1 class="table-name">Appointment List</h1>
         <button routerLink="/bookappoints" class="appoint-btn">New Appointment</button>
-
       </div>
-
-
-
       <div>
         <div class="mat-elevation-z8">
           <table mat-table [dataSource]="patientDataSource" matSort>
@@ -85,26 +78,16 @@
                 </button>
               </td>
             </ng-container>
-
-            <!-- Fruit Column -->
-
             <tr mat-header-row *matHeaderRowDef="patientColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: patientColumns;"></tr>
 
             <tr class="mat-row" *matNoDataRow>
               <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
             </tr>
-
           </table>
           <mat-paginator [pageSizeOptions]="[4, 24, 36, 100]" aria-label="Select page of users"></mat-paginator>
-
         </div>
       </div>
-
-
     </div>
-
-
-
   </div>
 </section>

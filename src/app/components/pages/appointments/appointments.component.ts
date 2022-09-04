@@ -5,7 +5,7 @@ import { PatientsService } from 'src/app/services/patients/patients.service';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import { DentistsService } from 'src/app/services/doctors/doctors.service';
+import { DentistsService } from 'src/app/services/dentists/dentists.service';
 import Swal from 'sweetalert2';
 
 @Component({

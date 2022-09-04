@@ -1,11 +1,10 @@
 import { Component, AfterViewInit, OnInit, ViewChild } from '@angular/core';
-// import {MatPaginator} from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Dentists } from 'src/app/models/dentist';
 import { Patients } from 'src/app/models/patient';
 import { PatientsService } from 'src/app/services/patients/patients.service';
-import { DentistsService } from 'src/app/services/doctors/doctors.service';
+import { DentistsService } from 'src/app/services/dentists/dentists.service';
 import { ServicesService } from 'src/app/services/services/services.service';
 import { Services } from 'src/app/models/services';
 import { MatPaginator } from '@angular/material/paginator';
@@ -17,7 +16,7 @@ import Swal from 'sweetalert2';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent implements OnInit, AfterViewInit {
+export class DashboardComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   dentists: Dentists[] = [];
@@ -40,7 +39,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     'cost',
   ];
 
-  // @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
@@ -54,11 +53,8 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   getAllService() {
     this.servicesService.getAllServices().subscribe({
       next: (res) => {
-        // this.dentistDataSource = new MatTableDataSource(res.data);
         this.services = res.data;
         this.serviceLength = res.data.length;
-
-        // this.dataSource.sort = this.sort
       },
       error: (err) => {
         Swal.fire({
@@ -71,16 +67,11 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       },
     });
   }
-
   getDentistsList() {
     this.dentistService.getAllDentists().subscribe({
       next: (res) => {
-        // this.dentistDataSource = new MatTableDataSource(res.data);
         this.dentists = res.data;
         this.dentistLength = res.data.length;
-
-        // this.dataSource.paginator = this.paginator
-        // this.dataSource.sort = this.sort
       },
       error: (err) => {
         Swal.fire({
@@ -92,7 +83,6 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       },
     });
   }
-
   getPatientList() {
     this.patientService.getAllPatients().subscribe({
       next: (res) => {
@@ -124,12 +114,6 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       console.log(this.totalSalary)
     })
   }
-
-
-
-
-
-  ngAfterViewInit() { }
 
   ngOnInit(): void {
     this.getTotalSalary()

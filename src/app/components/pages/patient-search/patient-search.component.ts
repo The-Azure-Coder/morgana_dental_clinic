@@ -17,8 +17,6 @@ export class PatientSearchComponent implements OnInit {
   )
 
 
-
-
   constructor(private patientService: PatientsService) { }
 
   searchPatient() {

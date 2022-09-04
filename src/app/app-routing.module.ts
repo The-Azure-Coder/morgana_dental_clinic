@@ -25,6 +25,7 @@ import { EditUserComponent } from './components/pages/edit-user/edit-user.compon
 import { AdminGuard } from './admin.guard';
 import { PatientSearchComponent } from './components/pages/patient-search/patient-search.component';
 import { UserGuard } from './user.guard';
+import { NotfoundComponent } from './components/partials/notfound/notfound.component';
 
 
 const routes: Routes = [
@@ -51,6 +52,7 @@ const routes: Routes = [
   { path: 'addUser', component: AddUserComponent },
   { path: 'search', component: PatientSearchComponent, canActivate: [UserGuard] },
   { path: 'editUser/:id', component: EditUserComponent },
+  { path: '**', component: NotfoundComponent },
 ];
 
 @NgModule({

@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { Services } from 'src/app/models/services';
 import { ServicesService } from 'src/app/services/services/services.service';
 import { Dentists } from 'src/app/models/dentist';
-import { DentistsService } from 'src/app/services/doctors/doctors.service';
+import { DentistsService } from 'src/app/services/dentists/dentists.service';
 import { PatientsService } from 'src/app/services/patients/patients.service';
 import { Patients } from 'src/app/models/patient';
 import Swal from 'sweetalert2';
@@ -17,11 +17,7 @@ import Swal from 'sweetalert2';
 })
 export class ServiceDetailComponent implements OnInit {
   dentists: Dentists[] = []
-
   @Input() service!: Services
-
-
-
   serviceSub!: Subscription;
   serviceId!: string;
   routeSub!: Subscription;
@@ -36,27 +32,10 @@ export class ServiceDetailComponent implements OnInit {
     'age': new FormControl('', [Validators.required]),
     'dentistId': new FormControl('', [Validators.required]),
     'serviceId': new FormControl('', [Validators.required]),
-
   });
 
-  //  get first_nm() {
-  //   return this.appointForm.get('first_nm');
-  // }
-
-  // get last_nm() {
-  //   return this.appointForm.get('last_nm');
-  // }
-
-  // get price() {
-  //   return this.appointForm.get('price');
-  // }
-
-  // get quantity() {
-  //   return this.appointForm.get('quantity');
-  // }
-
-  constructor(private servicesService: ServicesService, private patientsService: PatientsService, private dentistService: DentistsService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder) { }
-
+  constructor(private servicesService: ServicesService, private patientsService: PatientsService, private dentistService:
+    DentistsService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder) { }
 
   getServiceFromId(id: string): void {
     this.serviceSub = this.servicesService.getServicesById(id).subscribe(theitem => this.service = theitem.data)
@@ -67,7 +46,6 @@ export class ServiceDetailComponent implements OnInit {
       this.dentists = results.data
     })
   }
-
 
   onSubmit() {
     console.log(this.appointForm.value)
@@ -87,8 +65,6 @@ export class ServiceDetailComponent implements OnInit {
       })
 
     }
-
-
   }
 
   ngOnInit(): void {

@@ -11,7 +11,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./edit-user.component.scss']
 })
 export class EditUserComponent implements OnInit {
-
   user!: Users;
   userForm!: FormGroup;
   constructor(private userService: UserService, private router: Router, private route: ActivatedRoute) { }
@@ -24,7 +23,6 @@ export class EditUserComponent implements OnInit {
       confirmButtonText: 'Save',
       denyButtonText: `Don't save`,
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         Swal.fire('Saved!', '', 'success')
         this.userService.updateUser(this.user._id, this.userForm.value).subscribe(() => {

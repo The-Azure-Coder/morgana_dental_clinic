@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicesService } from 'src/app/services/services/services.service';
 import { Services } from 'src/app/models/services';
 import { Dentists } from 'src/app/models/dentist';
-import { DentistsService } from 'src/app/services/doctors/doctors.service';
+import { DentistsService } from 'src/app/services/dentists/dentists.service';
 import { PageEvent } from '@angular/material/paginator';
 
 @Component({
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private servicesService: ServicesService,
     private dentistService: DentistsService
-  ) {}
+  ) { }
 
   getServicesList() {
     this.servicesService.getAllServices().subscribe((results) => {
@@ -50,12 +50,6 @@ export class HomeComponent implements OnInit {
       .subscribe((results) => {
         let start = 0;
         let end = pageEvent.pageSize;
-        // if(pageEvent.pageIndex > 0){
-        //   start = this.pageSize * --pageEvent.pageIndex;
-        //   end = this.pageSize * ++pageEvent.pageIndex;
-        //   console.log(start)
-        //   console.log(end)
-        // }
         this.services = results.data.slice(start, end);
       });
   }

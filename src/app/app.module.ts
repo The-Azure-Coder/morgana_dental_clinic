@@ -45,6 +45,7 @@ import { UserlistComponent } from './components/pages/userlist/userlist.componen
 import { AddUserComponent } from './components/pages/add-user/add-user.component';
 import { EditUserComponent } from './components/pages/edit-user/edit-user.component';
 import { PatientSearchComponent } from './components/pages/patient-search/patient-search.component';
+import { NotfoundComponent } from './components/partials/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { PatientSearchComponent } from './components/pages/patient-search/patien
     AddUserComponent,
     EditUserComponent,
     PatientSearchComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,

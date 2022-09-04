@@ -1,5 +1,8 @@
-<div class="hide-foot" [ngClass]="headerRoute('/register') || headerRoute('/editService') || headerRoute('/appoint')  || headerRoute('/addService') || headerRoute('/login') || headerRoute('/dashboard')|| headerRoute('/appointments') || headerRoute('/bookappoints') || headerRoute('/appointEdit') || headerRoute('/patientDetails/') || headerRoute('/dentistList') || headerRoute('/addDentist') || headerRoute('/editDentist') || headerRoute('/viewMore')  || headerRoute('/serviceList')  || headerRoute('/userList')|| headerRoute('/addUser') || headerRoute('/editUser') ? 'hide' : 'show'">
-
+<div class="hide-foot" [ngClass]="headerRoute('/register') || headerRoute('/editService')  || headerRoute('/appoint')  || headerRoute('/addService')
+ || headerRoute('/login') || headerRoute('/dashboard')|| headerRoute('/appointments') ||headerRoute('/bookappoints') || 
+ headerRoute('/appointEdit') || headerRoute('/patientDetails/') || headerRoute('/dentistList') ||
+  headerRoute('/addDentist') || headerRoute('/editDentist') || headerRoute('/viewMore')  || headerRoute('/serviceList')  ||
+  headerRoute('/userList')|| headerRoute('/addUser') || headerRoute('/editUser') ? 'hide' : 'show'">
   <nav>
     <div class="logo"><img src="/assets/images/logo3.png" alt=""></div>
     <div class="main-nav">
@@ -14,17 +17,7 @@
       <a *ngIf="!authenticated" [routerLink]="['/login']"><span>Login</span></a>
       <a (click)="logOut()" *ngIf="authenticated"><span>Log out</span></a>
     </div>
-    <!-- <div class="register-btn">
-      <button [routerLink]="['/register']" mat-button>Register</button>
-
-      <a *ngIf="!authenticated" [routerLink]="['/login']"><span>Login<mat-icon>arrow_right</mat-icon>
-          </span></a>
-      <span *ngIf="authenticated">
-          <a [ngStyle]="{'cursor': 'pointer'}" (click)="logOut()"><span>Log Out</span></a>
-      </span>
-  </div> -->
   </nav>
-
   <div class="sub-nav">
     <div class="icon">
       <div class="icon-img">
@@ -44,7 +37,6 @@
         <label>Mon-Sat 8:00-19:00</label>
       </div>
     </div>
-
     <div class="icon">
       <div class="icon-img"><img src="/assets/images/telephone-pngrepo-com.png" alt="" /></div>
       <div class="icon-content">
@@ -52,7 +44,6 @@
         <label>Call us Now</label>
       </div>
     </div>
-
     <div class="icon">
       <div class="icon-img"><img src="/assets/images/agenda-pngrepo-com.png" alt="" /></div>
       <div class="icon-content">
@@ -60,6 +51,5 @@
         <label>1895</label>
       </div>
     </div>
-
   </div>
 </div>

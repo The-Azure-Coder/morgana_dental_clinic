@@ -4,7 +4,7 @@ import { Dentists } from 'src/app/models/dentist';
 import { Patients } from 'src/app/models/patient';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { DentistsService } from 'src/app/services/doctors/doctors.service';
+import { DentistsService } from 'src/app/services/dentists/dentists.service';
 import { Services } from 'src/app/models/services';
 import { ServicesService } from 'src/app/services/services/services.service';
 import { PatientsService } from 'src/app/services/patients/patients.service';
@@ -27,18 +27,9 @@ export class EditAppointmentComponent implements OnInit {
   patientId!: string;
   routeSub!: Subscription;
 
-  // getters
-  get G_first_nm() { return this.appointForm.get('first_nm') }
-  get G_last_nm() { return this.appointForm.get('last_nm') }
-  get G_email() { return this.appointForm.get('email') }
-  get G_phoneNumber() { return this.appointForm.get('phoneNumber') }
-  get G_address() { return this.appointForm.get('address') }
-  get G_dob() { return this.appointForm.get('dob') }
-  get G_age() { return this.appointForm.get('age') }
-  get G_dentistId() { return this.appointForm.get('dentistId') }
-  get G_serviceId() { return this.appointForm.get('serviceId') }
 
-  constructor(private dentistService: DentistsService, private patientsService: PatientsService, private servicesService: ServicesService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder) { }
+  constructor(private dentistService: DentistsService, private patientsService: PatientsService,
+    private servicesService: ServicesService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder) { }
   getdoctorList(): void {
     this.dentistService.getAllDentists().subscribe(results => {
       this.dentists = results.data

@@ -9,10 +9,8 @@
     </form>
   </div>
 </div>
-
 <div *ngIf="!patient" class="search-contents">
 </div>
-
 <div *ngIf="patient" class="profile">
   <div class="profile-con">
     <div class="profile-card">
@@ -40,7 +38,6 @@
               <p><span>Age: </span> {{patient.age}}</p>
             </div>
           </div>
-
           <div class="other">
             <div class="address">
               <p> <span>Address: </span> {{patient.address}}</p>
@@ -51,7 +48,6 @@
             </div>
           </div>
         </fieldset>
-
         <fieldset class="field2">
           <legend>General Details</legend>
           <div class="name">
@@ -62,7 +58,6 @@
               <p><span>Appointment Date: </span> {{patient.appointDate| date}}</p>
             </div>
           </div>
-
           <div class="dob">
             <div class="service">
               <p><span>Service Name: </span> {{patient.serviceId.serviceName}}</p>
@@ -83,7 +78,6 @@
           </div>
         </fieldset>
       </div>
-
     </div>
   </div>
 </div>

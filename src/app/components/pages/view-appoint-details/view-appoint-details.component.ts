@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Dentists } from 'src/app/models/dentist';
-import { DentistsService } from 'src/app/services/doctors/doctors.service';
+import { DentistsService } from 'src/app/services/dentists/dentists.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Patients } from 'src/app/models/patient';
 import { PatientsService } from 'src/app/services/patients/patients.service';
@@ -23,7 +23,7 @@ export class ViewAppointDetailsComponent implements OnInit {
     private patientService: PatientsService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   getDetistPatients(id: string) {
     this.dentistService.getDentistPatients(id).subscribe((patients) => {

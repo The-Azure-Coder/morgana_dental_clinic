@@ -4,7 +4,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { Services } from 'src/app/models/services';
 import { ServicesService } from 'src/app/services/services/services.service';
-import { Patients } from 'src/app/models/patient';
 import { PatientsService } from 'src/app/services/patients/patients.service';
 import Swal from 'sweetalert2';
 
@@ -61,11 +60,6 @@ export class ServicelistComponent implements OnInit {
       }
     })
   }
-
-
-
-
-
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.serviceDataSource.filter = filterValue.trim().toLowerCase();

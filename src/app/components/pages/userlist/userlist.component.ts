@@ -43,9 +43,6 @@ export class UserlistComponent implements OnInit {
       },
     });
   }
-
-
-
   deleteUser(id: string): void {
     Swal.fire({
       title: 'Are you sure?',
@@ -74,10 +71,6 @@ export class UserlistComponent implements OnInit {
 
     })
   }
-
-
-
-
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.userDataSource.filter = filterValue.trim().toLowerCase();
@@ -85,9 +78,7 @@ export class UserlistComponent implements OnInit {
       this.userDataSource.paginator.firstPage();
     }
   }
-
   ngOnInit(): void {
     this.getUserList()
   }
-
 }

@@ -10,16 +10,13 @@
           <mat-form-field hideRequiredMarker class=" form-field" appearance="standard">
             <mat-label>Username</mat-label>
             <input type="email" formControlName="username" name="username" matInput placeholder="Placeholder">
-            <!-- <mat-hint>Enter Email Address</mat-hint> -->
             <mat-error *ngIf="userForm.get('username')?.hasError('required')&& userForm.get('username')?.touched">Username is required</mat-error>
           </mat-form-field>
-
-
 
           <mat-form-field hideRequiredMarker class="form-field" appearance="standard">
             <mat-label>Email</mat-label>
             <input type="email" formControlName="email" name="email" matInput placeholder="Placeholder">
-            <!-- <mat-hint>Enter Email Address</mat-hint> -->
+
             <mat-error *ngIf=" userForm.get('email')?.touched">
               <mat-error *ngIf="userForm.get('email')?.hasError('required')">
                 Please Enter your Email Address</mat-error>
@@ -27,7 +24,6 @@
                 Invalid Email Address</mat-error>
             </mat-error>
           </mat-form-field>
-
 
           <mat-form-field hideRequiredMarker class="select-field" appearance="standard">
             <mat-label>Select a Role</mat-label>
@@ -37,10 +33,7 @@
             </mat-select>
             <mat-error *ngIf="userForm.get('role')?.hasError('required')&& userForm.get('role')?.touched">Please Select a Role</mat-error>
           </mat-form-field>
-
-
           <button (click)="updateUser()" type="submit">Update User</button>
-          <!-- <p>Already have an account? <a [routerLink]="['/login']">Login</a></p> -->
         </form>
       </div>
     </div>
