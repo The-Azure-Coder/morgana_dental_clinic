@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist\\morgana_frontend",
+    "public": "dist/morgana-dental",
     "ignore": [
       "firebase.json",
       "**/.*",
