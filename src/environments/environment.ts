@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  API_SERVER: 'https://morgana-clinic.herokuapp.com/',
   production: false
 };
 

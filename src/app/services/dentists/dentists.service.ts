@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Dentists } from 'src/app/models/dentist';
 import { Observable, catchError, of } from 'rxjs';
 import { APIResponse } from 'src/app/models/api-response';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DentistsService {
 
-  private API_URL = "http://localhost:3100/dentists";
+  private API_URL = `${environment.API_SERVER}/dentists`
 
   private _handleHttpErrors(retVal: any) {
     return (err: any) => {

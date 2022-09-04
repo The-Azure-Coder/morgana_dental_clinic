@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Services } from 'src/app/models/services';
 import { Observable, catchError, of } from 'rxjs';
 import { APIResponse } from 'src/app/models/api-response';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ServicesService {
-  private API_URL = 'http://localhost:3100/services';
+  private API_URL = `${environment.API_SERVER}/services`;
 
   private _handleHttpErrors(retVal: any) {
     return (err: any) => {

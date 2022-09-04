@@ -4,12 +4,13 @@ import { Observable, catchError, of } from 'rxjs';
 import { APIResponse } from 'src/app/models/api-response';
 import { Users } from 'src/app/models/user';
 import { AUTHResponse } from 'src/app/models/auth-respose';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private API_URL = 'http://localhost:3100/users';
+  private API_URL = `${environment.API_SERVER}/services`;
 
   private _handleHttpErrors(retVal: any) {
     return (err: any) => {
