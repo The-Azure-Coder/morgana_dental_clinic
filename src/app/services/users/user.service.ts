@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class UserService {
-  private API_URL = `${environment.API_SERVER}/services`;
+  private API_URL = `${environment.API_SERVER}/users`;
 
   private _handleHttpErrors(retVal: any) {
     return (err: any) => {
