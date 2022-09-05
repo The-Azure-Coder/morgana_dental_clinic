@@ -34,14 +34,6 @@ export class DentistlistComponent implements OnInit {
         this.dentistDataSource.sort = this.sort;
         this.dentistDataSource.paginator = this.paginator;
       },
-      error: (err) => {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Error While fetching results!',
-          footer: '<a href="">Why do I have this issue?</a>'
-        })
-      },
     });
   }
   deleteDentist(id: string): void {
@@ -58,7 +50,7 @@ export class DentistlistComponent implements OnInit {
 
               this.dentistService.deleteDentist(id).subscribe({
                 next: (res) => {
-                  Swal.fire('Service Deleted Successfully');
+                  Swal.fire('Dentist Deleted Successfully');
                   this.getDentistList();
                 }
               })

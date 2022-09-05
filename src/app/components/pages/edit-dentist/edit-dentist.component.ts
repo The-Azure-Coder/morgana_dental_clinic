@@ -25,7 +25,6 @@ export class EditDentistComponent implements OnInit {
       confirmButtonText: 'Save',
       denyButtonText: `Don't save`,
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         Swal.fire('Saved!', '', 'success')
         this.dentistService.updateService(this.dentist._id, this.dentistForm.value).subscribe(() => {

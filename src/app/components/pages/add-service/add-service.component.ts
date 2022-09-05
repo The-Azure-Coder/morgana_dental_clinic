@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { Services } from 'src/app/models/services';
 import { ServicesService } from 'src/app/services/services/services.service';
 import Swal from 'sweetalert2';
-
 @Component({
   selector: 'app-add-service',
   templateUrl: './add-service.component.html',
@@ -22,7 +21,6 @@ export class AddServiceComponent implements OnInit {
     private servicesService: ServicesService,
     private router: Router
   ) { }
-
   onSubmit() {
     const formData = this.serviceForm.value as unknown as Partial<Services>;
     if (this.serviceForm.valid) {

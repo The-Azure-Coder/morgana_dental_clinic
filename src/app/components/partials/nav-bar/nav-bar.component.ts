@@ -9,12 +9,10 @@ import Swal from 'sweetalert2';
 })
 export class NavBarComponent implements OnInit {
   authenticated: boolean = this.isLoggedIn();
-
   constructor(private router: Router) { }
   headerRoute(route: string) {
     return this.router.url.includes(route)
   }
-
 
   ngOnInit(): void {
   }
@@ -33,8 +31,6 @@ export class NavBarComponent implements OnInit {
     this.authenticated = this.isLoggedIn();
   }
 
-
-
   isLoggedIn() {
     if (localStorage.getItem('admin') || localStorage.getItem('user')) {
       // console.log()
@@ -42,8 +38,5 @@ export class NavBarComponent implements OnInit {
     } else {
       return false
     }
-
-
   }
-
 }
