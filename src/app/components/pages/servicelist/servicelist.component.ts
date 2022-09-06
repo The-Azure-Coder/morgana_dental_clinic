@@ -33,29 +33,46 @@ export class ServicelistComponent implements OnInit {
   }
 
   deleteService(id: string): void {
-    this.patientsService.getAllPatients().subscribe({
-      next: (res) => {
-        this.servicesService.getServicesById(id).subscribe({
-          next: (res2) => {
-            let groupFilter;
-            groupFilter = res.data.filter(i => {
-              return i.serviceId._id == res2.data._id;
-            })
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+        this.patientsService.getAllPatients().subscribe({
+          next: (res) => {
+            this.servicesService.getServicesById(id).subscribe({
+              next: (res2) => {
+                let groupFilter;
+                groupFilter = res.data.filter(i => {
+                  return i.serviceId._id == res2.data._id;
+                })
 
-            if (groupFilter.length == 0) {
+                if (groupFilter.length == 0) {
 
 
-              this.servicesService.deleteService(id).subscribe({
-                next: (res) => {
-                  Swal.fire('Service Deleted Successfully');
-                  this.getAllServices();
+                  this.servicesService.deleteService(id).subscribe({
+                    next: (res) => {
+                      // Swal.fire('Service Deleted Successfully');
+                      this.getAllServices();
+                    }
+                  })
+                } else {
+                  Swal.fire(`${res2.data.serviceName} service has ${groupFilter.length} patient(s) \nRemove patient(s) before proceeding.`)
                 }
-              })
-            } else {
-              Swal.fire(`${res2.data.serviceName} service has ${groupFilter.length} patient(s) \nRemove patient(s) before proceeding.`)
-            }
-            console.log(groupFilter);
+              }
+            })
           }
+
         })
       }
     })

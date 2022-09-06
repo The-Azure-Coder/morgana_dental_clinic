@@ -27,6 +27,7 @@ export class DentistlistComponent implements OnInit {
   ];
 
   constructor(private dentistService: DentistsService, private patientsService: PatientsService) { }
+
   getDentistList() {
     this.dentistService.getAllDentists().subscribe({
       next: (res) => {
@@ -37,27 +38,45 @@ export class DentistlistComponent implements OnInit {
     });
   }
   deleteDentist(id: string): void {
-    this.patientsService.getAllPatients().subscribe({
-      next: (res) => {
-        this.dentistService.getDentistsById(id).subscribe({
-          next: (res2) => {
-            let dentistFilter;
-            dentistFilter = res.data.filter(i => {
-              return i.dentistId._id == res2.data._id;
-            })
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+        this.patientsService.getAllPatients().subscribe({
+          next: (res) => {
+            this.dentistService.getDentistsById(id).subscribe({
+              next: (res2) => {
+                let dentistFilter;
+                dentistFilter = res.data.filter(i => {
+                  return i.dentistId._id == res2.data._id;
+                })
 
-            if (dentistFilter.length == 0) {
+                if (dentistFilter.length == 0) {
 
-              this.dentistService.deleteDentist(id).subscribe({
-                next: (res) => {
-                  Swal.fire('Dentist Deleted Successfully');
-                  this.getDentistList();
+                  this.dentistService.deleteDentist(id).subscribe({
+                    next: (res) => {
+                      // Swal.fire('Dentist Deleted Successfully');
+                      this.getDentistList();
+                    }
+                  })
+                } else {
+                  Swal.fire(`Dr ${res2.data.last_nm} has ${dentistFilter.length} patient(s) \nRemove patient(s) before proceeding.`)
                 }
-              })
-            } else {
-              Swal.fire(`Dr ${res2.data.last_nm} has ${dentistFilter.length} patient(s) \nRemove patient(s) before proceeding.`)
-            }
+              }
+            })
           }
+
         })
       }
     })

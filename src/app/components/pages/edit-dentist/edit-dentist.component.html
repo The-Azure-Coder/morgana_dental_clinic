@@ -4,7 +4,7 @@
     <div class="book-form">
       <img routerLink="/dentistList" src="/assets/images/close.png" alt="">
       <form *ngIf="dentistForm" [formGroup]="dentistForm">
-        <h2>Add Dentist</h2>
+        <h2>Edit Dentist</h2>
         <div class="name">
           <div class="first">
             <mat-form-field hideRequiredMarker appearance="outline">
@@ -65,7 +65,7 @@
           <mat-error *ngIf="dentistForm.get('docDescrip')?.hasError('required') && dentistForm.get('docDescrip')?.touched">
             docDescrip is required</mat-error>
         </mat-form-field>
-        <button (click)="updateDentist()" class="submit-btn">update Dentist</button>
+        <button (click)="updateDentist()" class="submit-btn">Update Dentist</button>
       </form>
     </div>
   </div>

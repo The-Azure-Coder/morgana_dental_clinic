@@ -4,7 +4,7 @@
   headerRoute('/addDentist') || headerRoute('/editDentist') || headerRoute('/viewMore')  || headerRoute('/serviceList')  ||
   headerRoute('/userList')|| headerRoute('/addUser') || headerRoute('/editUser') ? 'hide' : 'show'">
   <nav>
-    <div class="logo"><img src="/assets/images/logo3.png" alt=""></div>
+    <div class="logo"><img [routerLink]="['/']" src="/assets/images/logo3.png" alt=""></div>
     <div class="main-nav">
       <a [routerLink]="['/']"><span>Home</span></a>
       <a href="#about"><span>About</span></a>
