@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit {
   dentists: Dentists[] = [];
 
   pageEvent!: PageEvent;
-  pageSizeOptions = [3, 6, 12, 18];
-  pageSize = 3;
+  pageSizeOptions = [6, 12, 18, 100];
+  pageSize = 6;
   length = 100;
 
   pageEvent2!: PageEvent;
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
 
   getServicesList() {
     this.servicesService.getAllServices().subscribe((results) => {
-      this.services = results.data.slice(0, 3);
+      this.services = results.data.slice(0, 6);
       this.length = results.data.length;
     });
   }

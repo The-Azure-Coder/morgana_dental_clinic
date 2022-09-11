@@ -35,7 +35,7 @@ export class AddDentistComponent implements OnInit {
           console.log(formData);
         },
         error: () => {
-          Swal.fire('Error While booking the appointment');
+          Swal.fire('Error While adding a dentist');
         },
       });
     }

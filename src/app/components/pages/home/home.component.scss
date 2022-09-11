@@ -62,9 +62,10 @@ section{
     padding-top: 1.5rem;
     margin-top: 2.5rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 
     .content{
+        margin-right: 10rem;
         h1{
             color: rgb(39, 39, 39);
         }
@@ -92,6 +93,7 @@ section{
     }
 
     .about-image{
+       
         img{
             width: 30rem;
             height: 18rem;
@@ -108,13 +110,14 @@ section{
 
 .cert-head{
     padding-top: 1rem;
-    margin-left: 6.6rem;
+    margin-left: 10vw;
     margin-bottom: 1rem;
 }
 
 .certificate{
     padding-bottom: 3.5rem;
     display: flex;
+    justify-content: center;
     margin-left: 6.5rem;
     
  
@@ -152,8 +155,9 @@ section{
 .services{
 
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    margin-left: 6.5rem;
+    
     img{
         width: 22rem;
         height: 15rem;

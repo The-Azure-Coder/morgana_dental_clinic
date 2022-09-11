@@ -5,11 +5,15 @@
   </div>
   <div class="search-con">
     <form action="" [formGroup]="searchForm">
-      <input class="search" name="email" formControlName="email" type="text"><button class="search-btn" (click)="searchPatient()">Search</button>
+      <input class="search" placeholder="Enter your email...." name="email" formControlName="email" type="text"><button class="search-btn" (click)="searchPatient()">Search</button>
     </form>
   </div>
 </div>
 <div *ngIf="!patient" class="search-contents">
+  <div class="results">
+    <button routerLink="/appoint" class="appoint-btn">book Appointment</button>
+  </div>
+
 </div>
 <div *ngIf="patient" class="profile">
   <div class="profile-con">

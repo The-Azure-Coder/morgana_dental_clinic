@@ -30,8 +30,8 @@
             <span class="card__price">{{service.serviceCost | currency}}</span>
             <!-- <button class="btn btn--block card__btn">Button</button> -->
             <div class="card__action">
-              <img routerLink="/editService/{{service._id}}" class="card__edit" src="/assets/images/card-edit.png" alt="">
-              <img (click)="deleteService(service._id)" class="card__remove" src="/assets/images/remove.png" alt="">
+              <img title="edit" routerLink="/editService/{{service._id}}" class="card__edit" src="/assets/images/card-edit.png" alt="">
+              <img title="delete" (click)="deleteService(service._id)" class="card__remove" src="/assets/images/remove.png" alt="">
             </div>
           </div>
         </div>

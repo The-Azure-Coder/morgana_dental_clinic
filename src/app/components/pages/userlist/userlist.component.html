@@ -46,10 +46,10 @@
             <ng-container matColumnDef="action">
               <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
               <td mat-cell *matCellDef="let row">
-                <button [ngStyle]="{'color':'blue','border':'none','background-color':'transparent','cursor':'pointer','margin-right':'6px'}">
+                <button title="edit" [ngStyle]="{'color':'blue','border':'none','background-color':'transparent','cursor':'pointer','margin-right':'6px'}">
                   <img routerLink="/editUser/{{row._id}}" src="/assets/images/edit.png" width="20px" alt="">
                 </button>
-                <button (click)="deleteUser(row._id)" [ngStyle]="{'color':'red','border':'none','background-color':'transparent', 'margin-right':'6px','cursor':'pointer'}">
+                <button title="delete" (click)="deleteUser(row._id)" [ngStyle]="{'color':'red','border':'none','background-color':'transparent', 'margin-right':'6px','cursor':'pointer'}">
                   <img src="/assets/images/delete.png" width="20px" alt="">
                 </button>
               </td>

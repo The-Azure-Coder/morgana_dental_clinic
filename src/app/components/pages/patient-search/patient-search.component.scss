@@ -63,6 +63,17 @@
     height: 28rem;
     background-position: center;
     // background-size: cover;
+
+    .appoint-btn{
+        background-color: rgb(255, 111, 9);
+        border: none;
+        border-radius: .2rem;
+        color: #fff;
+        padding: 15px;
+        margin-top: 22rem;
+       margin-left: 37rem;
+       cursor: pointer;
+    }
 }
 
 .profile{

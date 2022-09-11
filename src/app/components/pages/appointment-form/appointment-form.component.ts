@@ -61,7 +61,7 @@ export class AppointmentFormComponent implements OnInit {
       this.patientsService.createPatient(formData).subscribe({
         next: (res) => {
           Swal.fire('Appointment Booked successfully')
-          this.router.navigate(['/']);
+          this.router.navigate(['/search']);
           console.log(formData)
         },
         error: () => {

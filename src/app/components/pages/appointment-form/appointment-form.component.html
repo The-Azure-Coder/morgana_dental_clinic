@@ -19,7 +19,7 @@
               <div class="first">
                 <mat-form-field hideRequiredMarker appearance="outline">
                   <mat-label>First Name</mat-label>
-                  <input matInput name="first_nm" formControlName="first_nm" required>
+                  <input matInput type="text" name="first_nm" formControlName="first_nm" required>
                   <mat-hint>Enter You First Name</mat-hint>
                   <mat-error *ngIf="appointForm.get('first_nm')?.hasError('required')&& appointForm.get('first_nm')?.touched">Your Firstname is required</mat-error>
                 </mat-form-field>
@@ -27,7 +27,7 @@
               <div class="sec">
                 <mat-form-field hideRequiredMarker appearance="outline">
                   <mat-label>Last Name</mat-label>
-                  <input matInput name="last_nm" formControlName="last_nm" required>
+                  <input type="text" matInput name="last_nm" formControlName="last_nm" required>
 
                   <mat-hint>Enter You last Name</mat-hint>
                   <mat-error *ngIf="appointForm.get('last_nm')?.hasError('required')&& appointForm.get('last_nm')?.touched">Your lastname is required</mat-error>
@@ -67,7 +67,7 @@
               <div class="third">
                 <mat-form-field hideRequiredMarker class="form-field" appearance="outline">
                   <mat-label>Age</mat-label>
-                  <input formControlName="age" matInput required>
+                  <input type="number" formControlName="age" matInput required>
                   <mat-hint>Enter your patient's Age</mat-hint>
                   <mat-error *ngIf="appointForm.get('age')?.hasError('required') && appointForm.get('age')?.touched">
                     Age is required</mat-error>

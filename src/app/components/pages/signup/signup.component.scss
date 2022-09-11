@@ -61,6 +61,7 @@
                 margin-top: 1.1rem;
                 margin-bottom: 1.1rem;
                 width: 20rem;
+                cursor: pointer;
             }
         }
 
@@ -68,7 +69,7 @@
             color: white;
             position: relative;
             margin-right: 6rem;
-            margin-top: 8rem;
+            margin-top: 2rem;
 
             h2{
                 font-size: 40px;
@@ -80,8 +81,7 @@
             }
 
             img{
-                top: -10rem;
-                   position: absolute;
+                
                    cursor: pointer;
                }
         }

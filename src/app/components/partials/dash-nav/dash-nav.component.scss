@@ -38,11 +38,12 @@
             cursor: pointer;
         }
 
-        // img{
-        //     width: 130px;
-        //     margin-right: .4rem;
+        img{
+          
+            margin-right: .4rem;
+            cursor: pointer;
         
-        // }
+        }
     }
 
     .items{
@@ -85,10 +86,10 @@
     .items li:hover{
         background: #016495;
         cursor: pointer;
-    
     }
     
 }
+
 
 .menu .items li
 .menu .items li:hover i,
