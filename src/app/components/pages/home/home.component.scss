@@ -2,14 +2,15 @@
     position: relative;
     height:450px;
     width:100%;
-    background-image: url('/assets/images/home-img.jpg');
+    background-image: url('/assets/images/home-img2.jpg');
     background-position: center;
+    background-size: cover;
 
     .overlay {
         position: absolute;
         bottom: 0;
-        background-image: linear-gradient( 135deg, #0654ae 10%, #7ff4ff 100%);
-        opacity: 0.3;
+        background-image: linear-gradient( 135deg, #025ec7 10%, #7ff4ff 100%);
+        opacity: 0.4;
        
         /* Black see-through */
         width: 100%;
@@ -26,16 +27,17 @@
 
 
         h1{
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
             font-size: 45px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
 
         }
 
         p{
-            font-size: 18px;
+            font-size: 16px;
             width: 25rem;
             line-height: 1.7rem;
-            letter-spacing:1.2px;
+            letter-spacing:1px;
 
         }
         a{
@@ -48,7 +50,11 @@
             border-radius: .4rem;
             margin-top: 2rem;
 
+        }
 
+        a:hover{
+            background-color: rgb(250, 118, 47);
+            transition: 0.3s;
         }
     }
 
@@ -67,14 +73,19 @@ section{
     .content{
         margin-right: 10rem;
         h1{
-            color: rgb(39, 39, 39);
+            color:rgb(7, 75, 147);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-bottom: 2rem;
+            
         }
         h3{
-            color: rgb(39, 39, 39);
+            color: rgb(107, 107, 107);
+            font-weight: 500;
         }
        
         p{
             color: rgb(90, 90, 90);
+            
             line-height: 2rem;
             width: 26rem;
         }
@@ -109,9 +120,11 @@ section{
 
 
 .cert-head{
+    color: rgb(82, 82, 82);
     padding-top: 1rem;
     margin-left: 10vw;
     margin-bottom: 1rem;
+    font-weight: 500;
 }
 
 .certificate{
@@ -183,12 +196,11 @@ section{
     overflow: hidden;
 
    
-   
   }
   
   .item .overlay{
     color: #000;
-    width: 91.6%;
+    width: 100%;
     height: 86.2%;
     background-color: #fff;
     opacity: 0;
@@ -339,8 +351,10 @@ section{
     .staff-head{
         margin-left: 6rem;
         margin-top: 2rem;
-        padding-bottom: 1.1rem;
-        color: rgb(90, 90, 90);
+        padding-bottom: 1rem;
+        color: #777;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+       
 
     }
 
@@ -422,7 +436,10 @@ section{
     .news-head{
         margin-left: 6rem;
         margin-top: 2rem;
-        padding-bottom: 1.1rem;
+        padding-bottom: 1rem;
+        color: #777;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: 600;
 
     }
 
@@ -443,13 +460,15 @@ section{
                 .content{
 
                     h1{
-                        color: #777;
+                        color: rgb(72, 72, 72);
                         font-size: 20px;
+                        font-weight: 400;
 
                     }
 
                     p{
                         width: 20rem;
+                        color: #777;
                     }
 
                 }
@@ -468,6 +487,11 @@ section{
         }
 
         .col2{
+
+            h1{
+                color: rgb(75, 75, 75);
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
 
             video{
                 width: 440px;
