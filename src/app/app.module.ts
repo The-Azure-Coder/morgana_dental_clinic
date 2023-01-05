@@ -47,6 +47,7 @@ import { EditUserComponent } from './components/pages/edit-user/edit-user.compon
 import { PatientSearchComponent } from './components/pages/patient-search/patient-search.component';
 import { NotfoundComponent } from './components/partials/notfound/notfound.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
