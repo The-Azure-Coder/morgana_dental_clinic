@@ -35,7 +35,7 @@
         <form [formGroup]="appointForm" (submit)="onSubmit()">
           <div class="name">
             <div class="first">
-              <input type="hidden" name="dentistId" [(ngModel)]="dentist._id" formControlName="dentistId">
+
               <mat-form-field hideRequiredMarker appearance="outline">
                 <mat-label>First Name</mat-label>
                 <input matInput name="first_nm" formControlName="first_nm" required>

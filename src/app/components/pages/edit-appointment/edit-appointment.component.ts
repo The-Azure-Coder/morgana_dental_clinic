@@ -19,7 +19,7 @@ export class EditAppointmentComponent implements OnInit {
   dentists: Dentists[] = []
   services: Services[] = []
 
-  ID: string | undefined = this.route.snapshot.params['id'];
+  // ID: string | undefined = this.route.snapshot.params['id'];
   patient!: Patients;
   appointForm!: FormGroup;
 

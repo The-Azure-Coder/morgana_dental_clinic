@@ -7,12 +7,23 @@ nav{
      border-bottom: 1px solid rgb(226, 226, 226);
    
 
+     .logo-manage{
+        display: flex;
+        align-items: center;
+     }
+
+     .burger-menu{
+        img{
+            width: 2rem;
+        }
+     }
+
 
     .logo{
         margin-right: 4vw;
-        padding-left: 2.6rem;
-        height: 2rem;
-        cursor: pointer;
+        // padding-left: 2.6rem;
+        // height: 2rem;
+        // cursor: pointer;
 
         img{
             width: 170px;
@@ -102,3 +113,26 @@ nav{
 .show {
     display: block;
 }
+
+
+.burger-menu { //by defect not show
+    display: none;
+  }
+  
+  @media (max-width: 1020px) { //when larger screen
+    .burger-menu {
+      display: block;
+    }
+
+    .main-nav{
+        display: none;
+    }
+
+    .book{
+        margin-left: 50%;
+      
+    }
+    .sub-nav{
+        display: none;
+    }
+  }
