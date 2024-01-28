@@ -42,7 +42,12 @@ $morganaDental-theme: mat.define-light-theme((
 
   
 }
-html, body { 
+
+.mat-paginator-range-label {
+  margin: 0 !important;
+}
+html, body {
+  // overflow-x: hidden; 
   height: 100%;
   width: 100%;
 }

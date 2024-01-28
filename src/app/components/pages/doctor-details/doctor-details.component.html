@@ -2,18 +2,15 @@
 
   <div class="dentist-background"></div>
 
-  <div class="dentist-card">
-    <div class="profile-heading">
-      <h2>Dr. {{dentist.first_nm}}'s Profile</h2>
-    </div>
-    <div class="dental-appoint">
-      <div class="dentist-profile">
+
+    <div class="dental-appoint row justify-content-center">
+      <div class="dentist-profile d-flex flex-column align-items-center p-3 col-sm-12 col-lg-6 col-xl-6">
         <div class="profile-img">
           <img src="{{dentist.docImg}}" alt="">
         </div>
         <div class="profile-content">
           <h2>Dr. {{dentist.first_nm}} {{dentist.last_nm}}</h2>
-          <p>{{dentist.docDescrip}}</p>
+          <p class="w-75 text-center mx-auto">{{dentist.docDescrip}}</p>
           <div class="icons">
             <span>
               <mat-icon>email</mat-icon>
@@ -31,10 +28,10 @@
 
         </div>
       </div>
-      <div class="book-form">
+      <div class="book-form p-3 col-sm-12 col-lg-6 col-xl-5">
         <form [formGroup]="appointForm" (submit)="onSubmit()">
-          <div class="name">
-            <div class="first">
+          <div class="name row">
+            <div class="first col">
               <input type="hidden" name="dentistId" [(ngModel)]="dentist._id" formControlName="dentistId">
               <mat-form-field hideRequiredMarker appearance="outline">
                 <mat-label>First Name</mat-label>
@@ -43,7 +40,7 @@
                 <mat-error *ngIf="appointForm.get('first_nm')?.hasError('required')&& appointForm.get('first_nm')?.touched">Your Firstname is required</mat-error>
               </mat-form-field>
             </div>
-            <div class="sec">
+            <div class="sec col">
               <mat-form-field hideRequiredMarker appearance="outline">
                 <mat-label>Last Name</mat-label>
                 <input matInput name="last_nm" formControlName="last_nm" required>
@@ -56,8 +53,8 @@
 
           </div>
 
-          <div class="contact">
-            <div class="mail">
+          <div class="contact row">
+            <div class="mail col">
               <mat-form-field hideRequiredMarker appearance="outline">
                 <mat-label>Email</mat-label>
                 <input type="email" formControlName="email" name="email" matInput>
@@ -70,7 +67,7 @@
                 </mat-error>
               </mat-form-field>
             </div>
-            <div class="num">
+            <div class="num col">
               <mat-form-field hideRequiredMarker appearance="outline">
                 <mat-label>Phone Number</mat-label>
                 <input matInput formControlName="phoneNumber" name="phoneNumber" required>
@@ -124,11 +121,11 @@
               Address is required</mat-error>
           </mat-form-field>
 
-          <button class="submit-btn" type="submit">Book Appointment</button>
+          <div class="row"> <button class="submit-btn col-12" type="submit">Book Appointment</button></div>
+         
         </form>
 
       </div>
     </div>
-  </div>
   <div class="banner"></div>
 </div>

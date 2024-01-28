@@ -1,12 +1,15 @@
-<div class="login-background">
+
+
+<div class="login-background d-flex align-items-center">
+  <div class="col-12">
   <div class="overlay"></div>
-  <div class="login-content">
-    <div class="welcome">
-      <img routerLink="/" src="/assets/images/logo2.1.png" alt="">
-      <p>Login, Make an Appointment and help us help you matain those precious pearly whites. Welcome to Morgana Hospital where the patients are placed first</p>
+  <div class="login-content row justify-content-center container-fluid gap-5" >
+    <div class="welcome col-sm-12 col-md-5 col-xl-4">
+      <img routerLink="/" src="/assets/images/logo.svg" alt="">
+      <p class="w-100">Login, Make an Appointment and help us help you matain those precious pearly whites. Welcome to Morgana Hospital where the patients are placed first</p>
       <button></button>
     </div>
-    <div class="login-form">
+    <div class="login-form col-sm-12 col-md-5 col-xl-3">
       <form [formGroup]="loginForm" action="" (submit)="onSubmit()">
         <h2>Hello,<br> Welcome Back</h2>
 
@@ -32,9 +35,12 @@
           <mat-error *ngIf="loginForm.get('password')?.hasError('required')&& loginForm.get('password')?.touched">Password is required</mat-error>
         </mat-form-field>
         <p>Forget Password?</p>
-        <button>Login Now</button>
+        <div class="row">
+          <button class="col-12">Login Now</button>
+        </div>
         <p>Don't have an account? <a [routerLink]="['/register']">sign up</a></p>
       </form>
     </div>
+  </div>
   </div>
 </div>

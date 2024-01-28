@@ -1,4 +1,45 @@
-<div class="home-video">
+<div class="carousel-container">
+  <div
+    class="carousel-slides"
+    [style.transform]="'translateX(-' + currentSlideIndex * 100 + '%)'"
+  >
+    <div class="carousel-slide" *ngFor="let slide of slides; let i = index">
+      <div class="overlay"></div>
+      <img
+        style="background-size: cover; object-fit: cover"
+        [src]="slide.image"
+      />
+      <div class="carousel-content">
+        <h2>
+          {{ slide.title }}
+        </h2>
+        <p>{{ slide.desc }}</p>
+        <a (click)="silderNavigate(slide.link)">{{ slide.btn_title }}</a>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-nav carousel-prev" (click)="prevSlide()">
+    <img src="../../../../assets/images/next.png" alt="" />
+  </button>
+  <button class="carousel-nav carousel-next" (click)="nextSlide()">
+    <img src="../../../../assets/images/next.png" alt="" />
+  </button>
+  <div class="carousel-radio">
+    <span *ngFor="let slide of slides; let index = index">
+      <input
+        type="radio"
+        name="carousel-radio"
+        [value]="index"
+        [checked]="index === currentSlideIndex"
+        (click)="currentSlideIndex = index"
+        id="{{ 'slide-' + index }}"
+      />
+      <label for="{{ 'slide-' + index }}"></label>
+    </span>
+  </div>
+</div>
+
+<!-- <div class="home-video">
   <div class="overlay"></div>
   <div class="home-content">
     <h1>Creating Beautiful Smiles</h1>
@@ -8,151 +49,185 @@
     </p>
     <a [routerLink]="['/appoint']">Book Now</a>
   </div>
-</div>
+</div> -->
 
 <section>
-  <div class="aboutus">
-    <div class="content">
+  <div class="aboutus row row-cols-md-2 justify-content-center">
+    <div class="content col-sm-12 col-md-5 pe-5 gx-5">
       <h1 id="about">About Us</h1>
       <h3>Enhancing Our Natural smiles</h3>
-      <p>
-        Morgana Dental Clinic is a Registered Charity under the Charities Acts (Registered Charity No. 20000394) and is administered and managed in accordance with a Hospital Constitution approved by the Charities Regulatory Authority. The current Hospital Constitution was approved in 2018. The property is vested in Trustees.
+      <p class="">
+        Morgana Dental Clinic is a Registered Charity under the Charities Acts
+        (Registered Charity No. 20000394) and is administered and managed in
+        accordance with a Hospital Constitution approved by the Charities
+        Regulatory Authority. The current Hospital Constitution was approved in
+        2018. The property is vested in Trustees.
       </p>
       <!-- <a href="">Read More</a> -->
     </div>
-    <div class="about-image">
+    <div class="about-image col-sm-12 col-md-5">
       <img src="/assets/images/chair.jpg" alt="" />
-      <p>
-        an inside preview of one of our luxourious dental chairs
-      </p>
+      <p>an inside preview of one of our luxourious dental chairs</p>
     </div>
   </div>
 
   <h3 class="cert-head">We are certified</h3>
-  <div class="certificate">
-    <div class="image"><img src="/assets/images/cert2.jpg" alt="" /></div>
-    <div class="image"><img src="/assets/images/cert2.jpg" alt="" /></div>
-    <div class="image"><img src="/assets/images/cert2.jpg" alt="" /></div>
-    <div class="image"><img src="/assets/images/cert2.jpg" alt="" /></div>
+  <div class="certificate row justify-content-center g-4">
+    <div class="image col-sm-6 col-md-2"><img src="/assets/images/cert2.jpg" alt="" /></div>
+    <div class="image col-sm-6 col-md-2"><img src="/assets/images/cert2.jpg" alt="" /></div>
+    <div class="image col-sm-6 col-md-2"><img src="/assets/images/cert2.jpg" alt="" /></div>
+    <div class="image col-sm-6 col-md-2"><img src="/assets/images/cert2.jpg" alt="" /></div>
   </div>
 </section>
-
 
 <section class="service-con">
   <div class="service-head">
     <h1 id="services">Services we provide</h1>
-    <p>Choose From a diverse selction of detal services. Taking care for your pearly whites is what we do</p>
-
+    <p>
+      Choose From a diverse selction of detal services. Taking care for your
+      pearly whites is what we do
+    </p>
   </div>
 
-  <div class="services">
-    <div *ngFor="let service of services" class="item clean">
-      <img src="{{service.serviceImg}}" alt="image">
+  <div class="services row row-cols-1 justify-content-center">
+    <div *ngFor="let service of services" class="item clean col">
+      <img src="{{ service.serviceImg }}" alt="image" />
       <div class="overlay">
-        <span>{{service.serviceName}}</span>
+        <span>{{ service.serviceName }}</span>
         <span>
-          <img src="{{service.serviceImg2}}" alt="">
-          <a routerLink="/services/{{service._id}}">Book Appoinment</a>
+          <img src="{{ service.serviceImg2 }}" alt="" />
+          <a routerLink="/services/{{ service._id }}">Book Appoinment</a>
         </span>
-
       </div>
     </div>
-    <mat-paginator class="pag-color" [length]="length" (page)="getPageWithIndex($event)" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" aria-label="Select page">
-    </mat-paginator>
+    <div class="d-flex justify-content-center">   <mat-paginator
+      class="pag-color"
+      [length]="length"
+      (page)="getPageWithIndex($event)"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="pageSizeOptions"
+      aria-label="Select page"
+    >
+    </mat-paginator></div>
+ 
   </div>
-
 </section>
 
 <div class="appoint">
-  <div class="overlay">
-    <div class="add">
-      <div class="add-img">
-        <img src="/assets/images/appoint-smile.png" alt="">
-      </div>
-
-      <div class="content">
-        <h1>Make An Appoinment</h1>
-        <p>
-          <mat-icon>done</mat-icon>50% refund if services are unsatisfactory
-        </p>
-        <p>
-          <mat-icon>done</mat-icon>Allows a patient an opertuninty to choose thier dentist
-        </p>
-        <p>
-          <mat-icon>done</mat-icon>Select from of our wide selection of services offered
-        </p>
-        <a [routerLink]="['/appoint']">Book Appoinment</a>
+  <div class="video-size">
+    <div class="overlay">
+      <div class="add row justify-content-center">
+        <div class="add-img col-sm-12 col-md-12 col-lg-5" >
+          <img style="width: 100%;" src="/assets/images/appoint-smile.png" alt="" />
+        </div>
+  
+        <div class="content col-sm-12 col-md-12 col-lg-7">
+          <h1>Make An Appoinment</h1>
+          <p>
+            <mat-icon>done</mat-icon>50% refund if services are unsatisfactory
+          </p>
+          <p>
+            <mat-icon>done</mat-icon>Allows a patient an opertuninty to choose
+            thier dentist
+          </p>
+          <p>
+            <mat-icon>done</mat-icon>Select from of our wide selection of services
+            offered
+          </p>
+          <a [routerLink]="['/appoint']">Book Appoinment</a>
+        </div>
       </div>
     </div>
-  </div>
-
-
-  <div class="video-size">
     <video autoplay loop muted>
-      <source src="/assets/videos/home-vid2.1.mp4" type="video/mp4">
+      <source src="/assets/videos/home-vid2.1.mp4" type="video/mp4" />
     </video>
   </div>
-
 </div>
 
 <div class="staff">
   <div class="staff-head">
     <h1 id="staff">Meet Our Staff</h1>
+    <p>
+      Get to know the faces behind your radiant smiles! Our exceptional dental
+      staff is here to provide you with top-tier care and personalized
+      attention.
+    </p>
   </div>
-  <div class="card-con">
-    <div *ngFor="let dentist of dentists" class="staff-card">
-      <div class="staff-img">
-        <img src="{{dentist.docImg}}" alt="">
-      </div>
-      <div class="content">
-        <h1>Dr {{dentist.first_nm}} {{dentist.last_nm}}</h1>
-        <p>DDS in Dentistry</p>
-        <a routerLink="/dentists/{{dentist._id}}">View Profile</a>
+  <div class="card-con row justify-content-center gap-5">
+    <div *ngFor="let dentist of dentists" class="staff-card col-sm-6 col-md-6 col-lg-2 me-4">
+      <div class="row">
+        <div class="staff-img col-12 g-0">
+          <img src="{{ dentist.docImg }}" alt="" />
+        </div>
+        <div class="content col-12">
+          <h1>Dr {{ dentist.first_nm }} {{ dentist.last_nm }}</h1>
+          <p>DDS in Dentistry</p>
+          <a routerLink="/dentists/{{ dentist._id }}">View Profile</a>
+        </div>
       </div>
     </div>
   </div>
-  <mat-paginator class="pag-adjust" [length]="length2" (page)="getPageWithIndex2($event)" [pageSize]="pageSize2" [pageSizeOptions]="pageSizeOptions2" aria-label="Select page"> </mat-paginator>
+  <div class="d-flex justify-content-center mt-4">
+    <mat-paginator
+      class="pag-adjust"
+      [length]="length2"
+      (page)="getPageWithIndex2($event)"
+      [pageSize]="pageSize2"
+      [pageSizeOptions]="pageSizeOptions2"
+      aria-label="Select page"
+    >
+    </mat-paginator>
+  </div>
 </div>
-
 
 <div class="news">
-  <div class="news-head">
-    <h1 id="news">Our Latest News</h1>
-  </div>
-  <div class="main-con">
-    <div class="col">
-      <div class="first-sec">
-
-        <div class="image">
-          <img src="/assets/images/news1.png" alt="">
+  
+  <div class="main-con row justify-content-center gap-5">
+    <div class="col-sm-12 col-lg-5">
+      <div class="row">
+        <div class="col-xs-12 col">
+          <div class="news-head">
+            <h1 id="news">Our Latest News</h1>
+          </div>
+          <div class="first-sec">
+            <div class="image">
+              <img src="/assets/images/news1.png" alt="" />
+            </div>
+            <div class="content">
+              <h1>Recommendcing Checkups</h1>
+              <p>
+                Since the year of 2020 our clinic restict the ammount of face to
+                face visit, but now we're bringing it back
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="content">
-          <h1>Recommendcing Checkups</h1>
-          <p>Since the year of 2020 our clinic restict the ammount of face to face visit, but now we're bringing it back</p>
-        </div>
-      </div>
-
-      <div class="first-sec">
-        <div class="image">
-          <img src="/assets/images/news2.jpg" alt="">
-        </div>
-        <div class="content">
-          <h1>Visitation Plans</h1>
-          <p>Discounts and plans put in place for dental visits</p>
+        <div class="col-xs-12 col">
+          <div class="first-sec">
+            <div class="image">
+              <img src="/assets/images/news2.jpg" alt="" />
+            </div>
+            <div class="content">
+              <h1>Visitation Plans</h1>
+              <p>Discounts and plans put in place for dental visits</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <div class="col-sm-12 col-lg-5">
+      <div class="row">
+        <div class="col-12">
+          <h1>Video Presentaion</h1>
+        </div>
 
-    <div class="col2">
-      <h1>Video Presentaion</h1>
-      <video autoplay loop muted>
-        <source src="/assets/videos/home-vid.mp4" type="video/mp4">
-      </video>
+        <div class="col-12"></div>
+        <video autoplay loop muted>
+          <source src="/assets/videos/home-vid.mp4" type="video/mp4" />
+        </video>
+      </div>
     </div>
   </div>
 </div>
 
-
-<div class="banner">
-
-</div>
+<div class="banner"></div>

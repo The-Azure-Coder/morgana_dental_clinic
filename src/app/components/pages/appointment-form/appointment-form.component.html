@@ -1,9 +1,11 @@
 <div class="appointment">
+  
   <form action="" [formGroup]="appointForm" (submit)="onSubmit()">
-    <div class="appoint-background">
+    <div class="appoint-background d-flex align-items-center">
       <div class="overlay"></div>
-      <div class="appointment-section">
-        <div class="appoint-content">
+
+      <div class="appointment-section row align-items-center justify-content-center container-fluid gy-5">
+        <div class="appoint-content col-sm-12 col-md-12 col-lg-6 col-xl-4">
           <h2>Make An Appointment</h2>
           <p>sign up, login and book an appointment with morgana dental. Subscribe to our newsletter to recieve updates on the lastest news</p>
           <div class="action-btn">
@@ -12,11 +14,11 @@
           </div>
         </div>
 
-        <div class="appoint-con">
+        <div class="appoint-con col-sm-12 col-md-12 col-lg-6 col-xl-5">
           <div class="book-form">
             <h2>It's Quick And Easy</h2>
-            <div class="name">
-              <div class="first">
+            <div class="name row">
+              <div class="first col">
                 <mat-form-field hideRequiredMarker appearance="outline">
                   <mat-label>First Name</mat-label>
                   <input matInput type="text" name="first_nm" formControlName="first_nm" required>
@@ -24,7 +26,7 @@
                   <mat-error *ngIf="appointForm.get('first_nm')?.hasError('required')&& appointForm.get('first_nm')?.touched">Your Firstname is required</mat-error>
                 </mat-form-field>
               </div>
-              <div class="sec">
+              <div class="sec col">
                 <mat-form-field hideRequiredMarker appearance="outline">
                   <mat-label>Last Name</mat-label>
                   <input type="text" matInput name="last_nm" formControlName="last_nm" required>
@@ -38,8 +40,8 @@
 
             </div>
 
-            <div class="contact">
-              <div class="mail">
+            <div class="contact row">
+              <div class="mail col">
                 <mat-form-field hideRequiredMarker appearance="outline">
                   <mat-label>Email</mat-label>
                   <input type="email" formControlName="email" name="email" matInput>
@@ -52,7 +54,7 @@
                   </mat-error>
                 </mat-form-field>
               </div>
-              <div class="num">
+              <div class="num col">
                 <mat-form-field hideRequiredMarker appearance="outline">
                   <mat-label>Phone Number</mat-label>
                   <input matInput formControlName="phoneNumber" name="phoneNumber" required>
@@ -63,8 +65,8 @@
               </div>
             </div>
 
-            <div class="other">
-              <div class="third">
+            <div class="other row">
+              <div class="third col">
                 <mat-form-field hideRequiredMarker class="form-field" appearance="outline">
                   <mat-label>Age</mat-label>
                   <input type="number" formControlName="age" matInput required>
@@ -73,7 +75,7 @@
                     Age is required</mat-error>
                 </mat-form-field>
               </div>
-              <div class="add">
+              <div class="add col">
                 <mat-form-field hideRequiredMarker class="form-field" appearance="outline">
                   <mat-label>Address</mat-label>
                   <input type="text" name="address" formControlName="address" matInput>
@@ -119,11 +121,7 @@
           </div>
         </div>
 
-
       </div>
-
-    </div>
-
-
-  </form>
 </div>
+  </form>
+  </div>
