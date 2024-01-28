@@ -84,6 +84,41 @@ export class HomeComponent implements OnInit {
   pageSizeOptions2 = [4, 8, 12, 16];
   pageSize2 = 4;
   length2 = 100;
+  currentSlideIndex = 0;
+  slideTimer: any;
+
+  slides = [
+    {
+      image: "/assets/images/appoint-img.jpg",
+      heading: 'Creating Beautiful Smiles',
+      description: 'We provide the best dental services at the most affordable prices book an appoinment Now',
+      buttonText: 'Book Now',
+      link: '/'
+    },
+    {
+      image: "/assets/images/home-img2.jpg",
+      heading: 'Providing Quality Services',
+      description: 'We provide the best dental services at the most affordable prices book an appoinment Now',
+      buttonText: 'View Services',
+      link: '/'
+    },
+    {
+      image: "/assets/images/home-img.jpg",
+      heading: 'Most Amiable Staff',
+      description: 'We provide the best dental services at the most affordable prices book an appoinment Now',
+      buttonText: 'Meet Our team',
+      link: '/'
+    },
+    {
+      image: "/assets/images/login-img.jpg",
+      heading: 'Advance Care Team',
+      description: 'We provide the best dental services at the most affordable prices book an appoinment Now',
+      buttonText: 'Learn More',
+      link: '/'
+    },
+    // add more slides as needed
+  ];
+
 
   startSlideTimer() {
     this.slideTimer = setInterval(() => {
@@ -159,6 +194,28 @@ export class HomeComponent implements OnInit {
         }
         this.dentists = results.data.slice(start, end);
       });
+  }
+  startSlideTimer() {
+    this.slideTimer = setInterval(() => {
+      this.nextSlide();
+    }, 5000); // change slide every 5 seconds
+  }
+
+  stopSlideTimer() {
+    clearInterval(this.slideTimer);
+  }
+
+  prevSlide() {
+    this.stopSlideTimer();
+    this.currentSlideIndex =
+      (this.currentSlideIndex + this.slides.length - 1) % this.slides.length;
+    this.startSlideTimer();
+  }
+
+  nextSlide() {
+    this.stopSlideTimer();
+    this.currentSlideIndex = (this.currentSlideIndex + 1) % this.slides.length;
+    this.startSlideTimer();
   }
   ngOnInit(): void {
     this.startSlideTimer();
