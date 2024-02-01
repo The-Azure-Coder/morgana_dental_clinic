@@ -9,6 +9,7 @@ import { Dentists } from 'src/app/models/dentist';
 import { Patients } from 'src/app/models/patient';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-appointment-form',
@@ -40,7 +41,7 @@ export class AppointmentFormComponent implements OnInit {
 
   })
 
-  constructor(private servicesService: ServicesService, private patientsService: PatientsService, private dentistService: DentistsService, private _formBuilder: FormBuilder, private router: Router) { }
+  constructor(private servicesService: ServicesService,private notif:NotificationService, private patientsService: PatientsService, private dentistService: DentistsService, private _formBuilder: FormBuilder, private router: Router) { }
   getServicesList() {
     this.servicesService.getAllServices().subscribe(results => {
       this.services = results.data
@@ -60,17 +61,17 @@ export class AppointmentFormComponent implements OnInit {
     if (this.appointForm.valid) {
       this.patientsService.createPatient(formData).subscribe({
         next: (res) => {
-          Swal.fire('Appointment Booked successfully')
+          this.notif.success('Appointment Booked successfully')
           this.router.navigate(['/search']);
           console.log(formData)
         },
         error: () => {
-          Swal.fire("Error While booking the appointment")
+          this.notif.error("Error While booking the appointment")
 
         }
       })
     } else {
-      Swal.fire('Invalid Form')
+      this.notif.error('Invalid Form Submission')
 
     }
   }

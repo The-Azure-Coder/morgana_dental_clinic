@@ -18,9 +18,9 @@
       <button routerLink="/addService" class="appoint-btn">Add Service</button>
     </div>
 
-    <ul class="cards">
+    <ul class="cards row">
       <li class="cards__item" *ngFor="let service of services">
-        <div class="card">
+        <div class="card col-12">
           <div class="card__image">
             <img src="{{service.serviceImg}}" alt="">
           </div>

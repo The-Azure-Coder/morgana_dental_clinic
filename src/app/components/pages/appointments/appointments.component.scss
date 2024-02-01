@@ -41,6 +41,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-left: 10rem;
 }
 
 .interface .navigation .profile i{
@@ -70,7 +71,7 @@
 }
 
 .stats{
-    display: flex;
+    // display: flex;
     margin-top: 2rem;
 
     .chart{
@@ -81,7 +82,8 @@
 }
 
 .container {
-    max-width: 1020px;
+    max-width: 100%;
+    padding: 20px;
     // position: relative;
     margin-left: 2rem;
     margin-top: 2rem;

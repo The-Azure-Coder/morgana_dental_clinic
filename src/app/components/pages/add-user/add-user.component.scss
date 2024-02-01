@@ -1,5 +1,5 @@
 .users{
-    position: fixed;
+    // position: fixed;
     height: 100%;
     width :100%;
     background-color: #f7f5f5;
@@ -10,14 +10,14 @@
          display: flex;
          border-radius: 0px 5px 5px 0px;
          margin-bottom: 2rem;
-         margin-left: 18rem;
+          width: fit-content;
+          margin: 0 auto;
          background-color: #fff;
     
    
     box-shadow: 9px 9px 5px 0px rgba(0,0,0,0.06);
     -webkit-box-shadow: 9px 9px 5px 0px rgba(0,0,0,0.06);
     -moz-box-shadow: 9px 9px 5px 0px rgba(0,0,0,0.06);
-    margin-top: 6rem;
     width: fit-content;
 
 
@@ -36,7 +36,7 @@
                 position: relative;
                 border-radius: .4rem;
                 background-color: #fff;
-                width: 23rem;
+                width: 100%;
                 height:24rem;
                 padding: 25px;
 
@@ -77,8 +77,8 @@
 
                 img{
                     position: absolute;
-                    left: 23rem;
-                    bottom: 24rem;
+                    left: 25rem;
+                    bottom: 21rem;
                     cursor: pointer;
                    
 

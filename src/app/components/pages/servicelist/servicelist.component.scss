@@ -39,6 +39,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-left: 10rem;
 }
 
 .interface .navigation .profile i{
@@ -215,7 +216,7 @@ th {
   .cards__item {
     display: flex;
     padding: 1rem;
-    width: 20rem;
+    width: 24.5rem;
   
   }
   
@@ -223,6 +224,7 @@ th {
     background-color: white;
     border-radius: 0.25rem;
     box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+    width: 100%;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -242,7 +244,7 @@ th {
   
   .card__image {
     img{
-        width: 20rem;
+        width: 24.5rem;
         height: 15rem;
     }
  
@@ -298,5 +300,6 @@ th {
 
   .card__action{
     display: flex;
-    margin-left: 14.5rem;
+    // margin-left: 14.5rem;
+    justify-content: end;
   }

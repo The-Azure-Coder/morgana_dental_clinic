@@ -1,10 +1,108 @@
+
+
+
 <div class="hide-foot" [ngClass]="headerRoute('/register') || headerRoute('/editService')  || headerRoute('/appoint')  || headerRoute('/addService')
  || headerRoute('/login') || headerRoute('/dashboard')|| headerRoute('/appointments') ||headerRoute('/bookappoints') || 
  headerRoute('/appointEdit') || headerRoute('/patientDetails/') || headerRoute('/dentistList') ||
   headerRoute('/addDentist') || headerRoute('/editDentist') || headerRoute('/viewMore')  || headerRoute('/serviceList')  ||
   headerRoute('/userList')|| headerRoute('/addUser') || headerRoute('/editUser') ? 'hide' : 'show'">
+<nav class="navbar navbar-expand-lg bg-white border-0">
+  <div class="container-fluid nav-content">
+    <a class="navbar-brand pe-5" href="#"><img [routerLink]="['/']" src="/assets/images/logov2.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link hover-underline-animation" aria-current="page"[routerLink]="['/']">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hover-underline-animation" aria-current="page" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hover-underline-animation" href="#services">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hover-underline-animation" href="#staff">staff</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hover-underline-animation" href="#news">News</a>
+        </li>   <li class="nav-item">
+          <a class="nav-link hover-underline-animation" [routerLink]="['/search']">My chart</a>
+        </li>
+      
+      </ul>
+      <div class="d-flex pe-5">
+        <div class="login-book">
+          <a *ngIf="!authenticated" [routerLink]="['/login']">Login</a>
+          <a (click)="logOut()" *ngIf="authenticated">Log out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="sub-navi">
+  <!-- <marquee behavior="scroll" direction="left"> -->
+  <div class="row g-4"  >
+    <div class="col-sm-12 col-md-4 col-lg-3">
+      <div class="icon">
+        <div class="icon-img">
+          <img src="/assets/images/location-pngrepo-com.png" alt="" />
+        </div>
+        <div class="icon-content">
+          <span>123 linsdale ave</span>
+          <label>Kingston,Jamaica</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-3">
+      <div class="icon">
+        <div class="icon-img">
+          <img src="/assets/images/alarm-clock-pngrepo-com (2).png" alt="" />
+        </div>
+        <div class="icon-content">
+          <span>Opening Hours</span>
+          <label>Mon-Sat 8:00-19:00</label>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="col-sm-12 col-md-4 col-lg-3">
+      <div class="icon">
+        <div class="icon-img"><img src="/assets/images/telephone-pngrepo-com.png" alt="" /></div>
+        <div class="icon-content">
+          <span>1(876) 842-7815</span>
+          <label>Call us Now</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-4 col-lg-3">
+      <div class="icon">
+        <div class="icon-img"><img src="/assets/images/agenda-pngrepo-com.png" alt="" /></div>
+        <div class="icon-content">
+          <span cl>Here Since</span>
+          <label>1895</label>
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+  <!-- </marquee> -->
+</div>
+</div>
+
+
+
+
+<!-- <div class="hide-foot" [ngClass]="headerRoute('/register') || headerRoute('/editService')  || headerRoute('/appoint')  || headerRoute('/addService')
+ || headerRoute('/login') || headerRoute('/dashboard')|| headerRoute('/appointments') ||headerRoute('/bookappoints') || 
+ headerRoute('/appointEdit') || headerRoute('/patientDetails/') || headerRoute('/dentistList') ||
+  headerRoute('/addDentist') || headerRoute('/editDentist') || headerRoute('/viewMore')  || headerRoute('/serviceList')  ||
+  headerRoute('/userList')|| headerRoute('/addUser') || headerRoute('/editUser') ? 'hide' : 'show'">
   <nav>
-    <div class="logo"><img [routerLink]="['/']" src="/assets/images/logo3.0.png" alt=""></div>
+    <div class="logo"><img [routerLink]="['/']" src="/assets/images/logov2.png" alt=""></div>
     <div class="main-nav">
       <a [routerLink]="['/']"><span>Home</span></a>
       <a href="#about"><span>About</span></a>
@@ -52,4 +150,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

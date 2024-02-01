@@ -13,8 +13,8 @@
   </div>
   <h3 class="i-name">Dashboard</h3>
 
-  <div class="values">
-    <div class="val-box">
+  <div class="values row ps-5">
+    <div class="val-box col">
       <div class="val-img">
         <img src="/assets/images/patients-icon.png" alt="">
       </div>
@@ -23,7 +23,7 @@
         <span>Patients</span>
       </div>
     </div>
-    <div class="val-box">
+    <div class="val-box col">
       <div class="val-img">
         <img src="/assets/images/doctors-icon.png" alt="">
       </div>
@@ -32,7 +32,7 @@
         <span>Doctors</span>
       </div>
     </div>
-    <div class="val-box">
+    <div class="val-box col">
       <div class="val-img">
         <img src="/assets/images/services-icon.png" alt="">
       </div>
@@ -41,7 +41,7 @@
         <span>Services</span>
       </div>
     </div>
-    <div class="val-box">
+    <div class="val-box col">
       <div class="val-img">
         <img src="/assets/images/salary-icon.png" alt="">
       </div>
@@ -51,7 +51,7 @@
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="container ps-4 ms-3 pe-5">
     <h1 class="table-name">Patient Summary</h1>
 
     <div>
@@ -98,9 +98,9 @@
       </div>
     </div>
   </div>
-  <h1 class="doc-msg">Doc's Message</h1>
-  <div class="dash-flex">
-    <div class="doc-card">
+  <h1 class="doc-msg ps-2">Doc's Message</h1>
+  <div class="dash-flex row ps-2">
+    <div class="doc-card col-6">
       <div *ngFor="let dentist of dentists" class="doc-list">
         <div class="profile-image">
           <img src="{{dentist.docImg}}" alt="">
@@ -111,7 +111,7 @@
         </div>
       </div>
     </div>
-    <div class="chart">
+    <div class="chart ms-5 col-5">
       <app-chart1></app-chart1>
 
     </div>

@@ -4,8 +4,8 @@
 
   <div class="service-heading">{{service.serviceName}} Details</div>
 
-  <div class="service-layout">
-    <div class="service-content">
+  <div class="service-layout row justify-content-center gy-4">
+        <div class="service-content col-sm-12 col-lg-6 col-xl-4 col-4">
       <div class="service-image">
         <div class="blue-background"></div>
         <img src="{{service.serviceImg}}" alt="">
@@ -14,15 +14,18 @@
         <h2>{{service.serviceName}}</h2>
         <p>{{service.serviceDescrip}}</p>
         <div class="price-info">
-          <p class="money"><span>Service Cost:</span>{{service.serviceCost | currency}}</p>
+          <div class="money row">
+            <div class="col span">Service Cost:</div>
+            <div class="col">{{service.serviceCost | currency}}</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="book-form">
+    <div class="book-form col-sm-12 col-lg-6 col-xl-5">
       <form [formGroup]="appointForm" (submit)="onSubmit()">
-        <div class="name">
-          <div class="first">
+        <div class="name row">
+          <div class="first col">
             <mat-form-field hideRequiredMarker appearance="outline">
               <mat-label>First Name</mat-label>
               <input matInput name="first_nm" formControlName="first_nm" required>
@@ -31,7 +34,7 @@
             </mat-form-field>
             <input type="hidden" name="serviceId" [(ngModel)]="service._id" formControlName="serviceId">
           </div>
-          <div class="sec">
+          <div class="sec col">
             <mat-form-field hideRequiredMarker appearance="outline">
               <mat-label>Last Name</mat-label>
               <input matInput name="last_nm" formControlName="last_nm" required>
@@ -44,8 +47,8 @@
 
         </div>
 
-        <div class="contact">
-          <div class="mail">
+        <div class="contact row">
+          <div class="mail col">
             <mat-form-field hideRequiredMarker appearance="outline">
               <mat-label>Email</mat-label>
               <input type="email" formControlName="email" name="email" matInput>
@@ -58,7 +61,7 @@
               </mat-error>
             </mat-form-field>
           </div>
-          <div class="num">
+          <div class="num col">
             <mat-form-field hideRequiredMarker appearance="outline">
               <mat-label>Phone Number</mat-label>
               <input matInput formControlName="phoneNumber" name="phoneNumber" required>

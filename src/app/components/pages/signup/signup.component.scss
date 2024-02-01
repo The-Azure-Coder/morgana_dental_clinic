@@ -1,15 +1,18 @@
 .login-background{
     position: relative;
-    height:100%;
+    height:fit-content;
+    min-height: 100%;
     width:100%;
     background-image: url('/assets/images/signup.jpg');
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 
     .overlay{
         position: absolute;
         bottom: 0;
-        background-image: linear-gradient( 135deg, #0654ae 10%, #7ff4ff 100%);
+        background-image: linear-gradient( 135deg, #031120 10%, #001a1c 100%);
         opacity: 0.6;
         width: 100%;
         height: 100%;
@@ -18,16 +21,18 @@
     }
 
     .login-content{
-        display: flex;
-        position: absolute;
-         margin-top: 7rem;
-         margin-left: 10rem;
+        // display: flex;
+        // position: absolute;
+         position: relative;
+         z-index: 100;
+        //  margin-top: 7rem;
+        //  margin-left: 10rem;
        
         .login-form{
             border-radius: .4rem;
             background-color: #fff;
-            width: 21rem;
-            height:26rem;
+            // width: 21rem;
+            // height:26rem;
             padding: 25px;
 
             h2{
@@ -37,7 +42,7 @@
 
             .form-field{
                 display: block;
-                width: 20rem;
+                // width: 20rem;
             }
 
             p{
@@ -60,7 +65,8 @@
                 padding: 10px;
                 margin-top: 1.1rem;
                 margin-bottom: 1.1rem;
-                width: 20rem;
+                border-radius: .5rem;
+                // width: 20rem;
                 cursor: pointer;
             }
         }
@@ -76,7 +82,7 @@
             }
 
             p{
-                width: 30rem;
+                // width: 30rem;
                 line-height: 30px;
             }
 

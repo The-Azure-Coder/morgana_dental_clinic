@@ -9,6 +9,7 @@ import { DentistsService } from 'src/app/services/dentists/dentists.service';
 import { PatientsService } from 'src/app/services/patients/patients.service';
 import { Patients } from 'src/app/models/patient';
 import Swal from 'sweetalert2';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-service-detail',
@@ -35,7 +36,7 @@ export class ServiceDetailComponent implements OnInit {
   });
 
   constructor(private servicesService: ServicesService, private patientsService: PatientsService, private dentistService:
-    DentistsService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder) { }
+    DentistsService, private router: Router, private route: ActivatedRoute, private _formBuilder: FormBuilder, private notif: NotificationService) { }
 
   getServiceFromId(id: string): void {
     this.serviceSub = this.servicesService.getServicesById(id).subscribe(theitem => this.service = theitem.data)
@@ -53,16 +54,11 @@ export class ServiceDetailComponent implements OnInit {
       const formData = (this.appointForm.value as unknown) as Partial<Patients>
       this.patientsService.createPatient(formData).subscribe(() => {
         this.router.navigate(['/'])
-        Swal.fire("appointment Successful Added");
+        this.notif.success("appointment Successful Added");
       })
 
     } else {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Invalid form submission!',
-        footer: '<a href="">Why do I have this issue?</a>'
-      })
+     this.notif.error("invalid Form submission")
 
     }
   }

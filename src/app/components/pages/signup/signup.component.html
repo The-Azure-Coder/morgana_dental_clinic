@@ -1,11 +1,12 @@
-<div class="login-background">
-  <div class="overlay"></div>
-  <div class="login-content">
-    <div class="welcome">
-      <img routerLink="/" src="/assets/images/logo2.1.png" alt="">
+<div class="login-background row d-flex align-items-center">
+  <div class="col">
+<div class="overlay"></div>
+  <div class="login-content row justify-content-center container-fluid gap-5">
+    <div class="welcome col col-sm-12 col-md-3 col-xl-4">
+      <img routerLink="/" src="/assets/images/logo.svg" alt="">
       <p>Register Today at Morgana Dental Clinc Where we put our patients first and foremost garantee the the ost suitable user experience </p>
     </div>
-    <div class="login-form">
+    <div class="login-form col col-sm-12 col-md-6 col-xl-4">
       <form action="" [formGroup]="regForm" (submit)="onSubmit()">
         <h2>Register Today</h2>
 
@@ -49,9 +50,12 @@
               Passwords do not match</mat-error>
           </mat-error>
         </mat-form-field>
-        <button type="submit">Sign Up</button>
+        <div class="row">
+          <button class="col-12" type="submit">Sign Up</button>
+        </div>
         <p>Already have an account? <a [routerLink]="['/login']">Login</a></p>
       </form>
     </div>
+  </div>
   </div>
 </div>
