@@ -563,7 +563,7 @@ p{
                     
                 }
 
-                img:hover{
+                img:hover, .content a:hover{
                     filter: grayscale(0);
                     transform: scale(1.1);
                 }
@@ -601,6 +601,32 @@ p{
                     padding: 8px;
                     border-radius: .3rem;
                     text-align: center;
+                    position: relative;
+                    transition: .3s;
+                    z-index: 1;
+                  
+                }
+
+                a::before{
+                 content: '';
+                 position: absolute;
+                 left: 0;
+                 top: 0;
+                 width: 0;
+                 height: 100%;
+                 background-color: #6cb1ff ;
+                 transition: .3s;
+                 z-index: -1;
+
+                }
+
+                a:hover::before{
+                    width: 100%;
+                }
+
+                
+                a:hover{
+                    color: #fff;
                   
                 }
             }

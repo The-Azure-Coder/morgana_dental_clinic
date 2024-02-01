@@ -1,9 +1,7 @@
-<div class="appointment-form">
-
+<div class="appointment-form row d-flex justify-content-center align-items-center">
+<div class="col-12 align-self-center">
   <div class="appoint-form">
     <div class="form-background"></div>
-
-
     <div class="book-form">
       <img routerLink="/appointments" src="/assets/images/close.png" alt="">
       <form [formGroup]="appointForm" (submit)="onSubmit()">
@@ -112,8 +110,13 @@
           <mat-hint>Choose a Service</mat-hint>
           <mat-error *ngIf="appointForm.get('serviceId')?.hasError('required')&& appointForm.get('serviceId')?.touched">Please Select a Service</mat-error>
         </mat-form-field>
-        <button class="submit-btn">Book Appointment</button>
+        <div>
+          <button class="submit-btn">Book Appointment</button>
+        </div>
+      
       </form>
     </div>
   </div>
+</div>
+ 
 </div>

@@ -42,6 +42,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-left: 10rem;
 }
 
 .interface .navigation .profile i{
@@ -59,17 +60,17 @@
 
 .i-name{
     color: rgb(76, 76, 76);
-    padding: 30px 30px 0 30px;
+    padding: 30px 30px 0 35px;
     font-size: 25px;
     // font-weight: 00;
 }
 
 .values{
-    display: flex;
+    // display: flex;
     // justify-content: space-between;
     margin-right: 2rem;
-    align-items: center;
-    width: fit-content;
+    // align-items: center;
+    // width: fit-content;
     padding-left: 30px;
     margin-bottom: 2rem;
   
@@ -78,7 +79,7 @@
 
 .values .val-box{
     background: #fff;
-    width: 180px;
+    width: 100%;
     padding: 16px 30px;
     border-radius: 5px;
     display: flex;
@@ -133,9 +134,9 @@
 }
 
 .container {
-    max-width: 1020px;
+    max-width: 100%;
     position: relative;
-    margin-left: 2rem;
+   
    
    
 }
@@ -251,7 +252,7 @@ th {
 }
 
 .dash-flex{
-    display: flex;
+    // display: flex;
    
 
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NotificationService } from 'src/app/services/notification.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -9,7 +10,7 @@ import Swal from 'sweetalert2';
 })
 export class NavBarComponent implements OnInit {
   authenticated: boolean = this.isLoggedIn();
-  constructor(private router: Router) { }
+  constructor(private router: Router, private notif: NotificationService) { }
   headerRoute(route: string) {
     return this.router.url.includes(route)
   }
@@ -18,13 +19,7 @@ export class NavBarComponent implements OnInit {
   }
 
   logOut() {
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Your are looged Out',
-      showConfirmButton: false,
-      timer: 1500
-    })
+    this.notif.success('Logged Out Sucessfully')
     localStorage.removeItem('admin')
     localStorage.removeItem('user')
     this.router.navigate(['/']);

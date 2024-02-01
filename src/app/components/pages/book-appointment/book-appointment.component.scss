@@ -1,23 +1,19 @@
 .appointment-form{
-    position: fixed;
-    width :100%;
-    background-color: #f7f5f5;
+    height: 100%;
+  
 
 .appoint-form{
     position: relative;
-    top: -.4rem;
     display: flex;
+    justify-content: center;
     border-radius: 0px 5px 5px 0px;
-    margin-bottom: 2rem;
-    margin-left: 12rem;
     background-color: #fff;
-   
     box-shadow: 9px 9px 5px 0px rgba(0,0,0,0.06);
     -webkit-box-shadow: 9px 9px 5px 0px rgba(0,0,0,0.06);
     -moz-box-shadow: 9px 9px 5px 0px rgba(0,0,0,0.06);
-    margin-top: 1.5rem;
     width: fit-content;
-    // margin-bottom: 8rem;
+    margin: 0 auto;
+
     
 
     .form-background{

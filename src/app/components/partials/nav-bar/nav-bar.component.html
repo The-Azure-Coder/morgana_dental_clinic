@@ -15,28 +15,28 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page"[routerLink]="['/']">Home</a>
+          <a class="nav-link hover-underline-animation" aria-current="page"[routerLink]="['/']">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#about">About</a>
+          <a class="nav-link hover-underline-animation" aria-current="page" href="#about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link hover-underline-animation" href="#services">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#staff">staff</a>
+          <a class="nav-link hover-underline-animation" href="#staff">staff</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#news">News</a>
+          <a class="nav-link hover-underline-animation" href="#news">News</a>
         </li>   <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/search']">My chart</a>
+          <a class="nav-link hover-underline-animation" [routerLink]="['/search']">My chart</a>
         </li>
       
       </ul>
       <div class="d-flex pe-5">
         <div class="login-book">
-          <a *ngIf="!authenticated" [routerLink]="['/login']"><span>Login</span></a>
-          <a (click)="logOut()" *ngIf="authenticated"><span>Log out</span></a>
+          <a *ngIf="!authenticated" [routerLink]="['/login']">Login</a>
+          <a (click)="logOut()" *ngIf="authenticated">Log out</a>
         </div>
       </div>
     </div>
